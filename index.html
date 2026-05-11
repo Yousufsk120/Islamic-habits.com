@@ -23,10 +23,10 @@
 
       <nav class="nav" aria-label="Primary">
         <a href="#console">Console</a>
+        <a href="#world-tools">World tools</a>
+        <a href="#knowledge-atlas">Knowledge</a>
         <a href="#civilization">Civilization</a>
         <a href="#library">Library</a>
-        <a href="#deep-dive">Deep dive</a>
-        <a href="#roadmap">Roadmap</a>
       </nav>
     </header>
 
@@ -43,14 +43,15 @@
               lived path of barakah.
             </p>
             <div class="hero-chips" aria-label="Product pillars">
+              <span>Prayer times worldwide</span>
+              <span>Qibla compass</span>
+              <span>Islamic knowledge atlas</span>
               <span>Salah-first</span>
               <span>Prophetic routines</span>
-              <span>Family circles</span>
-              <span>Ummah service</span>
             </div>
             <div class="hero-actions">
               <a class="button primary" href="#console">Open console</a>
-              <a class="button glass" href="#civilization">See the vision</a>
+              <a class="button glass" href="#world-tools">Find Salah time</a>
             </div>
           </div>
 
@@ -73,6 +74,168 @@
             </div>
             <p>Protect the anchors. Turn small deeds into a stronger self, family, and community.</p>
           </aside>
+        </div>
+      </section>
+
+      <section class="world-tools" id="world-tools" aria-labelledby="world-tools-title">
+        <div class="section-heading wide">
+          <p class="eyebrow">Worldwide practice tools</p>
+          <h2 id="world-tools-title">Salah time and Qibla from any corner of the earth.</h2>
+          <p>
+            Search by city and country, or use your current location. Times are calculated
+            through AlAdhan and may differ from local masjid or official authority adjustments.
+          </p>
+        </div>
+
+        <div class="tools-grid">
+          <article class="tool-panel prayer-tool">
+            <div class="tool-head">
+              <span>01</span>
+              <div>
+                <p class="eyebrow">Prayer clock</p>
+                <h3>Check today's Salah times</h3>
+              </div>
+            </div>
+            <form class="prayer-form" id="prayerForm">
+              <label>
+                <span>City</span>
+                <input id="cityInput" name="city" type="text" placeholder="London" autocomplete="address-level2" required>
+              </label>
+              <label>
+                <span>Country</span>
+                <input id="countryInput" name="country" type="text" placeholder="United Kingdom" autocomplete="country-name" required>
+              </label>
+              <label>
+                <span>Method</span>
+                <select id="methodInput" name="method">
+                  <option value="3">Muslim World League</option>
+                  <option value="2">ISNA</option>
+                  <option value="1">Karachi</option>
+                  <option value="4">Umm Al-Qura, Makkah</option>
+                  <option value="5">Egyptian General Authority</option>
+                  <option value="7">Institute of Geophysics, Tehran</option>
+                  <option value="8">Gulf Region</option>
+                  <option value="9">Kuwait</option>
+                  <option value="10">Qatar</option>
+                  <option value="11">Singapore</option>
+                  <option value="12">France</option>
+                  <option value="13">Turkey</option>
+                  <option value="14">Russia</option>
+                </select>
+              </label>
+              <div class="tool-actions">
+                <button class="button primary" id="useLocation" type="button">Use my location first</button>
+                <button class="button glass" type="submit">Search city</button>
+              </div>
+            </form>
+            <div class="status-line" id="prayerStatus" role="status"></div>
+            <div class="times-grid" id="timesGrid" aria-live="polite"></div>
+          </article>
+
+          <article class="tool-panel qibla-tool">
+            <div class="tool-head">
+              <span>02</span>
+              <div>
+                <p class="eyebrow">Qibla direction</p>
+                <h3>Face the Kaaba with confidence</h3>
+              </div>
+            </div>
+            <div class="qibla-compass" aria-label="Qibla compass">
+              <div class="compass-ring">
+                <span>N</span>
+                <span>E</span>
+                <span>S</span>
+                <span>W</span>
+                <strong id="qiblaNeedle">↑</strong>
+              </div>
+            </div>
+            <div class="qibla-readout">
+              <strong id="qiblaDegree">Awaiting location</strong>
+              <span id="qiblaHint">Use location or search a city to calculate Qibla direction.</span>
+            </div>
+            <div class="tool-actions compact-actions">
+              <button class="button primary" id="startCompass" type="button">Start live compass</button>
+            </div>
+            <div class="status-line" id="compassStatus" role="status"></div>
+            <p class="fine-print">
+              Live compass works best on phones over HTTPS after location and motion permission. Browser location may use GPS, Wi-Fi, and cellular signals depending on the device.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="knowledge-atlas" id="knowledge-atlas" aria-labelledby="knowledge-title">
+        <div class="section-heading wide">
+          <p class="eyebrow">Knowledge atlas</p>
+          <h2 id="knowledge-title">Calligraphy, history, manuscripts, and civilization roots.</h2>
+          <p>
+            A practical research layer for people searching Islamic beauty, authentic history,
+            archived books, and the human search for the One Creator across civilizations.
+          </p>
+        </div>
+
+        <div class="atlas-grid">
+          <article class="atlas-panel search-panel">
+            <p class="eyebrow">Islamic calligraphy</p>
+            <h3>Search scripts, styles, and museum collections</h3>
+            <form class="atlas-search" data-search-type="calligraphy">
+              <input name="query" type="search" placeholder="Thuluth, Kufic, Bismillah, Ottoman calligraphy">
+              <button class="button primary" type="submit">Search</button>
+            </form>
+            <div class="resource-row">
+              <a href="https://commons.wikimedia.org/wiki/Category:Islamic_calligraphy" target="_blank" rel="noreferrer">Wikimedia</a>
+              <a href="https://www.metmuseum.org/art/collection/search?department=14&q=calligraphy" target="_blank" rel="noreferrer">The Met</a>
+              <a href="https://www.europeana.eu/en/search?query=islamic%20calligraphy" target="_blank" rel="noreferrer">Europeana</a>
+            </div>
+          </article>
+
+          <article class="atlas-panel search-panel">
+            <p class="eyebrow">Archived books</p>
+            <h3>Search public libraries and manuscript portals</h3>
+            <form class="atlas-search" data-search-type="books">
+              <input name="query" type="search" placeholder="Tafsir, Hadith, Seerah, Islamic history">
+              <button class="button primary" type="submit">Search</button>
+            </form>
+            <div class="resource-row">
+              <a href="https://archive.org/search?query=islamic%20history" target="_blank" rel="noreferrer">Internet Archive</a>
+              <a href="https://www.loc.gov/collections/?fa=subject:islam" target="_blank" rel="noreferrer">Library of Congress</a>
+              <a href="https://www.qdl.qa/en/search/site/islamic%20manuscripts" target="_blank" rel="noreferrer">Qatar Digital Library</a>
+            </div>
+          </article>
+
+          <article class="atlas-panel history-panel">
+            <p class="eyebrow">Authentic history path</p>
+            <h3>Build from sources before opinions</h3>
+            <div class="pathway-list">
+              <div><strong>1. Revelation and Seerah</strong><span>Qur'an, hadith, early biography, and the Makkan/Madinan foundations.</span></div>
+              <div><strong>2. Khulafa and early community</strong><span>Governance, worship, knowledge, expansion, fitan, and preservation.</span></div>
+              <div><strong>3. Knowledge civilization</strong><span>Hadith sciences, fiqh, Arabic, medicine, astronomy, art, architecture, trade, and waqf.</span></div>
+              <div><strong>4. Modern renewal</strong><span>Colonial disruption, reform, education, diaspora, technology, and rebuilding institutions.</span></div>
+            </div>
+          </article>
+
+          <article class="atlas-panel philosophy-panel">
+            <p class="eyebrow">Civilization bridge</p>
+            <h3>The human search for the One God</h3>
+            <p>
+              Islam teaches that Allah sent messengers to peoples through history. This area
+              should help users compare civilizations with humility: tawhid, prophecy,
+              fitrah, worship, ethics, family, law, beauty, and the search for ultimate truth.
+            </p>
+            <div class="bridge-tags" aria-label="Comparative research themes">
+              <span>Tawhid</span>
+              <span>Fitrah</span>
+              <span>Prophecy</span>
+              <span>Mercy</span>
+              <span>Law and ethics</span>
+              <span>Beauty</span>
+              <span>Family</span>
+              <span>Afterlife</span>
+            </div>
+            <p class="fine-print">
+              Comparative content should be scholar-reviewed and respectful. The app should connect themes without making careless claims about other religions.
+            </p>
+          </article>
         </div>
       </section>
 
