@@ -1,66 +1,312 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Islamic Habits</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Welcome to Islamic Habits</h1>
-            <p>Progressive Habits for a Fulfilling Life</p>
-            <a href="#features" class="cta-button">Get Started</a>
-        </div>
-    </section>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Islamic Habits is a future-facing Islamic practice app for Salah, Qur'an, dhikr, duas, family routines, character, service, and civilization-building habits."
+    >
+    <title>Islamic Habits | Future Practice Civilization</title>
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="app-header">
+      <a class="brand" href="#top" aria-label="Islamic Habits home">
+        <span class="brand-mark">IH</span>
+        <span>
+          <strong>Islamic Habits</strong>
+          <small>Future practice civilization</small>
+        </span>
+      </a>
 
-    <!-- Trust Bar -->
-    <section class="trust-bar">
-        <div class="container">
-            <h2>Trusted by Thousands</h2>
-            <img src="trusted-partners.png" alt="Trusted Partners">
-        </div>
-    </section>
+      <nav class="nav" aria-label="Primary">
+        <a href="#console">Console</a>
+        <a href="#civilization">Civilization</a>
+        <a href="#library">Library</a>
+        <a href="#deep-dive">Deep dive</a>
+        <a href="#roadmap">Roadmap</a>
+      </nav>
+    </header>
 
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <div class="container">
-            <h2>Our Features</h2>
-            <div class="feature-card">
-                <h3>Daily Reminders</h3>
-                <p>Stay on track with daily reminders tailored to your needs.</p>
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-media" aria-hidden="true"></div>
+        <div class="hero-shell">
+          <div class="hero-copy">
+            <p class="eyebrow">Islamic Habits 2035</p>
+            <h1 id="hero-title">Future Islamic practice civilization.</h1>
+            <p>
+              A premium daily operating system where Salah, Qur'an, dhikr, duas,
+              family routines, character, work excellence, and service become one
+              lived path of barakah.
+            </p>
+            <div class="hero-chips" aria-label="Product pillars">
+              <span>Salah-first</span>
+              <span>Prophetic routines</span>
+              <span>Family circles</span>
+              <span>Ummah service</span>
             </div>
-            <div class="feature-card">
-                <h3>Habit Tracking</h3>
-                <p>Monitor your progress and celebrate your achievements.</p>
+            <div class="hero-actions">
+              <a class="button primary" href="#console">Open console</a>
+              <a class="button glass" href="#civilization">See the vision</a>
             </div>
-            <div class="feature-card">
-                <h3>Community Support</h3>
-                <p>Join a community of like-minded individuals for support and motivation.</p>
+          </div>
+
+          <aside class="hero-panel" aria-label="Today snapshot">
+            <div class="orbit-field" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+              <strong>بركة</strong>
             </div>
+            <div class="panel-topline">
+              <span>Today</span>
+              <strong id="heroPercent">0%</strong>
+            </div>
+            <div class="mini-ring" aria-hidden="true">
+              <svg viewBox="0 0 120 120">
+                <circle class="ring-track" cx="60" cy="60" r="48"></circle>
+                <circle class="ring-value" id="heroRing" cx="60" cy="60" r="48"></circle>
+              </svg>
+            </div>
+            <p>Protect the anchors. Turn small deeds into a stronger self, family, and community.</p>
+          </aside>
         </div>
-    </section>
+      </section>
 
-    <!-- Payment Checkout Flow -->
-    <section class="checkout">
-        <div class="container">
-            <h2>Secure Payment</h2>
-            <form action="/submit-payment" method="POST">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="card">Credit Card:</label>
-                <input type="text" id="card" name="card" required>
-                <button type="submit" class="cta-button">Pay Now</button>
-            </form>
+      <section class="civilization" id="civilization" aria-labelledby="civilization-title">
+        <div class="section-heading wide">
+          <p class="eyebrow">Civilization layers</p>
+          <h2 id="civilization-title">Practice should scale from the soul to the Ummah.</h2>
+          <p>
+            Islamic Habits is designed as more than a tracker. It is a guided practice
+            system that helps a person return to Allah, strengthen the self, serve the
+            family, benefit the community, and build excellence over time.
+          </p>
         </div>
-    </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Islamic Habits. All rights reserved.</p>
+        <div class="layer-grid" aria-label="Islamic Habits civilization layers">
+          <article class="layer-card">
+            <span>01</span>
+            <h3>Soul</h3>
+            <p>Salah, Qur'an, dhikr, dua, tawbah, khushu, sincerity, and spiritual recovery.</p>
+          </article>
+          <article class="layer-card">
+            <span>02</span>
+            <h3>Self</h3>
+            <p>Sleep, focus, speech, food, movement, digital discipline, and work ethic.</p>
+          </article>
+          <article class="layer-card">
+            <span>03</span>
+            <h3>Family</h3>
+            <p>Shared routines, parent service, children-friendly practice, and home barakah.</p>
+          </article>
+          <article class="layer-card">
+            <span>04</span>
+            <h3>Ummah</h3>
+            <p>Helping people, giving, neighbor rights, masjid participation, and mercy in public life.</p>
+          </article>
+          <article class="layer-card">
+            <span>05</span>
+            <h3>Civilization</h3>
+            <p>Knowledge, excellence, responsibility, lawful earning, leadership, and resilient communities.</p>
+          </article>
         </div>
+      </section>
+
+      <section class="console" id="console" aria-labelledby="console-title">
+        <div class="section-heading">
+          <p class="eyebrow">Daily console</p>
+          <h2 id="console-title">Practice command center.</h2>
+          <p>
+            Open the app and know the next right action: before Fajr, after Fajr,
+            during work or study, with family, and before sleep.
+          </p>
+        </div>
+
+        <div class="console-grid">
+          <aside class="score-card">
+            <span class="score" id="progressNumber">0%</span>
+            <p>completed today</p>
+            <div class="progress-bar" aria-hidden="true"><span id="barValue"></span></div>
+            <button class="ghost-button" id="resetDay" type="button">Reset today</button>
+          </aside>
+
+          <div class="habit-stack" id="habitList" aria-label="Daily checklist">
+            <label class="habit-check">
+              <input type="checkbox" data-habit="fajr">
+              <span>
+                <strong>Fajr protected</strong>
+                Wake, wudu, two Sunnah rak'ahs, Fajr, and a short post-prayer sit.
+              </span>
+            </label>
+            <label class="habit-check">
+              <input type="checkbox" data-habit="quran">
+              <span>
+                <strong>Qur'an connection</strong>
+                Read, listen, or memorize a small amount with attention.
+              </span>
+            </label>
+            <label class="habit-check">
+              <input type="checkbox" data-habit="adhkar">
+              <span>
+                <strong>Morning and evening adhkar</strong>
+                Create a protected window for remembrance.
+              </span>
+            </label>
+            <label class="habit-check">
+              <input type="checkbox" data-habit="speech">
+              <span>
+                <strong>Tongue guarded</strong>
+                Reduce gossip, harshness, useless arguments, and reactive replies.
+              </span>
+            </label>
+            <label class="habit-check">
+              <input type="checkbox" data-habit="body">
+              <span>
+                <strong>Body as amanah</strong>
+                Move, eat moderately, sleep on time, and avoid numbing scroll loops.
+              </span>
+            </label>
+            <label class="habit-check">
+              <input type="checkbox" data-habit="family">
+              <span>
+                <strong>One act of service</strong>
+                Benefit a parent, spouse, child, neighbor, colleague, or stranger.
+              </span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <section class="principles" aria-labelledby="principles-title">
+        <div class="principle-panel">
+          <p class="eyebrow">Experience principle</p>
+          <h2 id="principles-title">Reward return, not perfection.</h2>
+          <p>
+            The interface should create energy without turning worship into empty
+            gamification. The product celebrates consistency, repentance, humility,
+            and coming back after missing a day.
+          </p>
+        </div>
+        <div class="principle-list">
+          <div>
+            <strong>Deep modules</strong>
+            <span>Every habit opens into evidence, Sunnah, duas, actions, examples, and plans.</span>
+          </div>
+          <div>
+            <strong>Family mode</strong>
+            <span>Shared goals for parents, spouses, children, siblings, and halaqah groups.</span>
+          </div>
+          <div>
+            <strong>Scholar-ready content</strong>
+            <span>Prepared for future review, source grading, Arabic, translation, and audio.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="library" id="library" aria-labelledby="library-title">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Habit library</p>
+            <h2 id="library-title">Choose a practice module.</h2>
+          </div>
+          <label class="search">
+            <span>Search modules</span>
+            <input id="moduleSearch" type="search" placeholder="Fajr, dua, Sunnah, sleep...">
+          </label>
+        </div>
+
+        <div class="module-grid" id="moduleGrid"></div>
+      </section>
+
+      <section class="deep-dive" id="deep-dive" aria-labelledby="deep-title">
+        <div class="deep-header">
+          <p class="eyebrow">Deep dive</p>
+          <h2 id="deep-title">Fajr Salah blueprint</h2>
+          <p>
+            This is the level of depth every major practice can grow into: evidence,
+            Sunnah, benefits, actions, duas, companion examples, and a practical plan.
+          </p>
+        </div>
+
+        <div class="detail-layout">
+          <aside class="detail-tabs" aria-label="Fajr topics">
+            <button class="tab active" type="button" data-panel="meaning" onclick="window.setFajrPanel('meaning', this)">Meaning</button>
+            <button class="tab" type="button" data-panel="sunnah" onclick="window.setFajrPanel('sunnah', this)">Sunnah</button>
+            <button class="tab" type="button" data-panel="after" onclick="window.setFajrPanel('after', this)">After Fajr</button>
+            <button class="tab" type="button" data-panel="duas" onclick="window.setFajrPanel('duas', this)">Duas</button>
+            <button class="tab" type="button" data-panel="companions" onclick="window.setFajrPanel('companions', this)">Sahabah</button>
+            <button class="tab" type="button" data-panel="plan" onclick="window.setFajrPanel('plan', this)">Habit plan</button>
+          </aside>
+
+          <article class="detail-panel" id="detailPanel" aria-live="polite"></article>
+        </div>
+      </section>
+
+      <section class="prayer-map" aria-labelledby="map-title">
+        <div class="section-heading">
+          <p class="eyebrow">Salah anchors</p>
+          <h2 id="map-title">The day already has sacred structure.</h2>
+        </div>
+        <div class="timeline">
+          <button type="button" data-module="fajr">
+            <span>Fajr</span>
+            <strong>Awakening, protection, witnessed recitation</strong>
+          </button>
+          <button type="button" data-module="dhuhr">
+            <span>Dhuhr</span>
+            <strong>Break the workday before distraction owns it</strong>
+          </button>
+          <button type="button" data-module="asr">
+            <span>Asr</span>
+            <strong>Late-day discipline and angelic transition</strong>
+          </button>
+          <button type="button" data-module="maghrib">
+            <span>Maghrib</span>
+            <strong>Family reset, gratitude, and evening dhikr</strong>
+          </button>
+          <button type="button" data-module="isha">
+            <span>Isha</span>
+            <strong>Closure, tawbah, sleep hygiene, tomorrow prepared</strong>
+          </button>
+        </div>
+      </section>
+
+      <section class="roadmap" id="roadmap" aria-labelledby="roadmap-title">
+        <div>
+          <p class="eyebrow">Product direction</p>
+          <h2 id="roadmap-title">What this can become, insha'Allah.</h2>
+          <p>
+            This first deploy is the public concept layer. The next product phase can
+            add accounts, prayer-time personalization, streak recovery, reminders,
+            scholar-reviewed Arabic content, Ramadan programs, family circles, masjid
+            challenges, audio duas, and printable planners.
+          </p>
+        </div>
+        <form class="signup" aria-label="Join updates">
+          <label for="email">Join the early access list</label>
+          <div>
+            <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email">
+            <button type="submit">Notify me</button>
+          </div>
+          <p class="form-message" id="formMessage" role="status"></p>
+        </form>
+      </section>
+    </main>
+
+    <dialog class="module-dialog" id="moduleDialog">
+      <button class="close-dialog" type="button" aria-label="Close details">Close</button>
+      <div id="moduleDetail"></div>
+    </dialog>
+
+    <footer class="site-footer">
+      <strong>Islamic Habits</strong>
+      <span>Small deeds. Steady hearts. Strong routines.</span>
     </footer>
-</body>
+
+    <script src="./script.js"></script>
+  </body>
 </html>
