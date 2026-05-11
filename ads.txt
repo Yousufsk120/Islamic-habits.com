@@ -1,0 +1,5 @@
+# Replace this file after Google AdSense approval.
+# Format:
+# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+#
+# Use your AdSense publisher ID without the "ca-" prefix.
