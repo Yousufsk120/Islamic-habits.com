@@ -9,7 +9,7 @@ This document describes the safe payment and download model for selling the `100
 3. The website shows the basic price.
 4. The buyer continues to secure checkout.
 5. The payment provider confirms successful payment.
-6. The English 100-hour practice PDF is delivered through a protected download link during the first launch. Later, the selected reviewed language or activity edition can be delivered the same way.
+6. The English 100-hour practice PDF can be downloaded directly after payment. If anything is confusing, the buyer can email support@islamic-habits.com.
 7. The buyer receives a receipt and support contact.
 
 ## Current Website Preparation
@@ -17,6 +17,7 @@ This document describes the safe payment and download model for selling the `100
 - The website currently keeps the public store focused on the English launch edition.
 - The checkout button opens secure checkout after the real payment link is connected.
 - The payment-link map lives in `config.js` under `stripePaymentLinks`.
+- The direct-download map lives in `config.js` under `duaDownloadLinks`.
 - The site now has payment return pages:
   - Success URL: `https://islamic-habits.com/success`
   - Cancel URL: `https://islamic-habits.com/cancel`
@@ -46,7 +47,15 @@ stripePaymentLinks: {
 }
 ```
 
-8. During the first launch, send the protected English PDF manually after checking the Stripe receipt.
+8. Add the direct PDF delivery link into `config.js`:
+
+```js
+duaDownloadLinks: {
+  english: "https://your-protected-download-link",
+}
+```
+
+9. If a buyer has any confusion after purchase, ask them to email support@islamic-habits.com with the checkout email and receipt ID.
 
 ## Strong Production Setup
 
@@ -77,4 +86,5 @@ Use one of these instead:
 - Gradual reviewed PDFs for Bengali, Japanese, Chinese, Malay, Arabic/source, and future languages.
 - Product price and tax settings.
 - Stripe Payment Link copied into `config.js`.
+- Direct PDF download link copied into `config.js`.
 - Refund, support, and customer email process.

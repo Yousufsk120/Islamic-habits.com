@@ -2,6 +2,13 @@
   const config = window.ISLAMIC_HABITS_CONFIG || {};
   const conversionId = String(config.googleAdsConversionId || "").trim();
   const conversionLabel = String(config.googleAdsConversionLabel || "").trim();
+  const downloadUrl = String(config.duaDownloadLinks?.english || "").trim();
+  const downloadButton = document.querySelector("#duaDownloadButton");
+
+  if (downloadButton && downloadUrl) {
+    downloadButton.href = downloadUrl;
+    downloadButton.hidden = false;
+  }
 
   if (!/^AW-\d+$/.test(conversionId) || !conversionLabel) return;
 

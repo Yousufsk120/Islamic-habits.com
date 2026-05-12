@@ -3,6 +3,9 @@ window.ISLAMIC_HABITS_CONFIG = {
   stripePaymentLinks: {
     english: "",
   },
+  duaDownloadLinks: {
+    english: "",
+  },
   adsenseClient: "",
   googleAdsConversionId: "",
   googleAdsConversionLabel: "",
