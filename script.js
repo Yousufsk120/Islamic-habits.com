@@ -42,8 +42,20 @@ const civilizationLayers = {
     number: "01",
     title: "Soul",
     subtitle: "The inner return to Allah",
+    definition: "Soul is the inner life of the human being: the place of intention, remembrance, longing, guilt, hope, sincerity, and return to Allah. It is not measured by noise outside; it is measured by what the heart keeps returning to.",
     intro: "This layer is for the person who looks fine outside but knows the heart needs return, softness, discipline, and hope. The soul layer teaches you to stop living only by pressure and begin living by connection.",
     tags: ["salah", "tawbah", "khushu", "dua", "Qur'an"],
+    guidance: [
+      ["Allah's guidance", "Qur'an 13:28 teaches that hearts find rest in the remembrance of Allah."],
+      ["Prophetic lens", "The famous hadith of intention teaches that the inward aim gives an action its real direction."],
+      ["Rumi", "Rumi often compares the heart to a mirror: spiritual rust must be polished for it to reflect truth."],
+      ["Al-Ghazali", "The heart is trained by knowledge, worship, watchfulness, repentance, and disciplined desire."],
+    ],
+    echoes: [
+      ["Bhagavad Gita 6.5", "A human being must uplift the self rather than let the self fall into defeat."],
+      ["Dogen", "Practice is not merely preparation; repeated practice is itself a form of realization."],
+      ["Ancient pattern", "Across old civilizations, inner purification came before public responsibility."],
+    ],
     cards: [
       ["If this feels like you", ["I pray, but sometimes I feel far from Allah.", "My day is busy, but my heart feels underfed.", "I want worship to feel alive, not like a rushed task.", "I need a way back after guilt, delay, or missing days."]],
       ["Daily anchors", ["Protect the five prayers as meetings with Allah.", "Read or listen to a small amount of Qur'an with one personal lesson.", "Make one honest dua in your own words after salah.", "End the day with tawbah before sleep."]],
@@ -56,8 +68,20 @@ const civilizationLayers = {
     number: "02",
     title: "Self",
     subtitle: "The disciplined Muslim body, mind, and tongue",
+    definition: "Self is the practical person you live through every day: your body, habits, appetite, attention, speech, time, and choices. It is where faith becomes routine or gets blocked by chaos.",
     intro: "This layer is for the person who wants to be stronger but keeps losing energy to sleep chaos, scrolling, anger, food, procrastination, or scattered attention. Islam does not separate worship from the person carrying it.",
     tags: ["focus", "speech", "sleep", "body", "discipline"],
+    guidance: [
+      ["Islamic guideline", "The nafs is not ignored; it is trained, purified, and directed toward obedience."],
+      ["Prophetic lens", "A strong believer is beloved to Allah, and strength includes resolve, patience, and useful action."],
+      ["Allama Iqbal", "Iqbal's khudi is not egoistic pride; it is a God-aware self strengthened by love and responsibility."],
+      ["Ibn al-Qayyim", "The self grows by resisting harmful desire and choosing what benefits the heart and future."],
+    ],
+    echoes: [
+      ["Bhagavad Gita 6.5", "The mind can become a friend or enemy depending on discipline."],
+      ["Dogen", "Repeated practice turns understanding into lived reality."],
+      ["Old civilizational habit", "Warriors, scholars, monks, and craftsmen trained the self through repeated daily forms."],
+    ],
     cards: [
       ["If this feels like you", ["I want to wake for Fajr but my nights are uncontrolled.", "My phone pulls me away from Qur'an, family, and deep work.", "I regret words I said when I was tired or angry.", "I have ambition, but my routine does not support it."]],
       ["Daily anchors", ["Sleep with Fajr in mind, not entertainment in control.", "Create one phone-free block for worship, study, or work.", "Guard the tongue from gossip, mockery, and unnecessary argument.", "Treat the body as amanah through movement, moderation, and cleanliness."]],
@@ -70,8 +94,20 @@ const civilizationLayers = {
     number: "03",
     title: "Family",
     subtitle: "A home that makes worship easier",
+    definition: "Family is the first civilization a person experiences. It is where mercy, authority, service, forgiveness, speech, gender adab, elder respect, and children's faith are practiced before they are preached.",
     intro: "This layer is for the person who wants barakah at home, not only private worship. Family is where patience, mercy, service, forgiveness, adab, and daily Islam become visible.",
     tags: ["home", "parents", "spouse", "children", "mercy"],
+    guidance: [
+      ["Allah's guidance", "Qur'an 30:21 describes marriage with tranquility, affection, and mercy."],
+      ["Prophetic lens", "The Prophet's character at home shows that private kindness is part of public righteousness."],
+      ["Rumi", "Love matures when it becomes service, patience, and a softening of the heart."],
+      ["Ibn Khaldun", "Strong societies depend on bonds of trust, loyalty, and shared responsibility."],
+    ],
+    echoes: [
+      ["The Great Learning", "A classical East Asian pattern moves from self-cultivation to family order, then wider peace."],
+      ["Ancient household wisdom", "Older civilizations treated the home as the first school of manners and belonging."],
+      ["Japanese practice culture", "Small repeated forms at home teach respect before long lectures do."],
+    ],
     cards: [
       ["If this feels like you", ["I want my home to feel calmer and more Islamic.", "I need better adab with parents, spouse, siblings, or children.", "I want religion to feel warm at home, not only rules and tension.", "I want family routines that are realistic, not heavy."]],
       ["Daily anchors", ["Make one dua for each family member by name.", "Offer one act of service without announcing it.", "Keep one shared worship moment small: one ayah, one dua, one reminder.", "Repair quickly after harsh words."]],
@@ -84,8 +120,20 @@ const civilizationLayers = {
     number: "04",
     title: "Ummah",
     subtitle: "A life that benefits people",
+    definition: "Ummah is the moral community of believers, but it is also a daily responsibility: to care, give, protect, teach, reconcile, serve, and refuse indifference when others are in need.",
     intro: "This layer is for the person who wants faith to move beyond the private self. The Ummah layer asks: who becomes safer, wiser, fed, guided, supported, or encouraged because I exist?",
     tags: ["service", "charity", "neighbors", "masjid", "mercy"],
+    guidance: [
+      ["Allah's guidance", "Qur'an 3:110 connects the best community with calling to good and resisting wrong."],
+      ["Prophetic lens", "The believers are described as one body: pain in one part concerns the whole."],
+      ["Ibn Khaldun", "Civilizational strength grows from social solidarity, not isolated selfishness."],
+      ["Iqbal", "Iqbal's vision of selfhood points beyond the individual toward service and awakening."],
+    ],
+    echoes: [
+      ["Confucian tradition", "Moral cultivation expands outward from self to family, society, and public peace."],
+      ["Buddhist compassion", "A disciplined heart is expected to reduce suffering, not escape responsibility."],
+      ["Ancient civic pattern", "Enduring communities survive through trust, sacrifice, memory, and shared purpose."],
+    ],
     cards: [
       ["If this feels like you", ["I care about the Ummah but feel overwhelmed by its pain.", "I want to help but do not know where to start.", "I want my skills, money, time, or voice to become sadaqah.", "I want community without drama and ego."]],
       ["Daily anchors", ["Give something regularly, even small.", "Make dua for the Ummah without becoming numb.", "Help one person near you before trying to solve the whole world.", "Support masjid, neighbors, students, elders, and people under pressure."]],
@@ -98,8 +146,20 @@ const civilizationLayers = {
     number: "05",
     title: "Civilization",
     subtitle: "Faith expressed through excellence over generations",
+    definition: "Civilization is worship becoming culture: knowledge, law, beauty, family, economy, technology, public trust, institutions, and moral imagination shaped by accountability before Allah.",
     intro: "This layer is for the person who thinks beyond today: children, knowledge, institutions, halal work, design, technology, scholarship, beauty, justice, and a world that remembers Allah. Civilization starts when worship shapes how we build.",
     tags: ["knowledge", "work", "leadership", "beauty", "future"],
+    guidance: [
+      ["Allah's guidance", "Qur'an 49:13 teaches human diversity, recognition, and nobility through taqwa."],
+      ["Prophetic lens", "Ihsan means doing things with excellence under the awareness that Allah sees."],
+      ["Ibn Khaldun", "The rise and fall of societies depends on solidarity, justice, work, leadership, and moral habits."],
+      ["Allama Iqbal", "Iqbal calls the believer toward creative, responsible selfhood instead of passive decline."],
+    ],
+    echoes: [
+      ["The Great Learning", "Self-cultivation expands toward family, governance, and peace under heaven."],
+      ["Japanese craft culture", "Long practice, refinement, and responsibility turn work into character."],
+      ["Ancient memory", "Civilizations carried values through prayer, law, architecture, poetry, teaching, and family life."],
+    ],
     cards: [
       ["If this feels like you", ["I want Islam to shape my career, creativity, and leadership.", "I care about building something that benefits future generations.", "I want Muslims to be excellent in knowledge, product, design, service, and ethics.", "I want ambition without arrogance."]],
       ["Daily anchors", ["Learn one useful thing with the intention of service.", "Improve the quality of your work as amanah.", "Keep halal boundaries in earning, influence, and leadership.", "Connect beauty with truth: clean design, clear speech, reliable systems."]],
@@ -232,8 +292,22 @@ function openCivilizationLayer(id) {
     <article class="module-body civilization-body">
       <p class="eyebrow">Civilization layer ${layer.number}</p>
       <h2>${layer.title}: ${layer.subtitle}</h2>
+      <section class="layer-definition">
+        <strong>Clear definition</strong>
+        <p>${layer.definition}</p>
+      </section>
       <p class="lead-text">${layer.intro}</p>
       <div class="modal-meta">${layer.tags.map((tag) => `<span class="chip">${tag}</span>`).join("")}</div>
+      <div class="wisdom-grid">
+        <section class="wisdom-panel">
+          <strong>Islamic guidance and scholars</strong>
+          <ul>${layer.guidance.map(([source, text]) => `<li><span>${source}</span>${text}</li>`).join("")}</ul>
+        </section>
+        <section class="wisdom-panel">
+          <strong>Cross-civilization echoes</strong>
+          <ul>${layer.echoes.map(([source, text]) => `<li><span>${source}</span>${text}</li>`).join("")}</ul>
+        </section>
+      </div>
       <div class="content-grid">${layer.cards.map(([title, items]) => `
         <section class="content-card">
           <strong>${title}</strong>
@@ -241,6 +315,7 @@ function openCivilizationLayer(id) {
         </section>
       `).join("")}</div>
       <p class="layer-closing">${layer.closing}</p>
+      <p class="fine-print">Comparative notes are presented as respectful civilizational echoes. Islamic guidance remains anchored in Qur'an, Sunnah, and qualified scholarship.</p>
     </article>`;
   els.moduleDialog.showModal();
 }
