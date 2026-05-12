@@ -72,10 +72,20 @@ const els = {
   qiblaHint: $("#qiblaHint"),
   startCompass: $("#startCompass"),
   compassStatus: $("#compassStatus"),
+  duaPurchaseForm: $("#duaPurchaseForm"),
+  duaLanguage: $("#duaLanguage"),
+  duaPrice: $("#duaPrice"),
+  purchaseStatus: $("#purchaseStatus"),
 };
 
 let currentQiblaDegree = null;
 let liveCompassActive = false;
+const duaStore = {
+  price: "$2.99",
+  paymentLinks: {
+    english: "",
+  },
+};
 
 function status(target, message, isError = false) {
   if (!target) return;
@@ -296,6 +306,24 @@ function startLiveCompass() {
   });
 }
 
+function setupDuaStore() {
+  if (!els.duaPurchaseForm || !els.duaLanguage) return;
+  if (els.duaPrice) els.duaPrice.textContent = duaStore.price;
+  els.duaLanguage.addEventListener("change", () => {
+    status(els.purchaseStatus, "English 100 Hours Dua Practice is selected. Payment link activates after provider setup.");
+  });
+  els.duaPurchaseForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const language = els.duaLanguage.value;
+    const paymentLink = duaStore.paymentLinks[language];
+    if (paymentLink) {
+      window.location.href = paymentLink;
+      return;
+    }
+    status(els.purchaseStatus, "Manual step needed: add the Stripe payment link for the English 100 Hours Dua Practice PDF, then this button will open secure checkout.", true);
+  });
+}
+
 readState().forEach((habit) => {
   const input = els.habitInputs.find((item) => item.dataset.habit === habit);
   if (input) input.checked = true;
@@ -351,6 +379,7 @@ els.form.addEventListener("submit", (event) => {
 
 renderModules();
 renderFajrPanel("meaning");
+setupDuaStore();
 updateProgress();
 status(els.prayerStatus, "Tap Use my location first for local Salah times, or search any city worldwide.");
 status(els.compassStatus, "After location is allowed, live compass can follow the phone direction.");

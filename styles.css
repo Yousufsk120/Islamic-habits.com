@@ -677,14 +677,16 @@ h3 {
 }
 
 .resource-row,
-.bridge-tags {
+.bridge-tags,
+.language-roadmap {
   display: flex;
   flex-wrap: wrap;
   gap: 9px;
 }
 
 .resource-row a,
-.bridge-tags span {
+.bridge-tags span,
+.language-roadmap span {
   display: inline-flex;
   align-items: center;
   min-height: 34px;
@@ -695,6 +697,15 @@ h3 {
   background: rgba(246, 242, 232, 0.07);
   font-size: 0.82rem;
   font-weight: 820;
+}
+
+.language-roadmap {
+  margin-top: 16px;
+}
+
+.language-roadmap span {
+  border-color: rgba(240, 191, 85, 0.22);
+  color: rgba(246, 242, 232, 0.76);
 }
 
 .resource-row a:hover {
