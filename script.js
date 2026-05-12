@@ -37,6 +37,79 @@ const fajrPanels = {
   plan: ["A 30-day Fajr habit plan", "The goal is becoming a person who returns every morning.", [["Days 1-7", "Protect the time and pray before sunrise."], ["Days 8-14", "Add the two Sunnah rak'ahs."], ["Days 15-21", "Add a five-minute post-Fajr sit."], ["Days 22-30", "Attach study, movement, writing, or memorization."]]],
 };
 
+const civilizationLayers = {
+  soul: {
+    number: "01",
+    title: "Soul",
+    subtitle: "The inner return to Allah",
+    intro: "This layer is for the person who looks fine outside but knows the heart needs return, softness, discipline, and hope. The soul layer teaches you to stop living only by pressure and begin living by connection.",
+    tags: ["salah", "tawbah", "khushu", "dua", "Qur'an"],
+    cards: [
+      ["If this feels like you", ["I pray, but sometimes I feel far from Allah.", "My day is busy, but my heart feels underfed.", "I want worship to feel alive, not like a rushed task.", "I need a way back after guilt, delay, or missing days."]],
+      ["Daily anchors", ["Protect the five prayers as meetings with Allah.", "Read or listen to a small amount of Qur'an with one personal lesson.", "Make one honest dua in your own words after salah.", "End the day with tawbah before sleep."]],
+      ["Growth signs", ["You return faster after mistakes.", "You notice the state of your heart before reacting.", "You seek Allah in ease, not only in emergency.", "Your worship becomes calmer and more personal."]],
+      ["Start today", ["Choose one prayer to improve for seven days.", "Add a two-minute quiet dua after that prayer.", "Write one sentence: What is Allah inviting me to repair?", "Ask for sincerity before every good action."]],
+    ],
+    closing: "The soul does not need dramatic change first. It needs a sincere opening, repeated every day.",
+  },
+  self: {
+    number: "02",
+    title: "Self",
+    subtitle: "The disciplined Muslim body, mind, and tongue",
+    intro: "This layer is for the person who wants to be stronger but keeps losing energy to sleep chaos, scrolling, anger, food, procrastination, or scattered attention. Islam does not separate worship from the person carrying it.",
+    tags: ["focus", "speech", "sleep", "body", "discipline"],
+    cards: [
+      ["If this feels like you", ["I want to wake for Fajr but my nights are uncontrolled.", "My phone pulls me away from Qur'an, family, and deep work.", "I regret words I said when I was tired or angry.", "I have ambition, but my routine does not support it."]],
+      ["Daily anchors", ["Sleep with Fajr in mind, not entertainment in control.", "Create one phone-free block for worship, study, or work.", "Guard the tongue from gossip, mockery, and unnecessary argument.", "Treat the body as amanah through movement, moderation, and cleanliness."]],
+      ["Growth signs", ["You keep promises to yourself.", "You can focus without needing constant stimulation.", "Your speech becomes safer for others.", "Your worship is supported by your routine instead of fighting it."]],
+      ["Start today", ["Set a phone stop time before sleep.", "Pick one work or study block after a prayer.", "Pause before replying when emotion is high.", "Do one small physical action: walk, stretch, hydrate, or clean your space."]],
+    ],
+    closing: "The self becomes powerful when it serves the soul instead of dragging it.",
+  },
+  family: {
+    number: "03",
+    title: "Family",
+    subtitle: "A home that makes worship easier",
+    intro: "This layer is for the person who wants barakah at home, not only private worship. Family is where patience, mercy, service, forgiveness, adab, and daily Islam become visible.",
+    tags: ["home", "parents", "spouse", "children", "mercy"],
+    cards: [
+      ["If this feels like you", ["I want my home to feel calmer and more Islamic.", "I need better adab with parents, spouse, siblings, or children.", "I want religion to feel warm at home, not only rules and tension.", "I want family routines that are realistic, not heavy."]],
+      ["Daily anchors", ["Make one dua for each family member by name.", "Offer one act of service without announcing it.", "Keep one shared worship moment small: one ayah, one dua, one reminder.", "Repair quickly after harsh words."]],
+      ["Growth signs", ["Your family feels safer around your religion, not judged by it.", "You serve before demanding.", "Your home has repeated moments of remembrance.", "Children or younger relatives see Islam as mercy and structure."]],
+      ["Start today", ["Message or call a parent with kindness.", "Remove one source of avoidable tension at home.", "Share one short dua before food, school, work, or sleep.", "Ask: What does my family need from my Islam today?"]],
+    ],
+    closing: "A strong Muslim home is built through many small mercies repeated until they become culture.",
+  },
+  ummah: {
+    number: "04",
+    title: "Ummah",
+    subtitle: "A life that benefits people",
+    intro: "This layer is for the person who wants faith to move beyond the private self. The Ummah layer asks: who becomes safer, wiser, fed, guided, supported, or encouraged because I exist?",
+    tags: ["service", "charity", "neighbors", "masjid", "mercy"],
+    cards: [
+      ["If this feels like you", ["I care about the Ummah but feel overwhelmed by its pain.", "I want to help but do not know where to start.", "I want my skills, money, time, or voice to become sadaqah.", "I want community without drama and ego."]],
+      ["Daily anchors", ["Give something regularly, even small.", "Make dua for the Ummah without becoming numb.", "Help one person near you before trying to solve the whole world.", "Support masjid, neighbors, students, elders, and people under pressure."]],
+      ["Growth signs", ["You become reliable in small responsibilities.", "You do not turn every issue into online anger.", "Your charity becomes consistent.", "People experience mercy, honesty, and benefit from you."]],
+      ["Start today", ["Choose one weekly service action.", "Set a small recurring charity intention.", "Check on one person quietly.", "Ask: What problem near me can Allah use me to ease?"]],
+    ],
+    closing: "The Ummah is served by people who turn emotion into steady benefit.",
+  },
+  civilization: {
+    number: "05",
+    title: "Civilization",
+    subtitle: "Faith expressed through excellence over generations",
+    intro: "This layer is for the person who thinks beyond today: children, knowledge, institutions, halal work, design, technology, scholarship, beauty, justice, and a world that remembers Allah. Civilization starts when worship shapes how we build.",
+    tags: ["knowledge", "work", "leadership", "beauty", "future"],
+    cards: [
+      ["If this feels like you", ["I want Islam to shape my career, creativity, and leadership.", "I care about building something that benefits future generations.", "I want Muslims to be excellent in knowledge, product, design, service, and ethics.", "I want ambition without arrogance."]],
+      ["Daily anchors", ["Learn one useful thing with the intention of service.", "Improve the quality of your work as amanah.", "Keep halal boundaries in earning, influence, and leadership.", "Connect beauty with truth: clean design, clear speech, reliable systems."]],
+      ["Growth signs", ["You think in decades, not only moods.", "Your work becomes more trustworthy.", "You can collaborate without ego owning the mission.", "You build tools, habits, families, and institutions that make obedience easier."]],
+      ["Start today", ["Choose one skill to develop for the Ummah.", "Document one idea that could become a beneficial project.", "Improve one system in your work, study, or family.", "Ask: If Allah gave barakah to my effort, who would benefit?"]],
+    ],
+    closing: "Civilization is not a slogan. It is worship, knowledge, character, and useful work becoming structure.",
+  },
+};
+
 const sources = [
   ["Qur'an 17:78", "https://previous.quran.com/17/78"],
   ["Sahih Muslim 725a", "https://sunnah.com/muslim:725a"],
@@ -59,6 +132,7 @@ const els = {
   moduleDetail: $("#moduleDetail"),
   detailPanel: $("#detailPanel"),
   closeDialog: $(".close-dialog"),
+  layerGrid: $(".layer-grid"),
   form: $(".signup"),
   formMessage: $("#formMessage"),
   prayerForm: $("#prayerForm"),
@@ -147,6 +221,26 @@ function openModule(id) {
         <section class="content-card"><strong>Experience layer</strong><ul><li>Short lessons and clean visuals.</li><li>Progress that rewards return, not perfection.</li><li>Shareable challenges for friends and halaqah groups.</li></ul></section>
       </div>
       ${id === "fajr" ? sourceMarkup() : ""}
+    </article>`;
+  els.moduleDialog.showModal();
+}
+
+function openCivilizationLayer(id) {
+  const layer = civilizationLayers[id];
+  if (!layer) return;
+  els.moduleDetail.innerHTML = `
+    <article class="module-body civilization-body">
+      <p class="eyebrow">Civilization layer ${layer.number}</p>
+      <h2>${layer.title}: ${layer.subtitle}</h2>
+      <p class="lead-text">${layer.intro}</p>
+      <div class="modal-meta">${layer.tags.map((tag) => `<span class="chip">${tag}</span>`).join("")}</div>
+      <div class="content-grid">${layer.cards.map(([title, items]) => `
+        <section class="content-card">
+          <strong>${title}</strong>
+          <ul>${items.map((item) => `<li>${item}</li>`).join("")}</ul>
+        </section>
+      `).join("")}</div>
+      <p class="layer-closing">${layer.closing}</p>
     </article>`;
   els.moduleDialog.showModal();
 }
@@ -358,6 +452,10 @@ els.moduleSearch.addEventListener("input", ({ target }) => {
 els.moduleGrid.addEventListener("click", (event) => {
   const card = event.target.closest("[data-module]");
   if (card) openModule(card.dataset.module);
+});
+els.layerGrid.addEventListener("click", (event) => {
+  const card = event.target.closest("[data-layer]");
+  if (card) openCivilizationLayer(card.dataset.layer);
 });
 $$(".timeline [data-module]").forEach((button) => button.addEventListener("click", () => openModule(button.dataset.module)));
 $$(".tab").forEach((tab) => tab.addEventListener("click", () => window.setFajrPanel(tab.dataset.panel, tab)));
