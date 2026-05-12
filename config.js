@@ -7,6 +7,6 @@ window.ISLAMIC_HABITS_CONFIG = {
     english: "",
   },
   adsenseClient: "",
-  googleAdsConversionId: "",
+  googleAdsConversionId: "AW-18157183110",
   googleAdsConversionLabel: "",
 };

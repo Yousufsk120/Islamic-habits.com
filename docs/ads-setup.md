@@ -8,6 +8,7 @@
 - Added ads.txt placeholder. Replace it after AdSense gives the real publisher ID.
 - Added `config.js` so ad loading can be activated without editing the main app code.
 - Added a conversion hook on `/success` for future Google Ads purchase tracking.
+- Installed the Google Ads global tag for `AW-18157183110` across public pages.
 
 ## Manual Google AdSense Steps
 
@@ -32,12 +33,12 @@
 ## Manual Google Ads Conversion Steps
 
 1. In Google Ads, create a purchase conversion action.
-2. Copy the conversion ID, usually like `AW-123456789`.
+2. The current conversion ID is already installed as `AW-18157183110`.
 3. Copy the conversion label for that purchase action.
 4. Update `config.js`:
 
    ```js
-   googleAdsConversionId: "AW-123456789",
+   googleAdsConversionId: "AW-18157183110",
    googleAdsConversionLabel: "your_conversion_label",
    ```
 
