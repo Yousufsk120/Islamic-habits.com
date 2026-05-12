@@ -2,6 +2,7 @@ const storageKey = "islamic-habits-today";
 const todayKey = new Date().toISOString().slice(0, 10);
 const kaaba = { latitude: 21.422487, longitude: 39.826206 };
 const prayerNames = ["Fajr", "Sunrise", "Dhuhr", "Asr", "Maghrib", "Isha"];
+const siteConfig = window.ISLAMIC_HABITS_CONFIG || {};
 
 const modules = [
   ["fajr", "Salah", "Core", "Fajr Salah Mastery", "Wake with intention, pray the two Sunnah rak'ahs, protect Fajr, sit in remembrance, and begin the day before the world becomes loud.", ["Fajr", "Sunnah", "duas", "morning"]],
@@ -81,9 +82,9 @@ const els = {
 let currentQiblaDegree = null;
 let liveCompassActive = false;
 const duaStore = {
-  price: "$2.99",
+  price: siteConfig.duaPrice || "$2.99",
   paymentLinks: {
-    english: "",
+    english: siteConfig.stripePaymentLinks?.english || "",
   },
 };
 
@@ -310,7 +311,10 @@ function setupDuaStore() {
   if (!els.duaPurchaseForm || !els.duaLanguage) return;
   if (els.duaPrice) els.duaPrice.textContent = duaStore.price;
   els.duaLanguage.addEventListener("change", () => {
-    status(els.purchaseStatus, "English 100 Hours Dua Practice is selected. Payment link activates after provider setup.");
+    const ready = Boolean(duaStore.paymentLinks[els.duaLanguage.value]);
+    status(els.purchaseStatus, ready
+      ? "English 100 Hours Dua Practice is selected. Secure checkout is ready."
+      : "English 100 Hours Dua Practice is selected. Payment link activates after provider setup.");
   });
   els.duaPurchaseForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -322,6 +326,18 @@ function setupDuaStore() {
     }
     status(els.purchaseStatus, "Manual step needed: add the Stripe payment link for the English 100 Hours Dua Practice PDF, then this button will open secure checkout.", true);
   });
+}
+
+function setupAdSense() {
+  const client = String(siteConfig.adsenseClient || "").trim();
+  if (!/^ca-pub-\d{10,}$/.test(client)) return;
+
+  document.body.classList.add("ads-ready");
+  const script = document.createElement("script");
+  script.async = true;
+  script.crossOrigin = "anonymous";
+  script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${encodeURIComponent(client)}`;
+  document.head.appendChild(script);
 }
 
 readState().forEach((habit) => {
@@ -380,6 +396,7 @@ els.form.addEventListener("submit", (event) => {
 renderModules();
 renderFajrPanel("meaning");
 setupDuaStore();
+setupAdSense();
 updateProgress();
 status(els.prayerStatus, "Tap Use my location first for local Salah times, or search any city worldwide.");
 status(els.compassStatus, "After location is allowed, live compass can follow the phone direction.");

@@ -15,8 +15,11 @@ This document describes the safe payment and download model for selling the `100
 ## Current Website Preparation
 
 - The website currently keeps the public store focused on the English launch edition.
-- The checkout button is intentionally inactive until real payment links are connected.
-- The payment-link map lives in `script.js` under `duaStore.paymentLinks`.
+- The checkout button opens secure checkout after the real payment link is connected.
+- The payment-link map lives in `config.js` under `stripePaymentLinks`.
+- The site now has payment return pages:
+  - Success URL: `https://islamic-habits.com/success`
+  - Cancel URL: `https://islamic-habits.com/cancel`
 - The final paid PDFs should not be uploaded into the public website folder.
 
 ## Fastest Manual Setup
@@ -27,20 +30,23 @@ Use Stripe Payment Links if you want the simplest first launch.
 2. Create a basic price, for example `$2.99`.
 3. Create one Payment Link for the English 100-hour practice launch edition.
 4. Later, create one Payment Link per reviewed language edition.
-5. In each Payment Link, make the success page point to a protected delivery process or private email delivery workflow.
-6. Add each Payment Link URL into `script.js`:
+5. In each Payment Link, set the after-payment redirect to:
+
+   `https://islamic-habits.com/success`
+
+6. If Stripe allows a cancel URL in the chosen checkout setup, use:
+
+   `https://islamic-habits.com/cancel`
+
+7. Add the live Payment Link URL into `config.js`:
 
 ```js
-paymentLinks: {
+stripePaymentLinks: {
   english: "https://buy.stripe.com/...",
-  // Add later after review:
-  bengali: "https://buy.stripe.com/...",
-  japanese: "https://buy.stripe.com/...",
-  chinese: "https://buy.stripe.com/...",
-  malay: "https://buy.stripe.com/...",
-  arabic: "https://buy.stripe.com/...",
 }
 ```
+
+8. During the first launch, send the protected English PDF manually after checking the Stripe receipt.
 
 ## Strong Production Setup
 
@@ -70,5 +76,5 @@ Use one of these instead:
 - Final reviewed English 100 Hours Dua Practice PDF for launch.
 - Gradual reviewed PDFs for Bengali, Japanese, Chinese, Malay, Arabic/source, and future languages.
 - Product price and tax settings.
-- Checkout success and cancel pages.
+- Stripe Payment Link copied into `config.js`.
 - Refund, support, and customer email process.

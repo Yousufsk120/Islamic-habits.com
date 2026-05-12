@@ -3,3 +3,4 @@
 # google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
 #
 # Use your AdSense publisher ID without the "ca-" prefix.
+# Then add the full publisher ID in config.js as adsenseClient: "ca-pub-..."
