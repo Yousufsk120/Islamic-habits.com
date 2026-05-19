@@ -1,0 +1,36 @@
+name: Daily Islamic Habits Blog
+
+on:
+  schedule:
+    - cron: "30 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out website
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Generate daily blog post
+        run: node scripts/generate-daily-blog.mjs
+
+      - name: Publish if a new post was created
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "Islamic Habits Blog Bot"
+            git config user.email "support@islamic-habits.com"
+            git add blog content scripts sitemap.xml .github/workflows/daily-blog.yml
+            git commit -m "Publish daily Islamic Habits blog"
+            git push
+          else
+            echo "No new blog post for today."
+          fi
