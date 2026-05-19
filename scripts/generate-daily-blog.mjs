@@ -99,14 +99,21 @@ function buildPostHtml(post, item) {
 
       <main>
         <article class="article-shell">
-          <a class="back-link" href="./index.html">Back to all blog posts</a>
-          <p class="eyebrow">${escapeHtml(item.category)} • ${escapeHtml(formatDate(post.date))}</p>
-          <h1>${escapeHtml(item.title)}</h1>
-          <p class="article-summary">${escapeHtml(item.summary)}</p>
-          <blockquote>
-            <p>${escapeHtml(item.quote)}</p>
-            <cite>${escapeHtml(item.quoteSource)}</cite>
-          </blockquote>
+          <header class="article-hero">
+            <a class="back-link" href="./index.html">Back to all blog posts</a>
+            <p class="eyebrow">${escapeHtml(item.category)} • ${escapeHtml(formatDate(post.date))}</p>
+            <h1>${escapeHtml(item.title)}</h1>
+            <p class="article-summary">${escapeHtml(item.summary)}</p>
+            <div class="read-meter" aria-label="Article rhythm">
+              <span>Daily reminder</span>
+              <span>3 minute read</span>
+              <span>Practice today</span>
+            </div>
+            <blockquote>
+              <p>${escapeHtml(item.quote)}</p>
+              <cite>${escapeHtml(item.quoteSource)}</cite>
+            </blockquote>
+          </header>
           ${sections}
           <section class="article-section practice-actions">
             <h2>Practice today</h2>
@@ -169,13 +176,26 @@ function buildBlogIndex(posts) {
 
       <main>
         <section class="blog-archive">
-          <div class="section-heading wide">
-            <p class="eyebrow">Daily Islamic Habits Blog</p>
-            <h1>One practical reminder every day.</h1>
-            <p>
-              Short, useful articles for Salah, duas, Sunnah products, family practice,
-              self discipline, and the spiritual architecture of a Muslim day.
-            </p>
+          <div class="blog-archive-hero">
+            <div>
+              <p class="eyebrow">Daily Islamic Habits Blog</p>
+              <h1>One practical reminder every day.</h1>
+              <p>
+                Short, useful articles for Salah, duas, Sunnah products, family practice,
+                self discipline, and the spiritual architecture of a Muslim day.
+              </p>
+              <div class="blog-rhythm" aria-label="Blog rhythm">
+                <span><strong>Daily</strong> new post</span>
+                <span><strong>3 min</strong> read</span>
+                <span><strong>1</strong> habit step</span>
+              </div>
+            </div>
+            <div class="reading-compass" aria-hidden="true">
+              <span>Salah</span>
+              <span>Dua</span>
+              <span>Self</span>
+              <span>Family</span>
+            </div>
           </div>
           <div class="post-grid">
             ${cards || "<p>No posts have been published yet.</p>"}
