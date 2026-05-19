@@ -216,9 +216,12 @@ const els = {
 let currentQiblaDegree = null;
 let liveCompassActive = false;
 const duaStore = {
-  price: siteConfig.duaPrice || "$2.99",
+  price: siteConfig.duaPrice || "Free",
   paymentLinks: {
     english: siteConfig.stripePaymentLinks?.english || "",
+  },
+  downloadLinks: {
+    english: siteConfig.duaDownloadLinks?.english || "./downloads/100-hours-dua-practice-english.pdf",
   },
 };
 
@@ -480,20 +483,20 @@ function setupDuaStore() {
   if (!els.duaPurchaseForm || !els.duaLanguage) return;
   if (els.duaPrice) els.duaPrice.textContent = duaStore.price;
   els.duaLanguage.addEventListener("change", () => {
-    const ready = Boolean(duaStore.paymentLinks[els.duaLanguage.value]);
+    const ready = Boolean(duaStore.downloadLinks[els.duaLanguage.value]);
     status(els.purchaseStatus, ready
-      ? "English 100 Hours Dua Practice is selected. Secure checkout is ready."
-      : "English 100 Hours Dua Practice is selected. Payment link activates after provider setup.");
+      ? "English 100 Hours Dua Practice is selected. Free download is ready."
+      : "English 100 Hours Dua Practice is selected. If download is unavailable, email support@islamic-habits.com.");
   });
   els.duaPurchaseForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const language = els.duaLanguage.value;
-    const paymentLink = duaStore.paymentLinks[language];
-    if (paymentLink) {
-      window.location.href = paymentLink;
+    const downloadLink = duaStore.downloadLinks[language];
+    if (downloadLink) {
+      window.location.href = downloadLink;
       return;
     }
-    status(els.purchaseStatus, "Manual step needed: add the Stripe payment link for the English 100 Hours Dua Practice PDF, then this button will open secure checkout.", true);
+    status(els.purchaseStatus, "The free PDF link is not available yet. Please email support@islamic-habits.com and we will send it manually.", true);
   });
 }
 
