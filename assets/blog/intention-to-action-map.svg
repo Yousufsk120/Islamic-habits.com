@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Intention to action map</title>
+  <desc id="desc">A visual map showing intention, action, and spiritual value.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#09231f"/>
+      <stop offset="0.55" stop-color="#0f352f"/>
+      <stop offset="1" stop-color="#13231f"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" x2="1">
+      <stop offset="0" stop-color="#f0bf55"/>
+      <stop offset="1" stop-color="#42d19b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" rx="44" fill="url(#bg)"/>
+  <circle cx="1010" cy="120" r="180" fill="#f0bf55" opacity="0.08"/>
+  <circle cx="180" cy="650" r="220" fill="#5bd6e8" opacity="0.08"/>
+  <path d="M180 380h840" stroke="url(#gold)" stroke-width="10" stroke-linecap="round" opacity="0.8"/>
+  <g fill="#f6f2e8" font-family="Arial, sans-serif" text-anchor="middle">
+    <g transform="translate(190 380)">
+      <circle r="112" fill="#102b27" stroke="#42d19b" stroke-width="6"/>
+      <text y="-14" font-size="34" font-weight="800">Intention</text>
+      <text y="32" font-size="22" fill="#bed2cb">Niyyah in the heart</text>
+    </g>
+    <g transform="translate(600 380)">
+      <circle r="112" fill="#102b27" stroke="#5bd6e8" stroke-width="6"/>
+      <text y="-14" font-size="34" font-weight="800">Action</text>
+      <text y="32" font-size="22" fill="#bed2cb">Visible effort</text>
+    </g>
+    <g transform="translate(1010 380)">
+      <circle r="112" fill="#102b27" stroke="#f0bf55" stroke-width="6"/>
+      <text y="-14" font-size="34" font-weight="800">Value</text>
+      <text y="32" font-size="22" fill="#bed2cb">Reward and meaning</text>
+    </g>
+    <text x="600" y="110" font-size="52" font-weight="900">Actions Are Judged by Intentions</text>
+    <text x="600" y="168" font-size="25" fill="#bed2cb">Sahih al-Bukhari begins by purifying the engine of every habit.</text>
+  </g>
+</svg>
