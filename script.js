@@ -211,6 +211,10 @@ const els = {
   duaLanguage: $("#duaLanguage"),
   duaPrice: $("#duaPrice"),
   purchaseStatus: $("#purchaseStatus"),
+  latestBlogTitle: $("#latestBlogTitle"),
+  latestBlogSummary: $("#latestBlogSummary"),
+  latestBlogCategory: $("#latestBlogCategory"),
+  latestBlogLink: $("#latestBlogLink"),
 };
 
 let currentQiblaDegree = null;
@@ -500,6 +504,24 @@ function setupDuaStore() {
   });
 }
 
+async function setupDailyBlogPreview() {
+  if (!els.latestBlogTitle || !els.latestBlogLink) return;
+  try {
+    const response = await fetch("./blog/posts.json", { cache: "no-store" });
+    if (!response.ok) return;
+    const posts = await response.json();
+    const latest = Array.isArray(posts) ? posts[0] : null;
+    if (!latest?.title || !latest?.file) return;
+
+    els.latestBlogTitle.textContent = latest.title;
+    if (els.latestBlogSummary && latest.summary) els.latestBlogSummary.textContent = latest.summary;
+    if (els.latestBlogCategory && latest.category) els.latestBlogCategory.textContent = latest.category;
+    els.latestBlogLink.href = `./blog/${latest.file}`;
+  } catch (error) {
+    console.info("Daily blog preview will use the static fallback.", error);
+  }
+}
+
 function setupAdSense() {
   const client = String(siteConfig.adsenseClient || "").trim();
   if (!/^ca-pub-\d{10,}$/.test(client)) return;
@@ -572,6 +594,7 @@ els.form.addEventListener("submit", (event) => {
 renderModules();
 renderFajrPanel("meaning");
 setupDuaStore();
+setupDailyBlogPreview();
 setupAdSense();
 updateProgress();
 status(els.prayerStatus, "Tap Use my location first for local Salah times, or search any city worldwide.");

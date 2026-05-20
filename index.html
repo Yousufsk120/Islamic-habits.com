@@ -22,6 +22,9 @@
     <link rel="icon" type="image/svg+xml" href="./assets/islamic-habits-logo-kaaba-bayt-al-mamur.svg">
     <link rel="apple-touch-icon" href="./assets/islamic-habits-logo-kaaba-bayt-al-mamur.svg">
     <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
@@ -48,6 +51,29 @@
       </nav>
     </header>
 
+    <nav class="mobile-tabbar" aria-label="Mobile quick navigation">
+      <a href="#top" aria-label="Home">
+        <span class="tab-icon home" aria-hidden="true"></span>
+        <span>Home</span>
+      </a>
+      <a href="#world-tools" aria-label="Salah tools">
+        <span class="tab-icon salah" aria-hidden="true"></span>
+        <span>Salah</span>
+      </a>
+      <a href="#dua-store" aria-label="Dua practice">
+        <span class="tab-icon dua" aria-hidden="true"></span>
+        <span>Dua</span>
+      </a>
+      <a href="#product-catalogue" aria-label="Islamic products">
+        <span class="tab-icon shop" aria-hidden="true"></span>
+        <span>Shop</span>
+      </a>
+      <a href="#civilization" aria-label="Civilization layers">
+        <span class="tab-icon layers" aria-hidden="true"></span>
+        <span>Layers</span>
+      </a>
+    </nav>
+
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-media" aria-hidden="true"></div>
@@ -56,12 +82,11 @@
             <div class="hero-brand-seal" aria-hidden="true">
               <img src="./assets/islamic-habits-logo-kaaba-bayt-al-mamur.svg" alt="">
             </div>
-            <p class="eyebrow">Islamic Habits 2035</p>
-            <h1 id="hero-title">Future Islamic practice civilization.</h1>
+            <p class="eyebrow">Bismillahir Rahmanir Rahim</p>
+            <h1 id="hero-title">Architecture of the <span class="accent-green">Soul</span>, Destiny of the <span class="accent-gold">Ummah</span>.</h1>
             <p>
-              A premium daily operating system where Salah, Qur'an, dhikr, duas,
-              family routines, character, work excellence, and service become one
-              lived path of barakah.
+              Bridging ancient Islamic wisdom with a high-tech discipline system
+              to build the Muslim self, family, Ummah, and civilization layer by layer.
             </p>
             <div class="hero-chips" aria-label="Product pillars">
               <span>Prayer times worldwide</span>
@@ -73,9 +98,10 @@
               <span>Prophetic routines</span>
             </div>
             <div class="hero-actions">
-              <a class="button primary" href="#console">Open console</a>
-              <a class="button glass" href="#world-tools">Find Salah time</a>
+              <a class="button primary" href="#console">Begin your practice</a>
+              <a class="button glass" href="#civilization">Explore the manifesto</a>
             </div>
+            <p class="scroll-hint">Scroll to ascend</p>
           </div>
 
           <aside class="hero-panel" aria-label="Today snapshot">
@@ -104,6 +130,41 @@
               <span><strong>Entanglement</strong> habits affect family and Ummah</span>
             </div>
           </aside>
+        </div>
+      </section>
+
+      <section class="cosmic-landing" id="cosmic-journey" aria-labelledby="cosmic-journey-title">
+        <div class="cosmic-landing-copy">
+          <p class="eyebrow">Featured visual journey</p>
+          <h2 id="cosmic-journey-title">Intention, selfhood, and the universe of signs.</h2>
+          <p>
+            This new article now carries a cinematic seven-image journey through
+            creation, niyyah, Khudi, service, and reflection. The visuals are placed
+            inside the reading path so the reader feels the scale of the soul before
+            returning to daily practice.
+          </p>
+          <div class="cosmic-landing-actions">
+            <a class="button primary" href="./blog/2026-05-20-intention-khudi-and-muslim-awakening.html?seven-visuals=1">Read the visual blog</a>
+            <a class="button glass" href="./blog/2026-05-20-intention-khudi-and-muslim-awakening.html#pdf-edition">Open PDF source</a>
+          </div>
+        </div>
+        <div class="cosmic-landing-gallery" aria-label="Seven cosmic article visuals">
+          <figure class="cosmic-tile main">
+            <img src="./assets/blog/cosmic-svg/heavenly-islamic-space-journey.svg" alt="A Muslim traveler floating through luminous galaxies and divine cosmic light.">
+            <figcaption>Heavenly Space Journey</figcaption>
+          </figure>
+          <figure class="cosmic-tile">
+            <img src="./assets/blog/cosmic-svg/path-beyond-the-stars.svg" alt="A futuristic Muslim traveler moving toward a glowing celestial gateway.">
+            <figcaption>Path Beyond Stars</figcaption>
+          </figure>
+          <figure class="cosmic-tile">
+            <img src="./assets/blog/cosmic-svg/islamic-cosmic-garden.svg" alt="A peaceful cosmic garden with rivers of light and Islamic arches.">
+            <figcaption>Cosmic Garden</figcaption>
+          </figure>
+          <figure class="cosmic-tile">
+            <img src="./assets/blog/cosmic-svg/sufi-cosmic-meditation.svg" alt="A meditative Muslim figure above cosmic rings and sacred geometry.">
+            <figcaption>Sufi Reflection</figcaption>
+          </figure>
         </div>
       </section>
 
@@ -490,42 +551,47 @@
       </section>
 
       <section class="blog-preview" id="daily-blog" aria-labelledby="daily-blog-title">
-        <div class="section-heading wide">
-          <p class="eyebrow">Daily Islamic Habits blog</p>
-          <h2 id="daily-blog-title">One practical reminder published every day.</h2>
-          <p>
-            A growing library of compact articles for Salah, duas, Sunnah habits,
-            family routines, self discipline, travel, products, and spiritual
-            civilization. The system is prepared to publish one fresh post daily.
-          </p>
-        </div>
-
-        <div class="blog-preview-panel">
-          <div>
-            <p class="eyebrow">Automated publishing</p>
-            <h3>Daily practice content for young Muslims and families.</h3>
+        <div class="blog-editorial">
+          <div class="blog-editorial-copy">
+            <p class="eyebrow">Daily Islamic Habits journal</p>
+            <h2 id="daily-blog-title">A fresh practice letter every morning.</h2>
             <p>
-              Each post is designed as a short habit guide: one idea, one Islamic
-              reminder, and a few actions the reader can practice today.
+              A living publication for Salah, duas, Sunnah habits, family routines,
+              self discipline, travel, products, and spiritual civilization. One
+              useful article is generated and published automatically every day.
             </p>
-            <div class="blog-rhythm" aria-label="Blog rhythm">
-              <span><strong>Daily</strong> new article</span>
+            <div class="blog-rhythm" aria-label="Blog publishing rhythm">
+              <span><strong>Daily</strong> auto-published</span>
+              <span><strong>8 AM</strong> India time</span>
               <span><strong>3 min</strong> practical read</span>
-              <span><strong>1</strong> action today</span>
             </div>
           </div>
-          <article class="featured-blog-card">
-            <p class="eyebrow">Today’s read</p>
-            <h4>A Small Dua Routine After Salah</h4>
-            <p>Protect gratitude, forgiveness, and direction in the quiet minutes after prayer.</p>
-            <div class="read-meter" aria-label="Reading details">
-              <span>Qur'an reflection</span>
-              <span>After Salah</span>
-              <span>3 actions</span>
+
+          <article class="daily-issue-card" aria-label="Latest daily blog article">
+            <div class="issue-topline">
+              <span>Today's issue</span>
+              <span id="latestBlogCategory">Knowledge + Selfhood</span>
             </div>
-            <a class="button primary" href="./blog/2026-05-19-a-small-dua-routine-after-salah.html">Read today’s post</a>
-            <a class="text-link" href="./blog/">Open all articles</a>
+            <h3 id="latestBlogTitle">Intention, Khudi, and Muslim Awakening</h3>
+            <p id="latestBlogSummary">
+              A bilingual reflection on Sahih al-Bukhari's opening hadith and Allama Iqbal's call to awaken the believing self.
+            </p>
+            <div class="read-meter" aria-label="Reading details">
+              <span>Bukhari</span>
+              <span>Iqbal</span>
+              <span>Bangla + English</span>
+            </div>
+            <a class="button primary" id="latestBlogLink" href="./blog/2026-05-20-intention-khudi-and-muslim-awakening.html">Read today's post</a>
+            <a class="text-link" href="./blog/">Open the journal archive</a>
           </article>
+
+          <div class="blog-pipeline" aria-label="Daily blog publishing system">
+            <span class="pipeline-node active">Topic queue</span>
+            <span class="pipeline-line"></span>
+            <span class="pipeline-node">Daily article</span>
+            <span class="pipeline-line"></span>
+            <span class="pipeline-node">Auto deploy</span>
+          </div>
         </div>
       </section>
 

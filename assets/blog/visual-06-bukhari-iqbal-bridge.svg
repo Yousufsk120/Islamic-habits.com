@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Bridge from Bukhari to Iqbal</title>
+  <desc id="desc">A bridge connecting purified intention and awakened selfhood.</desc>
+  <linearGradient id="bg" x1="0" x2="1"><stop offset="0" stop-color="#061512"/><stop offset=".5" stop-color="#12372f"/><stop offset="1" stop-color="#171e1b"/></linearGradient>
+  <rect width="1200" height="760" rx="44" fill="url(#bg)"/>
+  <path d="M150 535c220-230 680-230 900 0" fill="none" stroke="#f0bf55" stroke-width="18" stroke-linecap="round"/>
+  <path d="M210 535h780" stroke="#5bd6e8" stroke-width="8" stroke-linecap="round" opacity=".7"/>
+  <g stroke="#42d19b" stroke-width="7" opacity=".72"><path d="M300 535v-95"/><path d="M450 535v-145"/><path d="M600 535v-165"/><path d="M750 535v-145"/><path d="M900 535v-95"/></g>
+  <g font-family="Arial, sans-serif" fill="#f6f2e8" text-anchor="middle">
+    <text x="600" y="110" font-size="50" font-weight="900">From Niyyah to Khudi</text>
+    <text x="600" y="164" font-size="24" fill="#bed2cb">Purify the heart, awaken the self, then build meaningful civilization.</text>
+    <text x="285" y="618" font-size="32" font-weight="900">Bukhari</text>
+    <text x="285" y="656" font-size="22" fill="#bed2cb">Correct intention</text>
+    <text x="915" y="618" font-size="32" font-weight="900">Iqbal</text>
+    <text x="915" y="656" font-size="22" fill="#bed2cb">Awaken the self</text>
+    <text x="600" y="420" font-size="30" font-weight="800">Meaningful Action</text>
+  </g>
+</svg>

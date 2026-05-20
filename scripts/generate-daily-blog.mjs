@@ -130,18 +130,19 @@ function buildPostHtml(post, item) {
 `;
 }
 
-function buildBlogIndex(posts) {
-  const cards = posts
-    .map(
-      (post) => `
+function postToIssueCard(post) {
+  return `
         <article class="post-card">
           <p class="eyebrow">${escapeHtml(post.category)} • ${escapeHtml(formatDate(post.date))}</p>
           <h2><a href="./${escapeHtml(post.file)}">${escapeHtml(post.title)}</a></h2>
           <p>${escapeHtml(post.summary)}</p>
           <a class="text-link" href="./${escapeHtml(post.file)}">Read article</a>
-        </article>`
-    )
-    .join("\n");
+        </article>`;
+}
+
+function buildBlogIndex(posts) {
+  const latest = posts[0];
+  const cards = posts.map(postToIssueCard).join("\n");
 
   return `<!doctype html>
 <html lang="en">
@@ -179,14 +180,15 @@ function buildBlogIndex(posts) {
           <div class="blog-archive-hero">
             <div>
               <p class="eyebrow">Daily Islamic Habits Blog</p>
-              <h1>One practical reminder every day.</h1>
+              <h1>A fresh practice letter every morning.</h1>
               <p>
                 Short, useful articles for Salah, duas, Sunnah products, family practice,
-                self discipline, and the spiritual architecture of a Muslim day.
+                self discipline, and the spiritual architecture of a Muslim day. The journal
+                is automatically refreshed daily from the Islamic Habits topic queue.
               </p>
               <div class="blog-rhythm" aria-label="Blog rhythm">
-                <span><strong>Daily</strong> new post</span>
-                <span><strong>3 min</strong> read</span>
+                <span><strong>Daily</strong> auto-published</span>
+                <span><strong>8 AM</strong> India time</span>
                 <span><strong>1</strong> habit step</span>
               </div>
             </div>
@@ -197,6 +199,13 @@ function buildBlogIndex(posts) {
               <span>Family</span>
             </div>
           </div>
+          ${latest ? `
+          <article class="journal-feature">
+            <p class="eyebrow">${escapeHtml(latest.category)} • Latest issue</p>
+            <h2><a href="./${escapeHtml(latest.file)}">${escapeHtml(latest.title)}</a></h2>
+            <p>${escapeHtml(latest.summary)}</p>
+            <a class="button primary" href="./${escapeHtml(latest.file)}">Read the latest article</a>
+          </article>` : ""}
           <div class="post-grid">
             ${cards || "<p>No posts have been published yet.</p>"}
           </div>
@@ -237,15 +246,16 @@ async function main() {
   const file = `${date}-${slugify(item.title)}.html`;
   const posts = await readJson(postsPath, []);
 
-  if (!existingFiles.has(file)) {
-    const post = {
-      date,
-      file,
-      title: item.title,
-      category: item.category,
-      summary: item.summary
-    };
-    await writeFile(path.join(blogDir, file), buildPostHtml(post, item));
+  const post = {
+    date,
+    file,
+    title: item.title,
+    category: item.category,
+    summary: item.summary
+  };
+
+  await writeFile(path.join(blogDir, file), buildPostHtml(post, item));
+  if (!existingFiles.has(file) && !posts.some((existing) => existing.file === file)) {
     posts.unshift(post);
   }
 

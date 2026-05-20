@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Recommended reading library path</title>
+  <desc id="desc">A library path connecting hadith and Iqbal recommended readings.</desc>
+  <rect width="1200" height="760" rx="44" fill="#071b18"/>
+  <circle cx="600" cy="380" r="245" fill="#f0bf55" opacity=".07"/>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <text x="600" y="92" fill="#f6f2e8" font-size="48" font-weight="900">Continue the Reading Journey</text>
+    <text x="600" y="143" fill="#bed2cb" font-size="23">Hadith, adab, poetry, and reconstruction form a living study path.</text>
+  </g>
+  <g transform="translate(130 250)" font-family="Arial, sans-serif" font-weight="900">
+    <g><rect width="170" height="280" rx="16" fill="#102b27" stroke="#42d19b"/><text x="85" y="130" fill="#f6f2e8" font-size="22" text-anchor="middle">Bukhari</text></g>
+    <g transform="translate(190)"><rect width="170" height="280" rx="16" fill="#102b27" stroke="#5bd6e8"/><text x="85" y="130" fill="#f6f2e8" font-size="22" text-anchor="middle">Riyad</text></g>
+    <g transform="translate(380)"><rect width="170" height="280" rx="16" fill="#102b27" stroke="#f0bf55"/><text x="85" y="120" fill="#f6f2e8" font-size="21" text-anchor="middle">Bang-e</text><text x="85" y="150" fill="#f6f2e8" font-size="21" text-anchor="middle">Dara</text></g>
+    <g transform="translate(570)"><rect width="170" height="280" rx="16" fill="#102b27" stroke="#42d19b"/><text x="85" y="120" fill="#f6f2e8" font-size="21" text-anchor="middle">Bal-e</text><text x="85" y="150" fill="#f6f2e8" font-size="21" text-anchor="middle">Jibril</text></g>
+    <g transform="translate(760)"><rect width="170" height="280" rx="16" fill="#102b27" stroke="#5bd6e8"/><text x="85" y="112" fill="#f6f2e8" font-size="19" text-anchor="middle">Recon-</text><text x="85" y="140" fill="#f6f2e8" font-size="19" text-anchor="middle">struction</text></g>
+  </g>
+  <path d="M220 598c210 78 550 78 760 0" fill="none" stroke="#f0bf55" stroke-width="8" stroke-linecap="round" opacity=".7"/>
+</svg>

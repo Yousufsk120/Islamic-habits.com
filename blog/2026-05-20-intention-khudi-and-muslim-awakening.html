@@ -15,6 +15,40 @@
       .article-figure { margin: 34px 0; }
       .article-figure img { display: block; width: 100%; border: 1px solid rgba(246, 242, 232, 0.12); border-radius: 18px; box-shadow: var(--shadow); }
       .article-figure figcaption { margin-top: 10px; color: var(--muted); font-size: 0.88rem; }
+      .cosmic-figure img {
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
+        background: #071b18;
+      }
+      .opening-gate-figure {
+        border: 1px solid rgba(246, 242, 232, 0.12);
+        border-radius: 22px;
+        overflow: hidden;
+        background: #071b18;
+        box-shadow: var(--shadow);
+      }
+      .opening-gate-figure .gate-image {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+        min-height: 420px;
+      }
+      .opening-gate-figure img {
+        height: 100%;
+        min-height: 420px;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        object-fit: cover;
+      }
+      .opening-gate-figure .gate-diagram {
+        background: #071b18;
+      }
+      .opening-gate-figure figcaption {
+        margin: 0;
+        border-top: 1px solid rgba(246, 242, 232, 0.12);
+        padding: 12px 16px;
+        background: rgba(5, 14, 12, 0.72);
+      }
       .bilingual-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
       .bilingual-grid > div, .insight-list article, .comparison-table, .essence-grid span, .reading-list a {
         border: 1px solid rgba(246, 242, 232, 0.11);
@@ -43,6 +77,50 @@
       .essence-grid small { display: block; margin-top: 4px; color: var(--muted); font-size: 0.78rem; }
       .reading-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .reading-list a:last-child { grid-column: 1 / -1; }
+      .pdf-reader-card {
+        display: grid;
+        gap: 18px;
+        border: 1px solid rgba(246, 242, 232, 0.12);
+        border-radius: 20px;
+        padding: 22px;
+        background:
+          linear-gradient(135deg, rgba(66, 209, 155, 0.12), rgba(91, 214, 232, 0.06)),
+          rgba(246, 242, 232, 0.045);
+        box-shadow: var(--shadow);
+      }
+      .pdf-reader-card h3 {
+        margin: 0;
+        color: var(--ink);
+        font-size: clamp(1.3rem, 3vw, 2rem);
+      }
+      .pdf-reader-card p { margin: 0; color: var(--soft); }
+      .pdf-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+      .pdf-actions a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        border-radius: 999px;
+        padding: 10px 16px;
+        text-decoration: none;
+        font-weight: 900;
+      }
+      .pdf-actions a:first-child {
+        background: var(--mint);
+        color: #061713;
+      }
+      .pdf-actions a:last-child {
+        border: 1px solid rgba(246, 242, 232, 0.14);
+        color: var(--ink);
+        background: rgba(246, 242, 232, 0.06);
+      }
+      .pdf-frame {
+        width: 100%;
+        min-height: min(72vh, 760px);
+        border: 1px solid rgba(246, 242, 232, 0.12);
+        border-radius: 16px;
+        background: rgba(6, 23, 19, 0.55);
+      }
       @media (max-width: 980px) {
         .blog-shell .app-header {
           position: relative;
@@ -97,6 +175,11 @@
           min-height: 28px;
           font-size: 0.72rem;
         }
+        .pdf-reader-card { padding: 16px; }
+        .pdf-actions a { width: 100%; }
+        .pdf-frame { min-height: 520px; }
+        .opening-gate-figure .gate-image { grid-template-columns: 1fr; }
+        .opening-gate-figure img { min-height: 300px; }
         .article-figure img {
           border-radius: 14px;
         }
@@ -149,8 +232,16 @@
           </header>
 
           <figure class="article-figure">
-            <img src="../assets/blog/intention-to-action-map.svg" alt="A visual map showing intention, action, and spiritual value.">
-            <figcaption>Figure 1: Islam begins habit-building from the unseen center of the heart.</figcaption>
+            <img src="../assets/blog/cosmic-svg/heavenly-islamic-space-journey.svg" alt="A lone Muslim traveler floating through luminous galaxies and divine cosmic light.">
+            <figcaption>Cosmic visual 1: A heavenly Islamic space journey opens the reader into awe, creation, and intention.</figcaption>
+          </figure>
+
+          <figure class="article-figure opening-gate-figure">
+            <div class="gate-image">
+              <img src="../assets/blog/cosmic-svg/path-beyond-the-stars.svg" alt="A luminous gateway beyond the stars, symbolizing revelation opening the path of intention.">
+              <img class="gate-diagram" src="../assets/blog/visual-01-revelation-gate.svg" alt="A manuscript gate showing revelation, knowledge, and the hadith of intention.">
+            </div>
+            <figcaption>Figure 1: The opening gate now pairs a heavenly image with Bukhari's gate of revelation and intention.</figcaption>
           </figure>
 
           <section class="article-section bilingual-section">
@@ -178,6 +269,16 @@
             </div>
           </section>
 
+          <figure class="article-figure">
+            <img src="../assets/blog/cosmic-svg/path-beyond-the-stars.svg" alt="A futuristic Muslim astronaut moving toward a glowing celestial gateway beyond the stars.">
+            <figcaption>Cosmic visual 2: Revelation is a path beyond the visible world, guiding action toward Allah.</figcaption>
+          </figure>
+
+          <figure class="article-figure">
+            <img src="../assets/blog/visual-02-heart-compass.svg" alt="A heart-shaped compass showing intention as the inner direction of action.">
+            <figcaption>Figure 2: Niyyah is the inner compass that directs every visible deed.</figcaption>
+          </figure>
+
           <section class="article-section">
             <h2>One action, two intentions</h2>
             <div class="comparison-table" role="table" aria-label="Action and intention comparison">
@@ -198,6 +299,16 @@
               </div>
             </div>
           </section>
+
+          <figure class="article-figure">
+            <img src="../assets/blog/cosmic-svg/islamic-cosmic-garden.svg" alt="A peaceful cosmic garden with rivers of light, celestial trees, and floating Islamic arches.">
+            <figcaption>Cosmic visual 3: A purified intention turns ordinary deeds into a garden of meaning.</figcaption>
+          </figure>
+
+          <figure class="article-figure">
+            <img src="../assets/blog/visual-03-two-intentions.svg" alt="Two pathways showing charity for Allah versus showing off.">
+            <figcaption>Figure 3: The same action can carry different spiritual weight because of intention.</figcaption>
+          </figure>
 
           <section class="article-section bilingual-section">
             <p class="eyebrow">Part 2</p>
@@ -225,8 +336,13 @@
           </section>
 
           <figure class="article-figure">
-            <img src="../assets/blog/khudi-awakening-ladder.svg" alt="A ladder showing spiritual awakening, fearless thought, moral discipline, creative action, and service to the Ummah.">
-            <figcaption>Figure 2: Khudi rises through worship, courage, discipline, creativity, and service.</figcaption>
+            <img src="../assets/blog/cosmic-svg/sufi-cosmic-meditation.svg" alt="A meditative Muslim figure above cosmic rings surrounded by sacred geometry and radiant light.">
+            <figcaption>Cosmic visual 4: Khudi begins with inward stillness, then rises into disciplined action.</figcaption>
+          </figure>
+
+          <figure class="article-figure">
+            <img src="../assets/blog/visual-04-khudi-pyramid.svg" alt="A non-overlapping pyramid and five side panels showing the stages of Khudi.">
+            <figcaption>Figure 4: Khudi rises through worship, courage, discipline, creativity, and service.</figcaption>
           </figure>
 
           <section class="article-section">
@@ -250,6 +366,16 @@
               </article>
             </div>
           </section>
+
+          <figure class="article-figure">
+            <img src="../assets/blog/cosmic-svg/ark-of-light-through-universe.svg" alt="A futuristic Islamic ark of light moving through cosmic space and glowing nebulae.">
+            <figcaption>Cosmic visual 5: Awakened faith is not passive; it builds vehicles of service through the universe of time.</figcaption>
+          </figure>
+
+          <figure class="article-figure">
+            <img src="../assets/blog/visual-05-awakening-workshop.svg" alt="A workshop scene showing worship, study, creativity, and social service.">
+            <figcaption>Figure 5: Iqbal's awakening is active: worship, study, creativity, and service.</figcaption>
+          </figure>
 
           <section class="article-section bilingual-section">
             <p class="eyebrow">Part 3</p>
@@ -277,8 +403,13 @@
           </section>
 
           <figure class="article-figure">
-            <img src="../assets/blog/bukhari-iqbal-bridge.svg" alt="A bridge connecting purified intention and awakened selfhood.">
-            <figcaption>Figure 3: Correct intention becomes powerful when it moves into meaningful action.</figcaption>
+            <img src="../assets/blog/cosmic-svg/journey-through-seven-skies.svg" alt="Layered celestial skies with Islamic-inspired heavenly architecture and glowing spiritual light.">
+            <figcaption>Cosmic visual 6: A civilization of faith looks upward, layer by layer, while repairing life below.</figcaption>
+          </figure>
+
+          <figure class="article-figure">
+            <img src="../assets/blog/visual-06-bukhari-iqbal-bridge.svg" alt="A bridge connecting purified intention and awakened selfhood.">
+            <figcaption>Figure 6: Correct intention becomes powerful when it moves into meaningful action.</figcaption>
           </figure>
 
           <section class="article-section">
@@ -300,8 +431,35 @@
             </ul>
           </section>
 
+          <figure class="article-figure cosmic-figure">
+            <img src="../assets/blog/cosmic-svg/endless-universe-divine-reflection.svg" alt="A Muslim traveler standing on a transparent cosmic platform and contemplating infinite galaxies.">
+            <figcaption>Cosmic visual 7: The reader ends in reflection: creation is vast, but the heart still has a direction.</figcaption>
+          </figure>
+
+          <section class="article-section" id="pdf-edition">
+            <h2>Read the PDF edition</h2>
+            <div class="pdf-reader-card">
+              <div>
+                <p class="eyebrow">PDF source</p>
+                <h3>Intention, Selfhood, and Moral Awakening</h3>
+                <p>
+                  A bilingual PDF edition is attached for deeper reading after the blog. It keeps the same theme in a printable, shareable format for study circles, family reading, and personal reflection.
+                </p>
+              </div>
+              <div class="pdf-actions" aria-label="PDF actions">
+                <a href="./intention-selfhood-moral-awakening-pdf.html" target="_blank" rel="noopener noreferrer">Open PDF reader</a>
+                <a href="./intention-selfhood-moral-awakening-pdf.html" target="_blank" rel="noopener noreferrer">Download inside reader</a>
+              </div>
+              <iframe class="pdf-frame" src="./intention-selfhood-moral-awakening-pdf.html" title="Intention, Selfhood, and Moral Awakening PDF reader"></iframe>
+            </div>
+          </section>
+
           <section class="article-section">
             <h2>Recommended reading</h2>
+            <figure class="article-figure">
+              <img src="../assets/blog/visual-07-reading-library.svg" alt="A library path connecting hadith and Iqbal recommended readings.">
+              <figcaption>Figure 7: A reading path from hadith to adab, poetry, and reconstruction.</figcaption>
+            </figure>
             <div class="reading-list">
               <a href="https://sunnah.com/bukhari" target="_blank" rel="noopener noreferrer">Sahih al-Bukhari</a>
               <a href="https://sunnah.com/riyadussalihin" target="_blank" rel="noopener noreferrer">Riyad as-Salihin</a>
