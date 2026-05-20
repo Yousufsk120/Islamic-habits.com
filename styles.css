@@ -978,6 +978,12 @@ h3 {
   margin-top: 20px;
 }
 
+.purchase-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
 .purchase-form label {
   min-width: 0;
 }
@@ -3236,6 +3242,7 @@ h3 {
   .detail-tabs,
   .layer-grid,
   .prayer-form,
+  .purchase-actions,
   .times-grid {
     grid-template-columns: 1fr;
   }
