@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Khudi awakening ladder</title>
+  <desc id="desc">A ladder showing spiritual awakening, courage, discipline, creativity, and service.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#071b18"/>
+      <stop offset="1" stop-color="#17312b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" rx="44" fill="url(#bg)"/>
+  <path d="M290 650 610 110 930 650" fill="none" stroke="#f0bf55" stroke-width="12" stroke-linecap="round"/>
+  <g stroke="#5bd6e8" stroke-width="8" stroke-linecap="round">
+    <path d="M370 515h480"/>
+    <path d="M420 430h380"/>
+    <path d="M470 345h280"/>
+    <path d="M520 260h180"/>
+  </g>
+  <g font-family="Arial, sans-serif" fill="#f6f2e8" font-weight="800">
+    <text x="600" y="94" text-anchor="middle" font-size="52">Khudi Is an Awakened Self</text>
+    <text x="600" y="150" text-anchor="middle" font-size="24" fill="#bed2cb" font-weight="500">Iqbal wanted a believer whose soul becomes active, dignified, and responsible.</text>
+    <text x="600" y="252" text-anchor="middle" font-size="28">Spiritual awakening</text>
+    <text x="600" y="337" text-anchor="middle" font-size="28">Fearless thought</text>
+    <text x="600" y="422" text-anchor="middle" font-size="28">Moral discipline</text>
+    <text x="600" y="507" text-anchor="middle" font-size="28">Creative action</text>
+    <text x="600" y="592" text-anchor="middle" font-size="28">Service to Ummah</text>
+  </g>
+</svg>
