@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">The gate of revelation and intention</title>
+  <desc id="desc">A luminous manuscript gate showing revelation, knowledge, and the hadith of intention.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#061713"/><stop offset="1" stop-color="#17372f"/></linearGradient>
+    <linearGradient id="line" x1="0" x2="1"><stop offset="0" stop-color="#42d19b"/><stop offset="0.5" stop-color="#f0bf55"/><stop offset="1" stop-color="#5bd6e8"/></linearGradient>
+  </defs>
+  <rect width="1200" height="760" rx="44" fill="url(#bg)"/>
+  <circle cx="600" cy="368" r="260" fill="#f0bf55" opacity="0.07"/>
+  <path d="M300 625V282c0-140 120-250 300-250s300 110 300 250v343" fill="none" stroke="url(#line)" stroke-width="10"/>
+  <path d="M382 626V306c0-98 88-180 218-180s218 82 218 180v320" fill="none" stroke="#f6f2e8" stroke-opacity=".18" stroke-width="3"/>
+  <rect x="410" y="330" width="380" height="220" rx="22" fill="#102b27" stroke="#f0bf55" stroke-opacity=".55"/>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <text x="600" y="105" fill="#f6f2e8" font-size="48" font-weight="900">The Opening Gate</text>
+    <text x="600" y="158" fill="#bed2cb" font-size="23">Bukhari begins by purifying the reason behind every action.</text>
+    <text x="600" y="420" fill="#f6f2e8" font-size="34" font-weight="900">إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ</text>
+    <text x="600" y="468" fill="#bed2cb" font-size="23">Actions are judged by intentions</text>
+  </g>
+</svg>
