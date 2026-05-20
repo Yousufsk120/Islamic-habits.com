@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Heart compass of niyyah</title>
+  <desc id="desc">A heart-shaped compass showing intention as the inner direction of action.</desc>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%"><stop offset="0" stop-color="#153d35"/><stop offset="1" stop-color="#061713"/></radialGradient>
+  </defs>
+  <rect width="1200" height="760" rx="44" fill="url(#bg)"/>
+  <circle cx="600" cy="382" r="250" fill="none" stroke="#5bd6e8" stroke-width="3" opacity=".35"/>
+  <circle cx="600" cy="382" r="176" fill="none" stroke="#f0bf55" stroke-width="3" opacity=".45"/>
+  <path d="M600 508C426 390 366 308 432 238c48-50 125-35 168 28 43-63 120-78 168-28 66 70 6 152-168 270Z" fill="#102b27" stroke="#42d19b" stroke-width="8"/>
+  <path d="M600 220 642 382 600 544 558 382Z" fill="#f0bf55"/>
+  <path d="M438 382 600 340 762 382 600 424Z" fill="#5bd6e8" opacity=".82"/>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <text x="600" y="100" fill="#f6f2e8" font-size="50" font-weight="900">Niyyah Is the Inner Compass</text>
+    <text x="600" y="153" fill="#bed2cb" font-size="23">The heart gives direction before the body takes a step.</text>
+    <text x="600" y="638" fill="#f6f2e8" font-size="29" font-weight="900">Why am I doing this?</text>
+  </g>
+</svg>
