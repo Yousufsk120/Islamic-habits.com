@@ -15,7 +15,7 @@ window.ISLAMIC_HABITS_CONFIG = {
     document.getElementById(sectionId)?.remove();
   };
 
-  const addNavLink = () => {
+  const addCircle3Nav = () => {
     const nav = document.querySelector(".nav");
     if (!nav || nav.querySelector('a[href="#circle3"]')) return;
     const link = document.createElement("a");
@@ -24,51 +24,67 @@ window.ISLAMIC_HABITS_CONFIG = {
     nav.insertBefore(link, nav.querySelector('a[href="#dua-store"]') || null);
   };
 
-  const addStyles = () => {
+  const addCircle3Styles = () => {
     if (document.getElementById("circle3-demo-style")) return;
     const style = document.createElement("style");
     style.id = "circle3-demo-style";
     style.textContent = `
-      .circle3-demo{margin:0 clamp(18px,5vw,72px);padding:76px 0;scroll-margin-top:96px;position:relative;isolation:isolate}
-      .circle3-demo:before{position:absolute;inset:28px -4vw auto;z-index:-1;height:620px;border:1px solid rgba(246,242,232,.06);border-radius:30px;background:radial-gradient(circle at 14% 12%,rgba(100,238,181,.18),transparent 32%),radial-gradient(circle at 82% 18%,rgba(240,191,85,.16),transparent 28%),rgba(5,14,12,.32);content:""}
-      .circle3-demo-grid{display:grid;grid-template-columns:minmax(300px,.9fr) minmax(320px,1.1fr);gap:18px;align-items:stretch}
-      .circle3-demo-card,.circle3-room-demo,.circle3-flow-card,.circle3-beta-note{border:1px solid var(--line);border-radius:26px;background:var(--panel);box-shadow:var(--shadow)}
-      .circle3-demo-card{display:grid;gap:18px;align-content:center;padding:clamp(24px,4vw,40px)}
-      .circle3-demo-card h2{margin:0;font-size:clamp(2.2rem,4vw,4rem);line-height:1.02}
-      .circle3-demo-card p{margin:0;color:var(--muted);font-size:1.04rem;line-height:1.7}
-      .circle3-demo-actions{display:flex;flex-wrap:wrap;gap:10px}
-      .circle3-trust-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
-      .circle3-trust-row span{border:1px solid rgba(246,242,232,.12);border-radius:16px;padding:12px;color:var(--soft);background:rgba(246,242,232,.06);font-weight:850}
-      .circle3-room-demo{padding:18px;background:radial-gradient(circle at 84% 10%,rgba(91,214,232,.14),transparent 28%),rgba(5,14,12,.7)}
-      .circle3-phone{border:8px solid #07100e;border-radius:34px;overflow:hidden;background:linear-gradient(180deg,rgba(6,47,41,.98),rgba(3,34,30,.98));box-shadow:0 28px 60px rgba(0,0,0,.28)}
-      .circle3-phone-top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 18px;color:#07100e;background:linear-gradient(135deg,var(--emerald),var(--aqua))}
-      .circle3-phone-top strong{font-family:var(--font-display)}
-      .circle3-phone-top span{border-radius:999px;padding:6px 9px;background:rgba(255,255,255,.36);font-size:.78rem;font-weight:950}
-      .circle3-presence{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:14px}
-      .circle3-presence article{border:1px solid rgba(246,242,232,.12);border-radius:18px;padding:12px;text-align:center;background:rgba(246,242,232,.06)}
-      .circle3-presence b{display:block;color:var(--soft);font-size:.86rem}.circle3-presence small{color:var(--muted)}
-      .circle3-presence .observer{background:rgba(240,191,85,.12);border-color:rgba(240,191,85,.28)}
-      .circle3-chat-line{display:grid;gap:10px;padding:0 14px 16px}
-      .circle3-message{max-width:88%;border:1px solid rgba(246,242,232,.1);border-radius:18px;padding:13px;color:var(--soft);background:rgba(246,242,232,.07);line-height:1.5}
-      .circle3-message small{display:block;margin-bottom:4px;color:var(--gold);font-weight:950}
-      .circle3-message.right{justify-self:end;background:rgba(66,209,155,.12)}
-      .circle3-message.observer{max-width:none;color:#07100e;background:linear-gradient(135deg,var(--gold),var(--mint))}
-      .circle3-room-controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:14px;border-top:1px solid rgba(246,242,232,.1)}
-      .circle3-room-controls button{border:0;border-radius:14px;padding:11px 8px;color:#07100e;background:rgba(246,242,232,.88);font-weight:950}
-      .circle3-room-controls button.primary-control{background:linear-gradient(135deg,var(--emerald),var(--aqua))}
-      .circle3-flow-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:18px}
-      .circle3-flow-card{padding:18px}.circle3-flow-card span{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:14px;color:#07100e;background:linear-gradient(135deg,var(--gold),var(--mint));font-weight:950}.circle3-flow-card h3{margin:12px 0 8px}.circle3-flow-card p{margin:0;color:var(--muted)}
-      .circle3-beta-note{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;margin-top:18px;padding:18px;background:linear-gradient(135deg,rgba(240,191,85,.1),rgba(66,209,155,.06)),var(--panel)}
-      .circle3-beta-note span{color:var(--muted)}
-      @media(max-width:900px){.circle3-demo-grid,.circle3-flow-grid{grid-template-columns:1fr}.circle3-trust-row{grid-template-columns:1fr}.circle3-presence{grid-template-columns:1fr}.circle3-phone-top{display:grid}.circle3-room-controls{grid-template-columns:1fr}}
+      .circle3-demo{margin:0 clamp(18px,5vw,72px);padding:78px 0;scroll-margin-top:96px;color:#13251f;isolation:isolate;position:relative}
+      .circle3-demo:before{position:absolute;inset:32px -4vw auto;z-index:-1;height:820px;border-radius:32px;background:linear-gradient(135deg,#f8fbf7,#ecf7f0 54%,#fff7df);content:"";box-shadow:0 28px 80px rgba(0,0,0,.22)}
+      .circle3-shell{display:grid;gap:18px}
+      .circle3-hero-demo{display:grid;grid-template-columns:minmax(280px,.92fr) minmax(320px,1.08fr);gap:18px;align-items:stretch}
+      .circle3-copy,.circle3-stage,.circle3-screen,.circle3-beta{border:1px solid rgba(19,37,31,.12);border-radius:26px;background:rgba(255,255,255,.82);box-shadow:0 24px 60px rgba(10,39,31,.12)}
+      .circle3-copy{display:grid;gap:18px;align-content:center;padding:clamp(24px,4vw,42px)}
+      .circle3-copy .eyebrow,.circle3-screen .eyebrow{color:#0f7a57}
+      .circle3-copy h2{max-width:760px;margin:0;color:#13251f;font-size:clamp(2.3rem,4.7vw,4.8rem);line-height:1.01;letter-spacing:0}
+      .circle3-copy p{max-width:720px;margin:0;color:#52645d;font-size:1.05rem;line-height:1.72}
+      .circle3-actions,.circle3-purpose-list,.circle3-room-actions{display:flex;flex-wrap:wrap;gap:10px}
+      .circle3-action{display:inline-flex;align-items:center;justify-content:center;min-height:44px;border:1px solid rgba(19,37,31,.14);border-radius:999px;padding:10px 15px;color:#13251f;background:#fff;font-weight:950;text-decoration:none}
+      .circle3-action.primary{border:0;color:#fff;background:linear-gradient(135deg,#0b7a56,#1bbf8b)}
+      .circle3-action.gold{border:0;background:linear-gradient(135deg,#f0bf55,#ffe6a2)}
+      .circle3-trust-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+      .circle3-trust-strip span{border:1px solid rgba(19,37,31,.1);border-radius:16px;padding:12px;background:#f5fbf7;color:#315247;font-weight:900}
+      .circle3-stage{padding:18px;background:linear-gradient(180deg,#ffffff,#eff8f1)}
+      .circle3-phone{overflow:hidden;border:8px solid #12251f;border-radius:34px;background:#f9fcfa;box-shadow:0 30px 70px rgba(6,39,30,.2)}
+      .circle3-phone-top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 18px;color:#fff;background:linear-gradient(135deg,#064f3c,#18a979)}
+      .circle3-phone-top strong{font-family:var(--font-display);font-size:1.05rem}
+      .circle3-phone-top span{border-radius:999px;padding:6px 9px;background:rgba(255,255,255,.18);font-size:.78rem;font-weight:950}
+      .circle3-presence{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:14px;background:#ffffff}
+      .circle3-presence article{border:1px solid #dfeae4;border-radius:18px;padding:12px;text-align:center;background:#f8fbf8}
+      .circle3-presence b{display:block;color:#13251f;font-size:.9rem}.circle3-presence small{color:#60746d;font-weight:750}
+      .circle3-presence .observer{background:#fff8e6;border-color:#f2d27a}
+      .circle3-chat{display:grid;gap:10px;padding:0 14px 16px;background:#ffffff}
+      .circle3-message{max-width:88%;border:1px solid #e2ece6;border-radius:18px;padding:13px;color:#273b34;background:#f6faf7;line-height:1.5}
+      .circle3-message small{display:block;margin-bottom:4px;color:#0d7a58;font-weight:950}
+      .circle3-message.right{justify-self:end;background:#eaf9f1}
+      .circle3-message.observer{max-width:none;border-color:#efd47d;background:#fff5d7}
+      .circle3-room-actions{padding:14px;border-top:1px solid #e2ece6;background:#fbfdfb}
+      .circle3-room-actions button{flex:1 1 120px;border:0;border-radius:14px;padding:12px 10px;color:#13251f;background:#eef4ef;font-weight:950}
+      .circle3-room-actions .primary{color:#fff;background:linear-gradient(135deg,#0b7a56,#18b783)}
+      .circle3-screens{display:grid;grid-template-columns:repeat(4,minmax(220px,1fr));gap:12px}
+      .circle3-screen{display:grid;gap:12px;min-height:268px;padding:18px}
+      .circle3-screen h3{margin:0;color:#13251f;font-size:1.12rem}
+      .circle3-screen p{margin:0;color:#60746d;line-height:1.52}
+      .circle3-form{display:grid;gap:8px}
+      .circle3-input,.circle3-select,.circle3-otp span,.circle3-upload{border:1px solid #dce8e2;border-radius:14px;background:#fff}
+      .circle3-input,.circle3-select{min-height:42px;padding:0 12px;color:#13251f}
+      .circle3-otp{display:flex;gap:6px}.circle3-otp span{display:grid;place-items:center;width:34px;height:40px;color:#13251f;font-weight:950}
+      .circle3-upload{display:grid;place-items:center;min-height:104px;color:#0f7a57;font-weight:950;background:linear-gradient(135deg,#f8fbf7,#fff8e4)}
+      .circle3-lobby{display:grid;gap:8px}.circle3-lobby span{display:flex;align-items:center;justify-content:space-between;border-radius:14px;padding:10px 12px;background:#f5fbf7;color:#315247;font-weight:900}.circle3-lobby b{color:#0f7a57}
+      .circle3-end{display:grid;gap:8px}.circle3-end span{border-radius:14px;padding:10px 12px;background:#fff8e6;color:#5c4a18;font-weight:900}
+      .circle3-purpose-list span{border-radius:999px;padding:8px 10px;background:#f1f7f3;color:#315247;font-size:.82rem;font-weight:900}
+      .circle3-beta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding:18px;background:#fff}
+      .circle3-beta span{color:#60746d}
+      @media(max-width:1000px){.circle3-hero-demo,.circle3-screens{grid-template-columns:1fr 1fr}.circle3-trust-strip{grid-template-columns:1fr}}
+      @media(max-width:640px){.circle3-hero-demo,.circle3-screens{grid-template-columns:1fr}.circle3-presence{grid-template-columns:1fr}.circle3-phone-top{display:grid}.circle3-copy h2{font-size:2.2rem}.circle3-demo{margin-inline:14px}.circle3-demo:before{inset:24px -10px auto}}
     `;
     document.head.appendChild(style);
   };
 
   const buildCircle3Demo = () => {
     removeOldCircle3();
-    addNavLink();
-    addStyles();
+    addCircle3Nav();
+    addCircle3Styles();
     const anchor = document.getElementById("mobile-experience") || document.getElementById("world-tools") || document.querySelector("main");
     if (!anchor) return;
     const section = document.createElement("section");
@@ -76,25 +92,104 @@ window.ISLAMIC_HABITS_CONFIG = {
     section.id = sectionId;
     section.setAttribute("aria-labelledby", "circle3-title");
     section.innerHTML = `
-      <div class="circle3-demo-grid">
-        <div class="circle3-demo-card">
-          <p class="eyebrow">Circle3 beta front-end</p>
-          <h2 id="circle3-title">Halal conversations with a trusted third presence.</h2>
-          <p>Circle3 is a future Islamic companionship room where two people can speak with purpose, including marriage-readiness conversations, while a third approved observer keeps the space respectful, safe, and accountable.</p>
-          <div class="circle3-trust-row" aria-label="Circle3 trust model"><span>2 participants</span><span>1 observer</span><span>Adab-first room</span></div>
-          <div class="circle3-demo-actions"><a class="button primary" href="mailto:support@islamic-habits.com?subject=Circle3%20beta%20interest">Join beta interest</a><a class="button glass" href="mailto:support@islamic-habits.com?subject=Circle3%20observer%20role">Ask about observer role</a></div>
-        </div>
-        <div class="circle3-room-demo" aria-label="Circle3 room front-end demo">
-          <div class="circle3-phone">
-            <div class="circle3-phone-top"><strong>Circle3 Room</strong><span>Waiting for 3 verified people</span></div>
-            <div class="circle3-presence"><article><b>Person A</b><small>Marriage intention</small></article><article><b>Person B</b><small>Marriage intention</small></article><article class="observer"><b>Observer</b><small>Wali / approved guide</small></article></div>
-            <div class="circle3-chat-line"><div class="circle3-message"><small>Room guide</small>Begin with salam, clear intention, and respectful boundaries.</div><div class="circle3-message right"><small>Participant</small>I would like to discuss values, family expectations, and deen goals.</div><div class="circle3-message observer"><small>Observer note</small>The observer can pause, guide, or report. The room is not an unmonitored private chat.</div></div>
-            <div class="circle3-room-controls"><button type="button">Invite observer</button><button class="primary-control" type="button">Start room</button><button type="button">Report</button></div>
+      <div class="circle3-shell">
+        <div class="circle3-hero-demo">
+          <div class="circle3-copy">
+            <p class="eyebrow">Circle3 module</p>
+            <h2 id="circle3-title">Safe conversations begin with a trusted third presence.</h2>
+            <p>Circle3 helps Muslim youth, families, and individuals communicate in a respectful 3-person room. It is not a dating app, not random social media, and not a lecture platform. It is a trusted digital majlis.</p>
+            <div class="circle3-trust-strip" aria-label="Circle3 room structure">
+              <span>Person 1: active speaker</span>
+              <span>Person 2: active speaker</span>
+              <span>Person 3: observer</span>
+            </div>
+            <div class="circle3-actions">
+              <a class="circle3-action primary" href="mailto:support@islamic-habits.com?subject=Start%20a%20Safe%20Circle">Start a Safe Circle</a>
+              <a class="circle3-action gold" href="mailto:support@islamic-habits.com?subject=Join%20Circle3%20as%20Observer">Join as Observer</a>
+              <a class="circle3-action" href="#circle3-flow">How It Works</a>
+            </div>
+          </div>
+          <div class="circle3-stage" aria-label="Circle3 active room demo">
+            <div class="circle3-phone">
+              <div class="circle3-phone-top"><strong>Marriage Discussion Circle</strong><span>3 verified present</span></div>
+              <div class="circle3-presence">
+                <article><b>Amina</b><small>Speaker</small></article>
+                <article><b>Yusuf</b><small>Speaker</small></article>
+                <article class="observer"><b>Fatima</b><small>Observer</small></article>
+              </div>
+              <div class="circle3-chat">
+                <div class="circle3-message"><small>Amina</small>Assalamu Alaikum. I wanted to discuss family expectations.</div>
+                <div class="circle3-message right"><small>Yusuf</small>Wa Alaikum Assalam. Yes, we can discuss respectfully.</div>
+                <div class="circle3-message observer"><small>Fatima Observer</small>I am here only to maintain comfort and clarity. Observer Mode can guide, but not dominate conversation.</div>
+              </div>
+              <div class="circle3-room-actions">
+                <button type="button">Observer mode</button>
+                <button class="primary" type="button">Begin respectful conversation</button>
+                <button type="button">Safety / Report</button>
+              </div>
+            </div>
           </div>
         </div>
+
+        <div class="circle3-screens" id="circle3-flow" aria-label="Circle3 frontend demo screens">
+          <article class="circle3-screen">
+            <p class="eyebrow">Screen 2</p>
+            <h3>Login / Registration</h3>
+            <div class="circle3-form">
+              <input class="circle3-input" value="Name" readonly>
+              <input class="circle3-input" value="+91 mobile number" readonly>
+              <select class="circle3-select" aria-label="Purpose of circle"><option>Marriage discussion</option></select>
+            </div>
+            <a class="circle3-action primary" href="mailto:support@islamic-habits.com?subject=Circle3%20registration%20interest">Send OTP</a>
+          </article>
+          <article class="circle3-screen">
+            <p class="eyebrow">Screen 3</p>
+            <h3>OTP Verification</h3>
+            <div class="circle3-otp" aria-label="Six digit OTP mock"><span>1</span><span>8</span><span>6</span><span>4</span><span>2</span><span>9</span></div>
+            <p>Your identity is protected. We verify every participant for a safer conversation.</p>
+          </article>
+          <article class="circle3-screen">
+            <p class="eyebrow">Screen 4</p>
+            <h3>Selfie Verification Mock</h3>
+            <div class="circle3-upload">Upload selfie</div>
+            <p>Upload a selfie to confirm that every Circle3 room has real people.</p>
+          </article>
+          <article class="circle3-screen">
+            <p class="eyebrow">Screen 5</p>
+            <h3>Waiting Lobby</h3>
+            <div class="circle3-lobby"><span>Speaker 1 <b>Verified</b></span><span>Speaker 2 <b>Waiting</b></span><span>Observer <b>Waiting</b></span></div>
+            <p>Your Circle3 will start when all three participants are present.</p>
+          </article>
+          <article class="circle3-screen">
+            <p class="eyebrow">Purpose options</p>
+            <h3>Choose the room intention</h3>
+            <div class="circle3-purpose-list"><span>Marriage discussion</span><span>Islamic habit support</span><span>Youth chit-chat</span><span>Family discussion</span><span>Study/productivity</span><span>Emotional support</span></div>
+          </article>
+          <article class="circle3-screen">
+            <p class="eyebrow">Screen 6</p>
+            <h3>Observer Mode</h3>
+            <p>Observer can guide, pause, report, or help clarify. The observer is present to protect comfort, not dominate the conversation.</p>
+            <button class="circle3-action gold" type="button">Invite Trusted Observer</button>
+          </article>
+          <article class="circle3-screen">
+            <p class="eyebrow">Safety</p>
+            <h3>Report and moderation</h3>
+            <p>Every room should include safety controls, clear boundaries, verified presence, and respectful session rules.</p>
+            <button class="circle3-action" type="button">Open Safety Panel</button>
+          </article>
+          <article class="circle3-screen">
+            <p class="eyebrow">End session</p>
+            <h3>Close with clarity</h3>
+            <div class="circle3-end"><span>Continue with family contact</span><span>Schedule follow-up</span><span>End respectfully</span></div>
+          </article>
+        </div>
+
+        <div class="circle3-beta">
+          <strong>Frontend demo only for now</strong>
+          <span>Backend will come gradually: real OTP, selfie verification, database, matching, moderation, realtime chat, observer control, and session history.</span>
+          <a class="circle3-action primary" href="mailto:support@islamic-habits.com?subject=Circle3%20frontend%20feedback">Send feedback</a>
+        </div>
       </div>
-      <div class="circle3-flow-grid" aria-label="Circle3 front-end flow"><article class="circle3-flow-card"><span>01</span><h3>Verify</h3><p>Users verify phone, basic profile, intention, and safety agreement before entering.</p></article><article class="circle3-flow-card"><span>02</span><h3>Match</h3><p>People can request a purposeful room by country, language, age range, and goal.</p></article><article class="circle3-flow-card"><span>03</span><h3>Observe</h3><p>A wali, family member, scholar-approved guide, or trusted observer joins as the third person.</p></article><article class="circle3-flow-card"><span>04</span><h3>Proceed</h3><p>The room can move toward family contact, a follow-up session, or closure with respect.</p></article></div>
-      <div class="circle3-beta-note"><strong>Frontend demo only for now</strong><span>The backend, verification, live chat, observer approval, moderation, and privacy controls will be built gradually.</span><a class="button secondary" href="mailto:support@islamic-habits.com?subject=Circle3%20frontend%20feedback">Send feedback</a></div>
     `;
     anchor.insertAdjacentElement("afterend", section);
   };
