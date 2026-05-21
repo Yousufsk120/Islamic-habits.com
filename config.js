@@ -14,6 +14,7 @@ window.ISLAMIC_HABITS_CONFIG = {
 (() => {
   const sectionId = "mobile-experience";
   const cssId = "mobile-experience-style";
+  const circle3Id = "circle3";
 
   const addStyle = () => {
     if (document.getElementById(cssId)) return;
@@ -42,7 +43,20 @@ window.ISLAMIC_HABITS_CONFIG = {
       .dhikr-mock strong{margin-top:120px;color:#fff;font-size:3rem;text-align:center}.dua-chip,.dua-reader-mini{margin-top:auto;border-radius:18px;padding:18px;color:#061713;background:rgba(246,242,232,.86)}.dua-chip{text-align:right}.dua-chip span,.dua-chip small{display:block;font-weight:900}.dua-chip small{color:#008656}
       .dua-category-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.dua-category-grid span{min-height:58px;border-radius:12px;padding:10px;color:#061713;background:rgba(246,242,232,.78);font-size:.82rem;font-weight:900}.dua-category-grid span:first-child{color:#fff;background:rgba(5,14,12,.82)}.dua-reader-mini p{margin:8px 0 0;font-size:1rem;text-align:right}
       .content-mock{grid-template-columns:repeat(2,minmax(0,1fr));align-content:center}.content-tile{min-height:96px;display:grid;place-items:center;border-radius:16px;color:#fff;background:linear-gradient(135deg,rgba(5,14,12,.3),rgba(5,14,12,.82)),linear-gradient(135deg,var(--emerald),var(--gold));font-family:var(--font-display);font-size:1.2rem;font-weight:950;box-shadow:0 14px 28px rgba(0,0,0,.18)}.content-tile.large{grid-column:1/-1;min-height:132px;background:linear-gradient(135deg,rgba(5,14,12,.28),rgba(5,14,12,.86)),linear-gradient(135deg,#0c684f,#64eeb5)}
-      @media(max-width:640px){.experience-card{min-height:620px}.phone-mock{min-height:360px}.mobile-experience{padding-bottom:96px}}
+      .circle3{margin:0 clamp(18px,5vw,72px);padding:76px 0;scroll-margin-top:96px;position:relative;isolation:isolate}.circle3:before{position:absolute;inset:36px -4vw auto;z-index:-1;height:560px;border:1px solid rgba(246,242,232,.06);border-radius:30px;background:radial-gradient(circle at 18% 14%,rgba(240,191,85,.16),transparent 30%),radial-gradient(circle at 80% 22%,rgba(91,214,232,.15),transparent 26%),rgba(5,14,12,.3);content:""}
+      .circle3-grid{display:grid;grid-template-columns:minmax(320px,.92fr) minmax(320px,1.08fr);gap:18px;align-items:stretch}.circle3-hero,.circle3-chat,.circle3-pillars article,.circle3-saas-grid article,.circle3-note{border:1px solid var(--line);background:var(--panel);box-shadow:var(--shadow)}
+      .circle3-hero{display:grid;gap:24px;align-content:space-between;min-height:560px;border-radius:26px;padding:clamp(22px,4vw,36px);overflow:hidden;background:linear-gradient(145deg,rgba(66,209,155,.1),rgba(91,214,232,.07)),var(--panel)}.circle3-hero h3{max-width:560px;margin:0 0 12px;font-size:clamp(1.8rem,3.2vw,3.1rem);line-height:1.02}
+      .circle3-orbit{position:relative;min-height:300px;border:1px solid rgba(246,242,232,.1);border-radius:24px;overflow:hidden;background:radial-gradient(circle at 50% 50%,rgba(240,191,85,.18),transparent 26%),radial-gradient(circle at 50% 50%,rgba(66,209,155,.14),transparent 52%),rgba(5,14,12,.4)}.circle3-orbit:before,.circle3-orbit:after{position:absolute;inset:44px;border:1px solid rgba(246,242,232,.16);border-radius:50%;content:""}.circle3-orbit:after{inset:82px;border-color:rgba(91,214,232,.22)}
+      .circle3-orbit i{position:absolute;left:50%;top:50%;width:78px;height:78px;border-radius:50%;background:linear-gradient(135deg,rgba(246,242,232,.08),rgba(240,191,85,.18)),rgba(5,14,12,.88);box-shadow:0 0 46px rgba(240,191,85,.22);transform:translate(-50%,-50%)}.circle3-orbit i:before{position:absolute;inset:21px;border:3px solid var(--gold);border-top:0;border-radius:0 0 18px 18px;content:""}
+      .circle-person{position:absolute;z-index:2;display:grid;place-items:center;width:104px;height:104px;border:1px solid rgba(246,242,232,.18);border-radius:50%;color:var(--soft);background:radial-gradient(circle at 35% 25%,rgba(246,242,232,.2),transparent 28%),rgba(6,38,33,.9);font-family:var(--font-display);font-size:.84rem;text-align:center}.circle-person b{max-width:82px}.circle-person.partner{left:8%;bottom:14%}.circle-person.friend{right:8%;bottom:14%}.circle-person.guide{left:50%;top:6%;color:#07100e;background:radial-gradient(circle at 35% 25%,rgba(255,255,255,.34),transparent 28%),linear-gradient(135deg,var(--gold),#f7dd91);transform:translateX(-50%)}
+      .circle3-chat{display:grid;align-items:center;border-radius:26px;padding:clamp(20px,4vw,34px);background:radial-gradient(circle at 88% 8%,rgba(91,214,232,.18),transparent 28%),rgba(5,14,12,.7)}.circle3-window{display:grid;gap:14px;border:8px solid #07100e;border-radius:34px;padding:18px;background:linear-gradient(180deg,rgba(6,47,41,.96),rgba(3,34,30,.98));box-shadow:0 24px 50px rgba(0,0,0,.24)}
+      .circle3-top,.circle3-strip{display:flex;gap:10px;align-items:center;justify-content:space-between;border-radius:16px;padding:12px 14px;font-weight:900}.circle3-top{color:#07100e;background:linear-gradient(135deg,var(--emerald),var(--aqua))}.circle3-top strong{border-radius:999px;padding:5px 9px;background:rgba(255,255,255,.38)}.circle3-strip{color:var(--gold);background:rgba(240,191,85,.1)}.circle3-strip b{color:var(--soft);font-size:.78rem}
+      .circle3-bubble{max-width:86%;border:1px solid rgba(246,242,232,.12);border-radius:18px;padding:14px;color:var(--soft);background:rgba(246,242,232,.08);line-height:1.45}.circle3-bubble small{display:block;margin-bottom:5px;color:var(--gold);font-weight:950}.circle3-bubble.member{justify-self:end;background:rgba(66,209,155,.12)}.circle3-bubble.silent{max-width:none;color:#07100e;background:rgba(246,242,232,.86)}.circle3-bubble.silent small{color:#00694c}
+      .circle3-pillars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:18px}.circle3-pillars article,.circle3-saas-grid article{display:grid;gap:10px;border-radius:18px;padding:18px}.circle3-pillars span{display:inline-grid;place-items:center;width:42px;height:42px;border:1px solid rgba(240,191,85,.4);border-radius:14px;color:var(--gold);background:rgba(240,191,85,.1);font-weight:950}.circle3-pillars h3,.circle3-saas-grid h3{margin:0;font-size:1.12rem}.circle3-pillars p,.circle3-saas-grid li{margin:0;color:var(--muted);font-size:.95rem}
+      .circle3-saas-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}.circle3-saas-grid ul{display:grid;gap:8px;margin:0;padding-left:18px}
+      .circle3-note{display:grid;grid-template-columns:auto minmax(260px,1fr) auto;gap:14px;align-items:center;margin-top:18px;border-radius:18px;padding:18px;background:linear-gradient(135deg,rgba(240,191,85,.1),rgba(66,209,155,.06)),var(--panel)}.circle3-note strong{color:var(--gold)}.circle3-note span{color:var(--muted)}
+      @media(max-width:980px){.circle3-grid,.circle3-saas-grid{grid-template-columns:1fr}.circle3-pillars{grid-template-columns:repeat(2,minmax(0,1fr))}}
+      @media(max-width:640px){.experience-card{min-height:620px}.phone-mock{min-height:360px}.mobile-experience{padding-bottom:96px}.circle3-pillars{grid-template-columns:1fr}.circle3-hero{min-height:auto}.circle3-orbit{min-height:260px}.circle-person{width:88px;height:88px;font-size:.74rem}.circle3-note{grid-template-columns:1fr}}
     `;
     document.head.appendChild(style);
   };
@@ -72,9 +86,60 @@ window.ISLAMIC_HABITS_CONFIG = {
     worldTools.insertAdjacentElement("afterend", section);
   };
 
+  const buildCircle3 = () => {
+    if (document.getElementById(circle3Id)) return;
+    const anchor = document.getElementById(sectionId) || document.getElementById("world-tools");
+    if (!anchor) return;
+    const section = document.createElement("section");
+    section.className = "circle3";
+    section.id = circle3Id;
+    section.setAttribute("aria-labelledby", "circle3-title");
+    section.innerHTML = `
+      <div class="section-heading wide">
+        <p class="eyebrow">Micro SaaS concept</p>
+        <h2 id="circle3-title">Circle3: small circles for better Islamic habits.</h2>
+        <p>A lightweight AI-assisted companionship system where Muslims are matched into intelligent three-person circles for habit building, accountability, reflection, emotional support, productivity, and faith-centered companionship.</p>
+      </div>
+      <div class="circle3-grid">
+        <article class="circle3-hero">
+          <div class="circle3-orbit" aria-hidden="true">
+            <span class="circle-person partner"><b>Habit partner</b></span>
+            <span class="circle-person friend"><b>Reflection friend</b></span>
+            <span class="circle-person guide"><b>Circle guide</b></span>
+            <i></i>
+          </div>
+          <div><p class="eyebrow">Faith-centered micro-community</p><h3>You were never meant to grow alone.</h3><p>Circle3 is not social media, not a lecture app, and not an open group chat. It is a quiet structure for three people to show up daily, build consistent Islamic habits, and encourage one another with adab.</p></div>
+        </article>
+        <article class="circle3-chat" aria-label="Circle3 daily room concept">
+          <div class="circle3-window">
+            <div class="circle3-top"><span>Daily Circle Room</span><strong>3 present</strong></div>
+            <div class="circle3-strip"><span>AI prompt active</span><b>Moderated and purposeful</b></div>
+            <div class="circle3-bubble"><small>Prompt</small>Which habit improved your iman recently, and what made it easier to repeat?</div>
+            <div class="circle3-bubble member"><small>Member</small>Fajr became easier when I slept earlier and kept my phone outside the bed.</div>
+            <div class="circle3-bubble silent"><small>Silent presence</small>I am here silently today. Please make dua for my consistency.</div>
+          </div>
+        </article>
+      </div>
+      <div class="circle3-pillars" aria-label="Circle3 product layers">
+        <article><span>01</span><h3>Smart matching</h3><p>Circles form around timezone, language, age band, activity level, personality, and goals like Fajr, Qur'an, study, fitness, or social media detox.</p></article>
+        <article><span>02</span><h3>Daily guided rooms</h3><p>Each room receives a halal conversation starter, a reflection task, and a small action so the group does not drift into empty chatting.</p></article>
+        <article><span>03</span><h3>Habit dashboard</h3><p>Track Salah, Qur'an minutes, dhikr, sleep, water, workout, detox, mood, and group encouragement without making faith feel like pressure.</p></article>
+        <article><span>04</span><h3>Silent presence</h3><p>Members can say "I am here silently" when they need companionship without talking. Presence still protects motivation.</p></article>
+      </div>
+      <div class="circle3-saas-grid" aria-label="Circle3 launch and business model">
+        <article><p class="eyebrow">MVP launch</p><h3>Start ultra-small</h3><ul><li>3-person matching</li><li>Daily AI prompt</li><li>Simple habit streak</li><li>Purposeful text chat</li></ul></article>
+        <article><p class="eyebrow">Free and premium</p><h3>Micro SaaS revenue</h3><ul><li>Free: one active circle and basic tracking</li><li>Premium: AI mentor, analytics, voice circles, productivity mode</li><li>Future: scholar sessions and premium groups</li></ul></article>
+        <article><p class="eyebrow">Safety design</p><h3>Trust before growth</h3><ul><li>Gender separation options</li><li>Anti-harassment filters</li><li>AI moderation and reporting</li><li>Marriage-readiness rooms with wali or approved observer</li></ul></article>
+      </div>
+      <div class="circle3-note"><strong>Circle3 pilot</strong><span>The simplest launch: collect interested users, form the first small habit circles manually, then automate matching, prompts, moderation, and premium coaching.</span><a class="button secondary" href="mailto:support@islamic-habits.com?subject=Circle3%20pilot%20interest">Join the Circle3 pilot</a></div>
+    `;
+    anchor.insertAdjacentElement("afterend", section);
+  };
+
   const init = () => {
     addStyle();
     buildSection();
+    buildCircle3();
   };
 
   if (document.readyState === "loading") {
