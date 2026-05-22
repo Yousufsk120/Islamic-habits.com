@@ -81,6 +81,23 @@ window.ISLAMIC_HABITS_CONFIG = {
     document.head.appendChild(style);
   };
 
+  const rewriteSupportEmailLinks = () => {
+    document.querySelectorAll('a[href^="mailto:support@islamic-habits.com"]').forEach((link) => {
+      const href = link.getAttribute("href") || "";
+      const subject = href.match(/[?&]subject=([^&]+)/)?.[1] || "Islamic%20Habits%20support";
+      const body = href.match(/[?&]body=([^&]+)/)?.[1] || "";
+      const gmailUrl = new URL("https://mail.google.com/mail/");
+      gmailUrl.searchParams.set("view", "cm");
+      gmailUrl.searchParams.set("fs", "1");
+      gmailUrl.searchParams.set("to", "support@islamic-habits.com");
+      gmailUrl.searchParams.set("su", decodeURIComponent(subject));
+      if (body) gmailUrl.searchParams.set("body", decodeURIComponent(body));
+      link.href = gmailUrl.toString();
+      link.target = "_blank";
+      link.rel = "noopener";
+    });
+  };
+
   const buildCircle3Demo = () => {
     removeOldCircle3();
     addCircle3Nav();
@@ -192,11 +209,16 @@ window.ISLAMIC_HABITS_CONFIG = {
       </div>
     `;
     anchor.insertAdjacentElement("afterend", section);
+    rewriteSupportEmailLinks();
   };
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", buildCircle3Demo);
+    document.addEventListener("DOMContentLoaded", () => {
+      rewriteSupportEmailLinks();
+      buildCircle3Demo();
+    });
   } else {
+    rewriteSupportEmailLinks();
     buildCircle3Demo();
   }
 })();
