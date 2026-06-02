@@ -82,16 +82,32 @@ window.ISLAMIC_HABITS_CONFIG = {
   };
 
   const rewriteSupportEmailLinks = () => {
+    const defaultSupportBody = [
+      "Assalamu Alaikum,",
+      "",
+      "I need help with Islamic Habits.",
+      "",
+      "Name:",
+      "Email:",
+      "Country:",
+      "Contact number:",
+      "Request type (PDF download / product preorder / Circle3 / correction / other):",
+      "Product or page:",
+      "Message:",
+      "",
+      "JazakAllah."
+    ].join("\n");
+
     document.querySelectorAll('a[href^="mailto:support@islamic-habits.com"]').forEach((link) => {
       const href = link.getAttribute("href") || "";
       const subject = href.match(/[?&]subject=([^&]+)/)?.[1] || "Islamic%20Habits%20support";
-      const body = href.match(/[?&]body=([^&]+)/)?.[1] || "";
+      const body = href.match(/[?&]body=([^&]+)/)?.[1] || encodeURIComponent(defaultSupportBody);
       const gmailUrl = new URL("https://mail.google.com/mail/");
       gmailUrl.searchParams.set("view", "cm");
       gmailUrl.searchParams.set("fs", "1");
       gmailUrl.searchParams.set("to", "support@islamic-habits.com");
       gmailUrl.searchParams.set("su", decodeURIComponent(subject));
-      if (body) gmailUrl.searchParams.set("body", decodeURIComponent(body));
+      gmailUrl.searchParams.set("body", decodeURIComponent(body));
       link.href = gmailUrl.toString();
       link.target = "_blank";
       link.rel = "noopener";
@@ -212,13 +228,117 @@ window.ISLAMIC_HABITS_CONFIG = {
     rewriteSupportEmailLinks();
   };
 
+  const enhanceMobileExperience = () => {
+    const section = document.getElementById("mobile-experience");
+    if (!section || section.dataset.smartUi === "1") return;
+    section.dataset.smartUi = "1";
+
+    const qibla = section.querySelector(".qibla-mock");
+    if (qibla) {
+      qibla.innerHTML = `
+        <div class="smart-status"><span>Qibla</span><b>292°</b></div>
+        <div class="smart-map"></div>
+        <div class="smart-kaaba">Kaaba</div>
+        <div class="mock-compass smart-compass">
+          <span>N</span><span>E</span><span>S</span><span>W</span><strong></strong>
+        </div>
+        <div class="smart-footer"><b>Facing Makkah</b><span>Live phone compass</span></div>
+      `;
+    }
+
+    const salah = section.querySelector(".salah-mock");
+    if (salah) {
+      salah.innerHTML = `
+        <div class="smart-status"><span>Today, 25 August</span><b>1 Rabi I</b></div>
+        <div class="smart-salah-panel">
+          <div class="smart-salah-now"><small>Now</small><strong>Asr</strong><span>15:17</span><em>Maghrib in 2h 26m</em></div>
+          <div class="smart-salah-ring"><strong>2/5</strong><span>prayed</span></div>
+        </div>
+        <div class="smart-salah-list">
+          <span class="done">Fajr <b>04:40</b></span>
+          <span class="done">Dhuhr <b>11:58</b></span>
+          <span class="active">Asr <b>15:17</b></span>
+          <span>Maghrib <b>17:56</b></span>
+        </div>
+      `;
+    }
+
+    const dhikr = section.querySelector(".dhikr-mock");
+    if (dhikr) {
+      dhikr.innerHTML = `
+        <div class="smart-status"><span>Dhikr pause</span><b>33 count</b></div>
+        <div class="smart-beads"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="smart-dhikr-count"><strong>25</strong><span>/ 33</span></div>
+        <div class="smart-dua-chip"><span>الله أكبر</span><small>Allahu Akbar</small><em>Tap to count quietly</em></div>
+      `;
+    }
+
+    const dua = section.querySelector(".dua-mock");
+    if (dua) {
+      dua.innerHTML = `
+        <div class="smart-status"><span>Dua Library</span><b>132 chapters</b></div>
+        <div class="smart-dua-grid">
+          <span>Morning</span><span>Prayer</span><span>Travel</span>
+          <span>Family</span><span>Food</span><span>Study</span>
+        </div>
+        <div class="smart-reader"><b>When leaving home</b><p>بِسْمِ اللهِ تَوَكَّلْتُ عَلَى اللهِ</p><small>In the name of Allah, I trust Allah.</small></div>
+      `;
+    }
+
+    const content = section.querySelector(".content-mock");
+    if (content) {
+      content.innerHTML = `
+        <div class="smart-status"><span>Family Feed</span><b>Useful only</b></div>
+        <div class="smart-content-tile large"><span>Qur'an</span><small>Short reflection for tonight</small></div>
+        <div class="smart-content-tile"><span>Seerah</span><small>5 min</small></div>
+        <div class="smart-content-tile"><span>Stories</span><small>Kids</small></div>
+        <div class="smart-content-tile"><span>Akhlaq</span><small>Adab</small></div>
+      `;
+    }
+
+    if (document.getElementById("smart-mobile-experience-styles")) return;
+    const style = document.createElement("style");
+    style.id = "smart-mobile-experience-styles";
+    style.textContent = `
+      #mobile-experience .phone-mock{display:grid;gap:14px;align-content:stretch;min-height:460px;padding:22px 16px 18px;background:radial-gradient(circle at 50% 0,rgba(100,238,181,.18),transparent 34%),linear-gradient(180deg,#082c27,#041614 72%)}
+      #mobile-experience .smart-status{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:44px;border:1px solid rgba(246,242,232,.1);border-radius:18px;padding:8px 10px;color:rgba(246,242,232,.76);background:rgba(246,242,232,.07);font-size:.78rem;font-weight:850}
+      #mobile-experience .smart-status b{color:#fff;white-space:nowrap}
+      #mobile-experience .qibla-mock{grid-template-rows:auto 108px auto 1fr auto;padding-inline:16px}
+      #mobile-experience .smart-map{position:relative;height:108px;border-radius:18px;overflow:hidden;background:radial-gradient(circle at 24% 36%,rgba(240,191,85,.72),transparent 20px),radial-gradient(circle at 74% 46%,rgba(78,198,230,.72),transparent 46px),linear-gradient(135deg,#dff6cf 0 31%,#62d1dc 32% 55%,#ebf3d0 56%);box-shadow:inset 0 0 0 1px rgba(7,16,14,.1)}
+      #mobile-experience .smart-map:before{position:absolute;inset:48% 20px auto;border-top:2px dashed rgba(0,126,84,.62);transform:rotate(-9deg);content:""}
+      #mobile-experience .smart-map:after{position:absolute;top:24px;right:28px;width:18px;height:18px;border:4px solid #fff;border-radius:4px;background:#07100e;box-shadow:0 0 0 6px rgba(66,209,155,.28);content:""}
+      #mobile-experience .smart-kaaba{justify-self:center;width:max-content;border-radius:999px;padding:6px 10px;color:#06221c;background:linear-gradient(135deg,#fff8dc,#64eeb5);font-size:.72rem;font-weight:950;transform:translateY(-5px)}
+      #mobile-experience .smart-compass{width:min(226px,96%);border-width:7px;background:repeating-conic-gradient(#111 0 1.4deg,transparent 1.4deg 8deg),radial-gradient(circle,#fff 0 59%,#eef8f1 60%)}
+      #mobile-experience .smart-compass:before{position:absolute;inset:13px;border:1px solid rgba(7,16,14,.14);border-radius:50%;content:""}
+      #mobile-experience .smart-compass strong{top:28px;height:156px}
+      #mobile-experience .smart-footer{display:grid;justify-items:center;gap:2px;color:#fff;text-align:center;font-weight:950}
+      #mobile-experience .smart-footer span{color:rgba(246,242,232,.7);font-size:.76rem}
+      #mobile-experience .salah-mock{align-content:start}
+      #mobile-experience .smart-salah-panel{display:grid;grid-template-columns:1fr .82fr;gap:10px}
+      #mobile-experience .smart-salah-now,#mobile-experience .smart-salah-ring{min-width:0;border:1px solid rgba(246,242,232,.13);border-radius:20px;padding:15px;background:linear-gradient(145deg,rgba(7,74,61,.92),rgba(4,28,25,.92))}
+      #mobile-experience .smart-salah-now small,#mobile-experience .smart-salah-now em{display:block;color:rgba(246,242,232,.68);font-size:.72rem;font-style:normal;font-weight:850}
+      #mobile-experience .smart-salah-now strong,#mobile-experience .smart-salah-now span{display:block;color:#fff}.smart-salah-now span{font-size:2.3rem;font-weight:950}
+      #mobile-experience .smart-salah-ring{position:relative;display:grid;place-items:center;text-align:center;overflow:hidden}.smart-salah-ring:before{position:absolute;inset:18px;border:13px solid rgba(66,209,155,.18);border-top-color:#42d19b;border-right-color:#42d19b;border-radius:50%;transform:rotate(35deg);content:""}.smart-salah-ring strong,.smart-salah-ring span{position:relative;z-index:1;display:block}.smart-salah-ring strong{color:#fff;font-size:2.3rem;font-weight:950}
+      #mobile-experience .smart-salah-list{display:grid;gap:8px}.smart-salah-list span{display:flex;align-items:center;justify-content:space-between;min-height:44px;border-radius:14px;padding:10px 12px;color:#fff;background:rgba(246,242,232,.08);font-weight:850}.smart-salah-list span:before{width:16px;height:16px;margin-right:8px;border:2px solid rgba(246,242,232,.38);border-radius:50%;content:""}.smart-salah-list .done:before{border-color:#42d19b;background:#42d19b}.smart-salah-list .active{background:rgba(66,209,155,.16)}
+      #mobile-experience .dhikr-mock{align-content:space-between;background:linear-gradient(180deg,rgba(255,255,255,.18),transparent 34%),radial-gradient(circle at 52% 64%,rgba(240,191,85,.18),transparent 34%),linear-gradient(180deg,#5ccdaa,#0a5143 58%,#041614)}
+      #mobile-experience .smart-beads{position:relative;width:100%;height:126px}.smart-beads:before{position:absolute;left:12px;right:12px;top:62px;height:2px;background:linear-gradient(90deg,transparent,rgba(7,16,14,.72),transparent);transform:rotate(-8deg);content:""}.smart-beads i{position:absolute;width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 32% 28%,rgba(246,242,232,.78),transparent 14%),radial-gradient(circle at 50% 50%,#0f9f61,#075634);box-shadow:0 7px 18px rgba(0,0,0,.28)}.smart-beads i:nth-child(1){left:4%;top:64px}.smart-beads i:nth-child(2){left:19%;top:42px}.smart-beads i:nth-child(3){left:34%;top:30px}.smart-beads i:nth-child(4){left:49%;top:28px}.smart-beads i:nth-child(5){left:64%;top:38px}.smart-beads i:nth-child(6){left:79%;top:60px}
+      #mobile-experience .smart-dhikr-count{display:flex;align-items:baseline;justify-content:center;gap:8px;color:#07100e}.smart-dhikr-count strong{margin:0;color:#05a86a;font-size:3.6rem;line-height:.9}.smart-dhikr-count span{color:rgba(7,16,14,.78);font-size:2rem;font-weight:950}
+      #mobile-experience .smart-dua-chip,#mobile-experience .smart-reader{border-radius:18px;padding:18px;color:#061713;background:rgba(246,242,232,.88);box-shadow:0 18px 38px rgba(0,0,0,.18)}.smart-dua-chip span,.smart-dua-chip small{display:block;text-align:right;font-weight:900}.smart-dua-chip small{color:#008656}.smart-dua-chip em,.smart-reader small,.smart-content-tile small{display:block;margin-top:6px;font-style:normal;font-size:.72rem;font-weight:850;opacity:.74}
+      #mobile-experience .dua-mock{align-content:start}.smart-dua-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.smart-dua-grid span{display:grid;place-items:center;min-height:54px;border-radius:12px;padding:8px;color:#061713;background:rgba(246,242,232,.84);text-align:center;font-size:.82rem;font-weight:900;box-shadow:0 10px 22px rgba(0,0,0,.12)}.smart-dua-grid span:first-child{color:#fff;background:rgba(5,14,12,.82)}.smart-reader p{margin:8px 0 0;text-align:right}
+      #mobile-experience .content-mock{grid-template-columns:repeat(2,minmax(0,1fr));align-content:start}.content-mock .smart-status{grid-column:1/-1}.smart-content-tile{display:grid;align-content:end;justify-items:start;min-height:108px;border-radius:16px;padding:14px;color:#fff;background:linear-gradient(135deg,rgba(5,14,12,.3),rgba(5,14,12,.82)),linear-gradient(135deg,#42d19b,#f0bf55);font-family:var(--font-display);font-size:1.1rem;font-weight:950;text-align:left;box-shadow:0 14px 28px rgba(0,0,0,.18)}.smart-content-tile.large{grid-column:1/-1;min-height:150px;background:linear-gradient(135deg,rgba(5,14,12,.28),rgba(5,14,12,.86)),linear-gradient(135deg,#0c684f,#64eeb5)}
+    `;
+    document.head.appendChild(style);
+  };
+
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", () => {
       rewriteSupportEmailLinks();
+      enhanceMobileExperience();
       buildCircle3Demo();
     });
   } else {
     rewriteSupportEmailLinks();
+    enhanceMobileExperience();
     buildCircle3Demo();
   }
 })();
