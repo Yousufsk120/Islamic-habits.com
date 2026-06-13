@@ -11,6 +11,7 @@ const modules = [
   ["maghrib", "Family", "Reset", "Maghrib Home Reset", "Use sunset to shift into gratitude, family attention, food adab, and evening remembrance.", ["Maghrib", "family"]],
   ["isha", "Sleep", "Closure", "Isha and Night Closure", "Close the day with prayer, tawbah, gratitude, screen boundaries, and preparation for Fajr.", ["Isha", "sleep"]],
   ["quran", "Qur'an", "Daily", "Qur'an Connection", "A sustainable relationship with Qur'an: recitation, listening, memorization, understanding, and action.", ["Qur'an", "reflection"]],
+  ["quranic-600-words", "Qur'an", "Vocabulary", "600 Essential Quranic Words", "Search Arabic, transliteration, English, and Bengali meanings in a manuscript-style Quranic vocabulary guide.", ["Arabic", "Bengali", "vocabulary"]],
   ["adhkar", "Dhikr", "Heart", "Morning and Evening Adhkar", "A shield for the heart through remembrance, gratitude, protection duas, and repeated return to Allah.", ["dhikr", "duas"]],
   ["family", "Family", "Circle", "Family Barakah Circle", "A shared home practice system for parents, spouses, children, siblings, and elders.", ["family", "home"]],
   ["ummah", "Ummah", "Service", "Ummah Service Challenges", "Turn personal discipline outward through giving, neighbor rights, masjid participation, and useful knowledge.", ["service", "charity"]],
@@ -551,7 +552,12 @@ els.moduleSearch.addEventListener("input", ({ target }) => {
 });
 els.moduleGrid.addEventListener("click", (event) => {
   const card = event.target.closest("[data-module]");
-  if (card) openModule(card.dataset.module);
+  if (!card) return;
+  if (card.dataset.module === "quranic-600-words") {
+    window.location.href = "./quranic-600-words.html";
+    return;
+  }
+  openModule(card.dataset.module);
 });
 els.layerGrid.addEventListener("click", (event) => {
   const card = event.target.closest("[data-layer]");
