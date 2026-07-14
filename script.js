@@ -493,7 +493,7 @@ function setupDuaStore() {
     const ready = Boolean(duaStore.downloadLinks[els.duaLanguage.value]);
     status(els.purchaseStatus, ready
       ? "English 100 Hours Dua Practice is selected. Free download is ready."
-      : "English 100 Hours Dua Practice is selected. If download is unavailable, email support@islamic-habits.com.");
+      : "English 100 Hours Dua Practice is selected. If download is unavailable, email 1001.yx01@gmail.com.");
   });
   els.duaPurchaseForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -503,7 +503,7 @@ function setupDuaStore() {
       window.location.href = downloadLink;
       return;
     }
-    status(els.purchaseStatus, "The free PDF link is not available yet. Please email support@islamic-habits.com and we will send it manually.", true);
+    status(els.purchaseStatus, "The free PDF link is not available yet. Please email 1001.yx01@gmail.com and we will send it manually.", true);
   });
 }
 
@@ -601,7 +601,7 @@ function setupCommerce() {
     if (payment) { window.location.href = payment; return; }
     const subject = `Order request — ${product.title}`;
     const body = `Assalamu Alaikum,\n\nI would like to order ${product.title}.\n\nQuantity: 1\nCountry / postcode:\nPhone:\nPreferred variation: ${product.format}\n\nPlease confirm stock, shipping, final price, and secure payment instructions.\n\nJazakAllah.`;
-    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=support@islamic-habits.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, "_blank", "noopener");
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=1001.yx01@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, "_blank", "noopener");
   };
   cards.forEach((card) => {
     const product = getProduct(card.dataset.productId);
@@ -637,7 +637,7 @@ function setupCommerce() {
     if (!cart.length) return;
     const lines = cart.map((item) => `${getProduct(item.id)?.title} × ${item.quantity}`).join("\n");
     const body = `Assalamu Alaikum,\n\nI would like to place this order:\n\n${lines}\n\nName:\nPhone:\nDelivery address:\nCountry / postcode:\n\nPlease confirm stock, shipping, final total, and secure payment instructions.\n\nJazakAllah.`;
-    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=support@islamic-habits.com&su=${encodeURIComponent("Islamic Habits cart order")}&body=${encodeURIComponent(body)}`, "_blank", "noopener");
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=1001.yx01@gmail.com&su=${encodeURIComponent("Islamic Habits cart order")}&body=${encodeURIComponent(body)}`, "_blank", "noopener");
   });
   renderCart();
 }

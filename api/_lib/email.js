@@ -17,7 +17,7 @@ async function sendEmail({ to, subject, html }) {
 const escapeHtml = (value) => String(value).replace(/[&<>"]/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[character]);
 
 export async function sendApplicationEmails(application) {
-  const support = process.env.CIRCLE3_SUPPORT_EMAIL || "support@islamic-habits.com";
+  const support = process.env.CIRCLE3_SUPPORT_EMAIL || "1001.yx01@gmail.com";
   const rows = ["name", "email", "country", "age_group", "role", "purpose", "language", "timezone", "safety_note"]
     .map((key) => `<tr><th align="left">${escapeHtml(key.replaceAll("_", " "))}</th><td>${escapeHtml(application[key])}</td></tr>`)
     .join("");
