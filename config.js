@@ -101,14 +101,14 @@ window.ISLAMIC_HABITS_CONFIG = {
       "JazakAllah."
     ].join("\n");
 
-    document.querySelectorAll('a[href^="mailto:support@islamic-habits.com"]').forEach((link) => {
+    document.querySelectorAll('a[href^="mailto:1001.yx01@gmail.com"]').forEach((link) => {
       const href = link.getAttribute("href") || "";
       const subject = href.match(/[?&]subject=([^&]+)/)?.[1] || "Islamic%20Habits%20support";
       const body = href.match(/[?&]body=([^&]+)/)?.[1] || encodeURIComponent(defaultSupportBody);
       const gmailUrl = new URL("https://mail.google.com/mail/");
       gmailUrl.searchParams.set("view", "cm");
       gmailUrl.searchParams.set("fs", "1");
-      gmailUrl.searchParams.set("to", "support@islamic-habits.com");
+      gmailUrl.searchParams.set("to", "1001.yx01@gmail.com");
       gmailUrl.searchParams.set("su", decodeURIComponent(subject));
       gmailUrl.searchParams.set("body", decodeURIComponent(body));
       link.href = gmailUrl.toString();
@@ -333,7 +333,7 @@ window.ISLAMIC_HABITS_CONFIG = {
       announce(`Circle3 secure storage is being connected. Your fallback application ${reference} is ready to send.`);
       submitButton.disabled = false;
       submitButton.textContent = "Submit my application";
-      window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=support@islamic-habits.com&su=${encodeURIComponent(`Circle3 pilot application — ${reference}`)}&body=${encodeURIComponent(body)}`, "_blank", "noopener");
+      window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=1001.yx01@gmail.com&su=${encodeURIComponent(`Circle3 pilot application — ${reference}`)}&body=${encodeURIComponent(body)}`, "_blank", "noopener");
     });
     rewriteSupportEmailLinks();
   };
