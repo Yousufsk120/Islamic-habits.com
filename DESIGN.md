@@ -8,7 +8,7 @@ Islamic Habits should feel like a future-facing Islamic practice civilization: s
 
 - Young Muslims who need energy, clarity, and beauty.
 - Families who want practical Islamic routines.
-- New Muslims and seekers who need gentle guidance.
+- People beginning Islamic practice and seekers who need gentle guidance.
 - Readers interested in Islamic history, philosophy, and civilization.
 
 ## Visual Direction
@@ -95,7 +95,7 @@ After Stitch creates a direction, export or share the design/code and integrate 
 
 ## Stitch Prompt Starter
 
-Design a premium future-facing Islamic practice website called Islamic Habits. It should combine Salah tools, Qibla, dua practice, daily Islamic blog, physical product catalogue, and civilization layers. Use deep emerald, noor gold, aqua, and dark cosmic backgrounds. Create a cinematic but usable homepage, a mobile-friendly blog article page, and a product catalogue section. The feeling should be spiritual, modern, trustworthy, and practical for Gen Z Muslims, families, and new Muslims.
+Design a premium future-facing Islamic practice website called Islamic Habits. It should combine Salah tools, Qibla, dua practice, daily Islamic blog, physical product catalogue, and civilization layers. Use deep emerald, noor gold, aqua, and dark cosmic backgrounds. Create a cinematic but usable homepage, a mobile-friendly blog article page, and a product catalogue section. The feeling should be spiritual, modern, trustworthy, and practical for Gen Z Muslims, families, and people beginning Islamic practice.
 
 ## Stitch Prompt For Current Redesign
 

@@ -185,6 +185,7 @@ const els = {
   progressNumber: $("#progressNumber"),
   heroPercent: $("#heroPercent"),
   heroRing: $("#heroRing"),
+  heroProgressBar: $("#heroProgressBar"),
   barValue: $("#barValue"),
   resetDay: $("#resetDay"),
   moduleGrid: $("#moduleGrid"),
@@ -252,6 +253,7 @@ function updateProgress() {
   els.progressNumber.textContent = `${percent}%`;
   els.heroPercent.textContent = `${percent}%`;
   els.heroRing.style.strokeDashoffset = String(offset);
+  if (els.heroProgressBar) els.heroProgressBar.style.width = `${percent}%`;
   els.barValue.style.width = `${percent}%`;
   localStorage.setItem(storageKey, JSON.stringify({ date: todayKey, completed }));
 }
@@ -535,6 +537,180 @@ function setupAdSense() {
   document.head.appendChild(script);
 }
 
+function setupCommerce() {
+  const cards = $$("#product-catalogue .product-card");
+  if (!cards.length) return;
+  const paymentLinks = siteConfig.productPaymentLinks || {};
+  const slugify = (value) => value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+  const products = cards.map((card) => {
+    const title = card.querySelector("h3")?.textContent.trim() || "Islamic Habits product";
+    const priceText = card.querySelector(".product-meta span")?.textContent || "₹0";
+    const price = Number(priceText.replace(/[^0-9]/g, "")) || 0;
+    const id = slugify(title);
+    card.dataset.productId = id;
+    return {
+      id, title, price, priceText,
+      summary: card.querySelector("h3 + p")?.textContent.trim() || "",
+      format: card.querySelector(".product-meta small")?.textContent.trim() || "",
+      badge: card.querySelector(".product-badge")?.textContent.trim() || "Practice essential",
+    };
+  });
+  let cart = [];
+  try { cart = JSON.parse(localStorage.getItem("islamic-habits-cart") || "[]"); } catch { cart = []; }
+
+  const shell = document.createElement("div");
+  shell.className = "commerce-shell";
+  shell.innerHTML = `
+    <button class="cart-launcher" type="button" aria-label="Open shopping cart">Cart <strong data-cart-count>0</strong></button>
+    <div class="cart-backdrop" data-cart-close></div>
+    <aside class="cart-drawer" aria-label="Shopping cart" aria-hidden="true">
+      <div class="cart-head"><div><small>Your basket</small><h2>Practice essentials</h2></div><button type="button" data-cart-close aria-label="Close cart">×</button></div>
+      <div class="cart-items" data-cart-items></div>
+      <div class="cart-summary"><span>Estimated total</span><strong data-cart-total>₹0</strong><small>Shipping and final availability confirmed before payment.</small><button class="button primary" data-cart-checkout type="button">Continue to checkout</button></div>
+    </aside>
+    <dialog class="product-profile" data-product-dialog><button class="profile-close" type="button" aria-label="Close product profile">×</button><div data-product-detail></div></dialog>
+  `;
+  document.body.appendChild(shell);
+
+  const drawer = shell.querySelector(".cart-drawer");
+  const persist = () => localStorage.setItem("islamic-habits-cart", JSON.stringify(cart));
+  const money = (value) => `₹${value.toLocaleString("en-IN")}`;
+  const getProduct = (id) => products.find((product) => product.id === id);
+  const renderCart = () => {
+    const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const total = cart.reduce((sum, item) => sum + (getProduct(item.id)?.price || 0) * item.quantity, 0);
+    shell.querySelector("[data-cart-count]").textContent = count;
+    shell.querySelector("[data-cart-total]").textContent = money(total);
+    shell.querySelector("[data-cart-items]").innerHTML = cart.length ? cart.map((item) => {
+      const product = getProduct(item.id);
+      if (!product) return "";
+      return `<article class="cart-item" data-cart-id="${item.id}"><div><small>${product.badge}</small><strong>${product.title}</strong><span>${money(product.price)} · Qty ${item.quantity}</span></div><div><button type="button" data-qty="-1" aria-label="Remove one">−</button><button type="button" data-qty="1" aria-label="Add one">+</button></div></article>`;
+    }).join("") : `<div class="empty-cart"><strong>Your basket is quiet.</strong><span>Add a useful daily-practice product to begin.</span></div>`;
+    persist();
+  };
+  const openCart = () => { shell.classList.add("cart-open"); drawer.setAttribute("aria-hidden", "false"); };
+  const closeCart = () => { shell.classList.remove("cart-open"); drawer.setAttribute("aria-hidden", "true"); };
+  const add = (id, open = true) => {
+    const existing = cart.find((item) => item.id === id);
+    if (existing) existing.quantity += 1; else cart.push({ id, quantity: 1 });
+    renderCart();
+    if (open) openCart();
+  };
+  const buy = (product) => {
+    const payment = paymentLinks[product.id];
+    if (payment) { window.location.href = payment; return; }
+    const subject = `Order request — ${product.title}`;
+    const body = `Assalamu Alaikum,\n\nI would like to order ${product.title}.\n\nQuantity: 1\nCountry / postcode:\nPhone:\nPreferred variation: ${product.format}\n\nPlease confirm stock, shipping, final price, and secure payment instructions.\n\nJazakAllah.`;
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=support@islamic-habits.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, "_blank", "noopener");
+  };
+  cards.forEach((card) => {
+    const product = getProduct(card.dataset.productId);
+    const oldAction = card.querySelector(".product-action");
+    if (oldAction) oldAction.remove();
+    const actions = document.createElement("div");
+    actions.className = "product-actions";
+    actions.innerHTML = `<button class="product-action secondary" data-product-profile type="button">View product</button><button class="product-action" data-add-cart type="button">Add to cart</button><button class="product-buy" data-buy-now type="button">Buy now</button>`;
+    card.appendChild(actions);
+    actions.querySelector("[data-product-profile]").addEventListener("click", () => {
+      shell.querySelector("[data-product-detail]").innerHTML = `<p class="eyebrow">${product.badge}</p><h2>${product.title}</h2><p>${product.summary}</p><div class="profile-facts"><span><small>Launch price</small><strong>${product.priceText}</strong></span><span><small>Format</small><strong>${product.format}</strong></span><span><small>Purpose</small><strong>Daily practice</strong></span></div><h3>Designed around a real habit</h3><p>Final materials, dimensions, colours, packaging and delivery timing will be confirmed after supplier sampling and quality review.</p><div class="profile-actions"><button class="button glass" data-profile-cart type="button">Add to cart</button><button class="button primary" data-profile-buy type="button">Buy now</button></div>`;
+      shell.querySelector("[data-profile-cart]").addEventListener("click", () => { add(product.id); shell.querySelector("[data-product-dialog]").close(); });
+      shell.querySelector("[data-profile-buy]").addEventListener("click", () => buy(product));
+      shell.querySelector("[data-product-dialog]").showModal();
+    });
+    actions.querySelector("[data-add-cart]").addEventListener("click", () => add(product.id));
+    actions.querySelector("[data-buy-now]").addEventListener("click", () => buy(product));
+  });
+  shell.querySelector(".cart-launcher").addEventListener("click", openCart);
+  shell.querySelectorAll("[data-cart-close]").forEach((button) => button.addEventListener("click", closeCart));
+  shell.querySelector(".profile-close").addEventListener("click", () => shell.querySelector("[data-product-dialog]").close());
+  shell.querySelector("[data-cart-items]").addEventListener("click", (event) => {
+    const button = event.target.closest("[data-qty]");
+    const row = event.target.closest("[data-cart-id]");
+    if (!button || !row) return;
+    const item = cart.find((entry) => entry.id === row.dataset.cartId);
+    if (!item) return;
+    item.quantity += Number(button.dataset.qty);
+    cart = cart.filter((entry) => entry.quantity > 0);
+    renderCart();
+  });
+  shell.querySelector("[data-cart-checkout]").addEventListener("click", () => {
+    if (!cart.length) return;
+    const lines = cart.map((item) => `${getProduct(item.id)?.title} × ${item.quantity}`).join("\n");
+    const body = `Assalamu Alaikum,\n\nI would like to place this order:\n\n${lines}\n\nName:\nPhone:\nDelivery address:\nCountry / postcode:\n\nPlease confirm stock, shipping, final total, and secure payment instructions.\n\nJazakAllah.`;
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=support@islamic-habits.com&su=${encodeURIComponent("Islamic Habits cart order")}&body=${encodeURIComponent(body)}`, "_blank", "noopener");
+  });
+  renderCart();
+}
+
+function setupEditorialMotion() {
+  const targets = $$("main > section:not(.hero):not(.practice-network), .section-heading, .product-card");
+  targets.forEach((target) => target.classList.add("reveal-ready"));
+  if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    targets.forEach((target) => target.classList.add("revealed"));
+    return;
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("revealed");
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.08, rootMargin: "0px 0px -40px" });
+  targets.forEach((target) => observer.observe(target));
+}
+
+function setupMotionSystem() {
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const progress = document.createElement("div");
+  progress.className = "page-progress";
+  progress.setAttribute("aria-hidden", "true");
+  document.body.prepend(progress);
+
+  const header = $(".app-header");
+  const hero = $(".hero");
+  const heroPanel = $(".hero-panel");
+  let ticking = false;
+  const updateScroll = () => {
+    const maximum = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    const ratio = Math.min(1, Math.max(0, window.scrollY / maximum));
+    progress.style.transform = `scaleX(${ratio})`;
+    header?.classList.toggle("header-scrolled", window.scrollY > 48);
+    if (!reduced && hero) {
+      const drift = Math.min(window.scrollY, window.innerHeight) * 0.12;
+      hero.style.setProperty("--hero-drift", `${drift}px`);
+    }
+    ticking = false;
+  };
+  window.addEventListener("scroll", () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(updateScroll);
+  }, { passive: true });
+  updateScroll();
+
+  if (!reduced && hero && heroPanel && window.matchMedia("(pointer: fine)").matches) {
+    hero.addEventListener("pointermove", (event) => {
+      const rect = hero.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+      hero.style.setProperty("--pointer-x", `${x * 18}px`);
+      hero.style.setProperty("--pointer-y", `${y * 14}px`);
+      heroPanel.style.setProperty("--panel-rx", `${y * -2.4}deg`);
+      heroPanel.style.setProperty("--panel-ry", `${x * 3.2}deg`);
+    });
+    hero.addEventListener("pointerleave", () => {
+      hero.style.setProperty("--pointer-x", "0px");
+      hero.style.setProperty("--pointer-y", "0px");
+      heroPanel.style.setProperty("--panel-rx", "0deg");
+      heroPanel.style.setProperty("--panel-ry", "0deg");
+    });
+  }
+
+  $$(".platform-map-grid, .catalogue-grid, .module-grid, .layer-grid, .atlas-grid").forEach((group) => {
+    Array.from(group.children).forEach((child, index) => child.style.setProperty("--stagger", `${Math.min(index, 7) * 55}ms`));
+  });
+}
+
 readState().forEach((habit) => {
   const input = els.habitInputs.find((item) => item.dataset.habit === habit);
   if (input) input.checked = true;
@@ -602,6 +778,9 @@ renderFajrPanel("meaning");
 setupDuaStore();
 setupDailyBlogPreview();
 setupAdSense();
+setupCommerce();
+setupEditorialMotion();
+setupMotionSystem();
 updateProgress();
 status(els.prayerStatus, "Tap Use my location first for local Salah times, or search any city worldwide.");
 status(els.compassStatus, "After location is allowed, live compass can follow the phone direction.");

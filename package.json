@@ -1,0 +1,16 @@
+{
+  "name": "islamic-habits",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "check": "node --check config.js && node --check script.js",
+    "test:backend": "node --test api/**/*.test.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.52.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

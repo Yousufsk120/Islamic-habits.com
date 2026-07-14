@@ -1,6 +1,7 @@
 window.ISLAMIC_HABITS_CONFIG = {
   duaPrice: "Free",
   stripePaymentLinks: { english: "" },
+  productPaymentLinks: {},
   duaDownloadLinks: { english: "./downloads/100-hours-dua-practice-english.pdf" },
   adsenseClient: "",
   googleAdsConversionId: "AW-18157183110",
@@ -75,6 +76,8 @@ window.ISLAMIC_HABITS_CONFIG = {
       .circle3-purpose-list span{border-radius:999px;padding:8px 10px;background:#f1f7f3;color:#315247;font-size:.82rem;font-weight:900}
       .circle3-beta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding:18px;background:#fff}
       .circle3-beta span{color:#60746d}
+      .circle3-live-notice{position:sticky;top:84px;z-index:5;border:1px solid rgba(66,209,155,.3);border-radius:14px;padding:12px 16px;color:#dff9ed;background:#0d4f3e;box-shadow:0 12px 28px rgba(0,0,0,.18);font-weight:850}
+      .circle3-purpose-list span{cursor:pointer}.circle3-purpose-list span.selected{color:#fff;background:#0f7a57;box-shadow:0 8px 22px rgba(15,122,87,.22)}
       @media(max-width:1000px){.circle3-hero-demo,.circle3-screens{grid-template-columns:1fr 1fr}.circle3-trust-strip{grid-template-columns:1fr}}
       @media(max-width:640px){.circle3-hero-demo,.circle3-screens{grid-template-columns:1fr}.circle3-presence{grid-template-columns:1fr}.circle3-phone-top{display:grid}.circle3-copy h2{font-size:2.2rem}.circle3-demo{margin-inline:14px}.circle3-demo:before{inset:24px -10px auto}}
     `;
@@ -137,8 +140,8 @@ window.ISLAMIC_HABITS_CONFIG = {
               <span>Person 3: observer</span>
             </div>
             <div class="circle3-actions">
-              <a class="circle3-action primary" href="mailto:support@islamic-habits.com?subject=Start%20a%20Safe%20Circle">Start a Safe Circle</a>
-              <a class="circle3-action gold" href="mailto:support@islamic-habits.com?subject=Join%20Circle3%20as%20Observer">Join as Observer</a>
+              <button class="circle3-action primary" data-circle-join="speaker" type="button">Join a Circle</button>
+              <button class="circle3-action gold" data-circle-join="observer" type="button">Join as Observer</button>
               <a class="circle3-action" href="#circle3-flow">How It Works</a>
             </div>
           </div>
@@ -173,7 +176,7 @@ window.ISLAMIC_HABITS_CONFIG = {
               <input class="circle3-input" value="+91 mobile number" readonly>
               <select class="circle3-select" aria-label="Purpose of circle"><option>Marriage discussion</option></select>
             </div>
-            <a class="circle3-action primary" href="mailto:support@islamic-habits.com?subject=Circle3%20registration%20interest">Send OTP</a>
+          <button class="circle3-action primary" data-circle-join="speaker" type="button">Join pilot queue</button>
           </article>
           <article class="circle3-screen">
             <p class="eyebrow">Screen 3</p>
@@ -202,13 +205,13 @@ window.ISLAMIC_HABITS_CONFIG = {
             <p class="eyebrow">Screen 6</p>
             <h3>Observer Mode</h3>
             <p>Observer can guide, pause, report, or help clarify. The observer is present to protect comfort, not dominate the conversation.</p>
-            <button class="circle3-action gold" type="button">Invite Trusted Observer</button>
+            <button class="circle3-action gold" data-circle-action="observer" type="button">Invite Trusted Observer</button>
           </article>
           <article class="circle3-screen">
             <p class="eyebrow">Safety</p>
             <h3>Report and moderation</h3>
             <p>Every room should include safety controls, clear boundaries, verified presence, and respectful session rules.</p>
-            <button class="circle3-action" type="button">Open Safety Panel</button>
+            <button class="circle3-action" data-circle-action="safety" type="button">Open Safety Panel</button>
           </article>
           <article class="circle3-screen">
             <p class="eyebrow">End session</p>
@@ -218,13 +221,120 @@ window.ISLAMIC_HABITS_CONFIG = {
         </div>
 
         <div class="circle3-beta">
-          <strong>Frontend demo only for now</strong>
-          <span>Backend will come gradually: real OTP, selfie verification, database, matching, moderation, realtime chat, observer control, and session history.</span>
-          <a class="circle3-action primary" href="mailto:support@islamic-habits.com?subject=Circle3%20frontend%20feedback">Send feedback</a>
+          <strong>Interactive pilot</strong>
+          <span>Pilot applications are open. Join the matching queue as a speaker or trusted observer.</span>
+          <button class="circle3-action primary" data-circle-join="speaker" type="button">Apply to join</button>
         </div>
       </div>
+      <dialog class="circle3-join-dialog" aria-labelledby="circle3-join-title">
+        <button class="circle3-join-close" type="button" aria-label="Close join form">×</button>
+        <div class="circle3-join-intro">
+          <p class="eyebrow">Circle3 pilot application</p>
+          <h2 id="circle3-join-title">Join a trusted three-person circle.</h2>
+          <p>Tell us how you would like to participate. We will review your application and contact you before matching. No selfie or identity document is collected through this form.</p>
+        </div>
+        <form class="circle3-join-form">
+          <label class="circle3-honeypot" aria-hidden="true"><span>Website</span><input name="website" type="text" tabindex="-1" autocomplete="off"></label>
+          <label><span>Full name</span><input name="name" type="text" autocomplete="name" required></label>
+          <label><span>Email address</span><input name="email" type="email" autocomplete="email" required></label>
+          <label><span>Country</span><input name="country" type="text" autocomplete="country-name" required></label>
+          <label><span>Age group</span><select name="age" required><option value="">Choose one</option><option>Under 18 — guardian-assisted</option><option>18–24</option><option>25–34</option><option>35–49</option><option>50+</option></select></label>
+          <label><span>I want to join as</span><select name="role" required><option value="speaker">Circle participant</option><option value="observer">Trusted observer</option></select></label>
+          <label><span>Circle intention</span><select name="purpose" required><option>Islamic habit support</option><option>Family discussion</option><option>Marriage discussion</option><option>Study and productivity</option><option>Emotional support</option><option>Youth support</option></select></label>
+          <label><span>Preferred language</span><input name="language" type="text" placeholder="English, Bengali, Arabic…" required></label>
+          <label><span>Timezone or city</span><input name="timezone" type="text" placeholder="Kolkata / UTC+5:30" required></label>
+          <label class="circle3-wide"><span>What would make this circle helpful and safe for you?</span><textarea name="note" rows="4" maxlength="800" required></textarea></label>
+          <label class="circle3-consent circle3-wide"><input name="consent" type="checkbox" required><span>I agree to respectful participation, privacy boundaries, moderation, and the Circle3 safety rules. I understand this pilot is not emergency, medical, legal, or professional counselling.</span></label>
+          <div class="circle3-submit-row circle3-wide"><button class="circle3-action primary" type="submit">Prepare my application</button><small>Your email app will open with the completed application. Send that message to enter the pilot queue.</small></div>
+          <p class="circle3-join-status circle3-wide" role="status"></p>
+        </form>
+      </dialog>
     `;
     anchor.insertAdjacentElement("afterend", section);
+    const announce = (message) => {
+      let notice = section.querySelector(".circle3-live-notice");
+      if (!notice) {
+        notice = document.createElement("div");
+        notice.className = "circle3-live-notice";
+        notice.setAttribute("role", "status");
+        section.querySelector(".circle3-shell")?.prepend(notice);
+      }
+      notice.textContent = message;
+    };
+    section.querySelectorAll(".circle3-purpose-list span").forEach((purpose) => {
+      purpose.tabIndex = 0;
+      purpose.setAttribute("role", "button");
+      purpose.addEventListener("click", () => {
+        section.querySelectorAll(".circle3-purpose-list span").forEach((item) => item.classList.remove("selected"));
+        purpose.classList.add("selected");
+        localStorage.setItem("circle3-purpose", purpose.textContent.trim());
+        announce(`${purpose.textContent.trim()} selected. Continue to registration when ready.`);
+      });
+    });
+    section.querySelector('[data-circle-action="observer"]')?.addEventListener("click", () => announce("Observer invitation prepared. You will be able to choose a trusted contact before a live room begins."));
+    section.querySelector('[data-circle-action="safety"]')?.addEventListener("click", () => announce("Safety panel: pause room, leave immediately, report conduct, or request moderator review."));
+    section.querySelectorAll(".circle3-room-actions button").forEach((button) => button.addEventListener("click", () => announce(`${button.textContent.trim()} is ready in the interactive pilot.`)));
+    const joinDialog = section.querySelector(".circle3-join-dialog");
+    const joinForm = section.querySelector(".circle3-join-form");
+    const openJoin = (role = "speaker") => {
+      joinForm.elements.role.value = role;
+      const savedPurpose = localStorage.getItem("circle3-purpose");
+      if (savedPurpose && Array.from(joinForm.elements.purpose.options).some((option) => option.text === savedPurpose)) joinForm.elements.purpose.value = savedPurpose;
+      joinDialog.showModal();
+      window.setTimeout(() => joinForm.elements.name.focus(), 80);
+    };
+    section.querySelectorAll("[data-circle-join]").forEach((button) => button.addEventListener("click", () => openJoin(button.dataset.circleJoin)));
+    section.querySelector(".circle3-join-close")?.addEventListener("click", () => joinDialog.close());
+    joinDialog?.addEventListener("click", (event) => { if (event.target === joinDialog) joinDialog.close(); });
+    joinForm?.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const data = Object.fromEntries(new FormData(joinForm).entries());
+      const statusTarget = joinForm.querySelector(".circle3-join-status");
+      const submitButton = joinForm.querySelector('button[type="submit"]');
+      submitButton.disabled = true;
+      submitButton.textContent = "Submitting safely…";
+      statusTarget.textContent = "Saving your application securely…";
+      let reference = "";
+      try {
+        const response = await fetch("/api/circle3/applications", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify(data),
+        });
+        const result = await response.json();
+        if (!response.ok) throw Object.assign(new Error(result.error || "Application could not be saved."), { status: response.status });
+        reference = result.application?.reference || result.reference;
+        localStorage.setItem("circle3-pilot-application", JSON.stringify({ reference, email: data.email, status: "submitted", savedAt: new Date().toISOString() }));
+        statusTarget.textContent = `Application ${reference} has been received. Keep this reference to check your status.`;
+        announce(`Your Circle3 application ${reference} has entered the pilot queue.`);
+        submitButton.textContent = "Application received";
+        joinForm.reset();
+        return;
+      } catch (error) {
+        if (error.status && error.status !== 503) {
+          statusTarget.textContent = error.message;
+          submitButton.disabled = false;
+          submitButton.textContent = "Submit my application";
+          return;
+        }
+        reference = `C3-OFFLINE-${Date.now().toString(36).toUpperCase()}`;
+      }
+      const body = [
+        "Assalamu Alaikum,", "", "I would like to join the Circle3 pilot.", "",
+        `Application reference: ${reference}`,
+        `Name: ${data.name}`, `Email: ${data.email}`, `Country: ${data.country}`,
+        `Age group: ${data.age}`, `Role: ${data.role}`, `Circle intention: ${data.purpose}`,
+        `Preferred language: ${data.language}`, `Timezone / city: ${data.timezone}`, "",
+        "What would make the circle helpful and safe:", data.note, "",
+        "I agree to the Circle3 participation and safety rules.", "", "JazakAllah."
+      ].join("\n");
+      localStorage.setItem("circle3-pilot-application", JSON.stringify({ reference, ...data, consent: true, savedAt: new Date().toISOString() }));
+      statusTarget.textContent = `The secure service is not connected yet. Send the prepared email to enter the pilot queue with reference ${reference}.`;
+      announce(`Circle3 secure storage is being connected. Your fallback application ${reference} is ready to send.`);
+      submitButton.disabled = false;
+      submitButton.textContent = "Submit my application";
+      window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=support@islamic-habits.com&su=${encodeURIComponent(`Circle3 pilot application — ${reference}`)}&body=${encodeURIComponent(body)}`, "_blank", "noopener");
+    });
     rewriteSupportEmailLinks();
   };
 
