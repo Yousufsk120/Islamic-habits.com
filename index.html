@@ -28,33 +28,30 @@
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="app-header">
-      <a class="brand" href="#top" aria-label="Islamic Habits home">
+      <a class="brand" href="#main-content" aria-label="Islamic Habits home">
         <span class="brand-mark">
           <img src="./assets/islamic-habits-logo-kaaba-bayt-al-mamur.svg" alt="">
         </span>
         <span>
           <strong>Islamic Habits</strong>
-          <small>Future practice civilization</small>
+          <small>Faith, made practice</small>
         </span>
       </a>
 
-      <nav class="nav" aria-label="Primary">
-        <a href="#console">Console</a>
-        <a href="#world-tools">World tools</a>
-        <a href="#knowledge-atlas">Knowledge</a>
-        <a href="#circle3">Circle3</a>
-        <a href="./quranic-600-words.html">600 Words</a>
-        <a href="#dua-store">Dua PDF</a>
-        <a href="#product-catalogue">Shop</a>
-        <a href="./blog/">Blog</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#world-tools">Prayer</a>
+        <a href="./quranic-600-words.html">Qur'an</a>
+        <a href="#dua-store">Dua</a>
+        <a href="./blog/">Journal</a>
         <a href="#civilization">Civilization</a>
-        <a href="#library">Library</a>
       </nav>
+      <a class="header-cta" href="#console">Open today <span aria-hidden="true">↗</span></a>
     </header>
 
     <nav class="mobile-tabbar" aria-label="Mobile quick navigation">
-      <a href="#top" aria-label="Home">
+      <a href="#main-content" aria-label="Home">
         <span class="tab-icon home" aria-hidden="true"></span>
         <span>Home</span>
       </a>
@@ -76,62 +73,94 @@
       </a>
     </nav>
 
-    <main id="top">
+    <main id="main-content">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-media" aria-hidden="true"></div>
+        <div class="hero-stars" aria-hidden="true"></div>
         <div class="hero-shell">
           <div class="hero-copy">
-            <div class="hero-brand-seal" aria-hidden="true">
-              <img src="./assets/islamic-habits-logo-kaaba-bayt-al-mamur.svg" alt="">
-            </div>
-            <p class="eyebrow">Bismillahir Rahmanir Rahim</p>
-            <h1 id="hero-title">Architecture of the <span class="accent-green">Soul</span>, Destiny of the <span class="accent-gold">Ummah</span>.</h1>
-            <p>
-              Bridging ancient Islamic wisdom with a high-tech discipline system
-              to build the Muslim self, family, Ummah, and civilization layer by layer.
-            </p>
-            <div class="hero-chips" aria-label="Product pillars">
-              <span>Prayer times worldwide</span>
-              <span>Qibla compass</span>
-              <span>Islamic knowledge atlas</span>
-              <span>Soul and time map</span>
-              <span>Connected practice</span>
-              <span>Salah-first</span>
-              <span>Prophetic routines</span>
-            </div>
+            <p class="hero-kicker"><span></span>Bismillahir Rahmanir Rahim</p>
+            <h1 id="hero-title">Build a life that<br><em>remembers Allah.</em></h1>
+            <p class="hero-lede">A calm digital home for Salah, Qur'an, dua, dhikr, and the small faithful habits that shape a person, a family, and a civilization.</p>
             <div class="hero-actions">
-              <a class="button primary" href="#console">Begin your practice</a>
-              <a class="button glass" href="#civilization">Explore the manifesto</a>
+              <a class="button primary" href="#world-tools">Find prayer time <span aria-hidden="true">→</span></a>
+              <a class="button glass" href="#console">Begin today's practice</a>
             </div>
-            <p class="scroll-hint">Scroll to ascend</p>
+            <div class="hero-trust" aria-label="Platform principles">
+              <span><i aria-hidden="true"></i>Source-led learning</span>
+              <span><i aria-hidden="true"></i>Private by design</span>
+              <span><i aria-hidden="true"></i>Made for every Muslim</span>
+            </div>
           </div>
 
-          <aside class="hero-panel" aria-label="Today snapshot">
-            <div class="orbit-field" aria-hidden="true">
-              <span></span>
-              <span></span>
-              <span></span>
-              <strong>بركة</strong>
+          <aside class="hero-panel" aria-label="Daily practice preview">
+            <div class="practice-card-head">
+              <div>
+                <span class="card-overline">Your day, anchored</span>
+                <strong>Tuesday · 28 Muharram</strong>
+              </div>
+              <span class="live-mark">Live</span>
             </div>
-            <div class="panel-topline">
-              <span>Today</span>
-              <strong id="heroPercent">0%</strong>
+            <div class="next-prayer">
+              <div>
+                <span>Next prayer</span>
+                <strong>Asr</strong>
+                <small>Begins in 1 hr 42 min</small>
+              </div>
+              <div class="prayer-time">4:51 <small>PM</small></div>
             </div>
-            <div class="mini-ring" aria-hidden="true">
-              <svg viewBox="0 0 120 120">
-                <circle class="ring-track" cx="60" cy="60" r="48"></circle>
-                <circle class="ring-value" id="heroRing" cx="60" cy="60" r="48"></circle>
-              </svg>
+            <div class="prayer-strip" aria-label="Prayer schedule preview">
+              <span><small>Fajr</small><strong>4:18</strong><i class="complete" aria-label="Complete">✓</i></span>
+              <span><small>Dhuhr</small><strong>12:17</strong><i class="complete" aria-label="Complete">✓</i></span>
+              <span class="active"><small>Asr</small><strong>4:51</strong><i aria-label="Next prayer">•</i></span>
+              <span><small>Maghrib</small><strong>7:08</strong><i></i></span>
+              <span><small>Isha</small><strong>8:31</strong><i></i></span>
             </div>
-            <p>Protect the anchors. Turn small deeds into a stronger self, family, and community.</p>
-            <div class="cosmic-metrics" aria-label="Civilization signals">
-              <span><strong>Design</strong> beautiful worship tools</span>
-              <span><strong>Space</strong> orient toward the Kaaba</span>
-              <span><strong>Soul</strong> return with dhikr</span>
-              <span><strong>Time</strong> live by Salah</span>
-              <span><strong>Entanglement</strong> habits affect family and Ummah</span>
+            <div class="practice-progress">
+              <div class="progress-copy"><span>Today's rhythm</span><strong id="heroPercent">0%</strong></div>
+              <div class="quiet-progress"><span id="heroProgressBar"></span></div>
+              <p>Every return matters. Begin again with the next prayer.</p>
             </div>
+            <svg class="hero-ring-compat" viewBox="0 0 120 120" aria-hidden="true"><circle id="heroRing" cx="60" cy="60" r="48"></circle></svg>
           </aside>
+        </div>
+        <div class="hero-footer">
+          <span>One faith · one rhythm · wherever you are</span>
+          <a href="#world-tools">Explore your daily tools <span aria-hidden="true">↓</span></a>
+        </div>
+      </section>
+
+      <section class="practice-network" aria-label="Islamic Habits practice pillars">
+        <p>One connected practice</p>
+        <div class="practice-network-track">
+          <span><i>01</i>Salah</span>
+          <span><i>02</i>Qur'an</span>
+          <span><i>03</i>Dua</span>
+          <span><i>04</i>Dhikr</span>
+          <span><i>05</i>Family</span>
+          <span><i>06</i>Service</span>
+          <span aria-hidden="true"><i>01</i>Salah</span>
+          <span aria-hidden="true"><i>02</i>Qur'an</span>
+          <span aria-hidden="true"><i>03</i>Dua</span>
+          <span aria-hidden="true"><i>04</i>Dhikr</span>
+          <span aria-hidden="true"><i>05</i>Family</span>
+          <span aria-hidden="true"><i>06</i>Service</span>
+        </div>
+      </section>
+
+      <section class="platform-map" aria-labelledby="platform-map-title">
+        <div class="platform-map-heading">
+          <p class="eyebrow">The Islamic Habits platform</p>
+          <h2 id="platform-map-title">Everything begins with the next faithful action.</h2>
+          <p>Move from awareness to practice through six connected spaces designed for daily life.</p>
+        </div>
+        <div class="platform-map-grid">
+          <a href="#world-tools"><span>01</span><strong>Prayer & Qibla</strong><small>Know the time. Find the direction.</small><i>↗</i></a>
+          <a href="#console"><span>02</span><strong>Daily Practice</strong><small>Protect the anchors that shape your day.</small><i>↗</i></a>
+          <a href="#knowledge-atlas"><span>03</span><strong>Knowledge</strong><small>Learn through sources, history, and reflection.</small><i>↗</i></a>
+          <a href="#circle3"><span>04</span><strong>Circle3</strong><small>Grow through a trusted three-person room.</small><i>↗</i></a>
+          <a href="#product-catalogue"><span>05</span><strong>Practice Store</strong><small>Useful objects built around real habits.</small><i>↗</i></a>
+          <a href="#civilization"><span>06</span><strong>Civilization</strong><small>Scale practice from soul to Ummah.</small><i>↗</i></a>
         </div>
       </section>
 
@@ -343,7 +372,7 @@
             <div class="experience-copy">
               <span>05</span>
               <h3>Soulful Family Content</h3>
-              <p>Short, useful reminders for children, parents, new Muslims, and seekers.</p>
+              <p>Short, useful reminders for children, parents, people beginning Islamic practice, and seekers.</p>
             </div>
             <div class="phone-mock content-mock" aria-hidden="true">
               <div class="content-tile large">Qur'an</div>
@@ -707,13 +736,13 @@
           </article>
 
           <article class="product-card kit-card">
-            <span class="product-badge">Welcome gift</span>
+            <span class="product-badge">Practice beginning</span>
             <div class="product-visual welcome-kit" aria-hidden="true"></div>
-            <p class="eyebrow">Gift kit</p>
-            <h3>New Muslim Welcome Kit</h3>
-            <p>Gentle starter pack with prayer mat, basic duas, step-by-step Salah guide, and support email.</p>
-            <div class="product-meta"><span>From ₹1,299</span><small>Beginner focused</small></div>
-            <a class="product-action" href="mailto:support@islamic-habits.com?subject=New%20Muslim%20Welcome%20Kit%20preorder">Ask to reserve</a>
+            <p class="eyebrow">Practice card</p>
+            <h3>Islamic Practice Initiation Card</h3>
+            <p>A gentle, beautifully designed starting card for Salah, essential duas, dhikr, daily adab, and the next small step.</p>
+            <div class="product-meta"><span>From ₹99</span><small>Guided initiation</small></div>
+            <a class="product-action" href="mailto:support@islamic-habits.com?subject=Islamic%20Practice%20Initiation%20Card%20preorder">Ask to reserve</a>
           </article>
         </div>
 
@@ -1011,16 +1040,17 @@
     </dialog>
 
     <footer class="site-footer">
-      <span class="footer-brand">
-        <img src="./assets/islamic-habits-logo-kaaba-bayt-al-mamur.svg" alt="">
-        <strong>Islamic Habits</strong>
-      </span>
-      <span>Small deeds. Steady hearts. Strong routines.</span>
-      <nav class="footer-links" aria-label="Site policies">
-        <a href="./privacy.html">Privacy</a>
-        <a href="./terms.html">Terms</a>
-        <a href="./contact.html">Contact</a>
-      </nav>
+      <div class="footer-intro">
+        <span class="footer-brand"><img src="./assets/islamic-habits-logo-kaaba-bayt-al-mamur.svg" alt=""><strong>Islamic Habits</strong></span>
+        <h2>Small deeds.<br>Steady hearts.</h2>
+        <p>A global Islamic practice platform for living with remembrance, direction, and service.</p>
+      </div>
+      <div class="footer-directory">
+        <nav aria-label="Practice links"><strong>Practice</strong><a href="#world-tools">Prayer & Qibla</a><a href="#console">Daily console</a><a href="#dua-store">Dua practice</a><a href="./quranic-600-words.html">Qur'an words</a></nav>
+        <nav aria-label="Explore links"><strong>Explore</strong><a href="#circle3">Circle3</a><a href="./blog/">Journal</a><a href="#product-catalogue">Store</a><a href="#civilization">Civilization</a></nav>
+        <nav aria-label="Company links"><strong>Company</strong><a href="./contact.html">Contact</a><a href="./privacy.html">Privacy</a><a href="./terms.html">Terms</a><a href="mailto:support@islamic-habits.com">Support</a></nav>
+      </div>
+      <div class="footer-bottom"><span>© 2026 Islamic Habits</span><span>Faith, made practice.</span><a href="#main-content">Return to top ↑</a></div>
     </footer>
 
     <script src="./config.js?v=circle3-20260521"></script>

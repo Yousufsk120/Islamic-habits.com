@@ -1,6 +1,12 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "functions": {
+    "api/circle3/*.js": {
+      "maxDuration": 10,
+      "memory": 1024
+    }
+  },
   "headers": [
     {
       "source": "/(.*)",
