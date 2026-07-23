@@ -17,7 +17,18 @@
       content="Islamic Habits is a future-facing Islamic practice app for Salah, Qur'an, dhikr, duas, family routines, character, service, and civilization-building habits."
     >
     <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://islamic-habits.com/">
+    <meta property="og:title" content="Islamic Habits | Future Practice Civilization">
+    <meta property="og:description" content="A calm digital home for Salah, Qur'an, dua, dhikr, family routines, and the small faithful habits that shape a person, a family, and a civilization.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://islamic-habits.com/">
+    <meta property="og:image" content="https://islamic-habits.com/assets/islamic-habits-logo-kaaba-bayt-al-mamur.png">
+    <meta property="og:image:alt" content="Islamic Habits logo">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Islamic Habits | Future Practice Civilization">
+    <meta name="twitter:description" content="A calm digital home for Salah, Qur'an, dua, dhikr, family routines, and the small faithful habits that shape a person, a family, and a civilization.">
+    <meta name="twitter:image" content="https://islamic-habits.com/assets/islamic-habits-logo-kaaba-bayt-al-mamur.png">
     <title>Islamic Habits | Future Practice Civilization</title>
     <link rel="icon" type="image/svg+xml" href="./assets/islamic-habits-logo-kaaba-bayt-al-mamur.svg">
     <link rel="apple-touch-icon" href="./assets/islamic-habits-logo-kaaba-bayt-al-mamur.svg">
@@ -25,33 +36,59 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css?v=circle3-triadic-20260522">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "name": "Islamic Habits",
+            "url": "https://islamic-habits.com/",
+            "logo": "https://islamic-habits.com/assets/islamic-habits-logo-kaaba-bayt-al-mamur.png"
+          },
+          {
+            "@type": "WebSite",
+            "name": "Islamic Habits",
+            "url": "https://islamic-habits.com/",
+            "description": "A future-facing Islamic practice site for Salah, Qur'an, dua, dhikr, family routines, character, and civilization-building habits.",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Islamic Habits"
+            },
+            "inLanguage": "en"
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="app-header">
-      <a class="brand" href="#main-content" aria-label="Islamic Habits home">
+      <a class="brand" href="#top" aria-label="Islamic Habits home">
         <span class="brand-mark">
           <img src="./assets/islamic-habits-logo-kaaba-bayt-al-mamur.svg" alt="">
         </span>
         <span>
           <strong>Islamic Habits</strong>
-          <small>Faith, made practice</small>
+          <small>Future practice civilization</small>
         </span>
       </a>
 
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="#world-tools">Prayer</a>
-        <a href="./quranic-600-words.html">Qur'an</a>
-        <a href="#dua-store">Dua</a>
-        <a href="./blog/">Journal</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#console">Console</a>
+        <a href="#world-tools">World tools</a>
+        <a href="#knowledge-atlas">Knowledge</a>
+        <a href="./quranic-600-words.html">600 Words</a>
+        <a href="#dua-store">Dua PDF</a>
+        <a href="#product-catalogue">Shop</a>
+        <a href="./blog/">Blog</a>
         <a href="#civilization">Civilization</a>
+        <a href="#library">Library</a>
       </nav>
-      <a class="header-cta" href="#console">Open today <span aria-hidden="true">↗</span></a>
     </header>
 
     <nav class="mobile-tabbar" aria-label="Mobile quick navigation">
-      <a href="#main-content" aria-label="Home">
+      <a href="#top" aria-label="Home">
         <span class="tab-icon home" aria-hidden="true"></span>
         <span>Home</span>
       </a>
@@ -63,104 +100,76 @@
         <span class="tab-icon dua" aria-hidden="true"></span>
         <span>Dua</span>
       </a>
-      <a href="#product-catalogue" aria-label="Islamic products">
-        <span class="tab-icon shop" aria-hidden="true"></span>
-        <span>Shop</span>
-      </a>
       <a href="./quranic-600-words.html" aria-label="600 Quranic words">
         <span class="tab-icon layers" aria-hidden="true"></span>
         <span>Quran</span>
       </a>
+      <a href="#product-catalogue" aria-label="Islamic products">
+        <span class="tab-icon shop" aria-hidden="true"></span>
+        <span>Shop</span>
+      </a>
+      <a href="#civilization" aria-label="Civilization layers">
+        <span class="tab-icon layers" aria-hidden="true"></span>
+        <span>Layers</span>
+      </a>
     </nav>
 
-    <main id="main-content">
+    <main id="top">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-media" aria-hidden="true"></div>
-        <div class="hero-stars" aria-hidden="true"></div>
         <div class="hero-shell">
           <div class="hero-copy">
-            <p class="hero-kicker"><span></span>Bismillahir Rahmanir Rahim</p>
-            <h1 id="hero-title">Build a life that<br><em>remembers Allah.</em></h1>
-            <p class="hero-lede">A calm digital home for Salah, Qur'an, dua, dhikr, and the small faithful habits that shape a person, a family, and a civilization.</p>
+            <div class="hero-brand-seal" aria-hidden="true">
+              <img src="./assets/islamic-habits-logo-kaaba-bayt-al-mamur.svg" alt="">
+            </div>
+            <p class="eyebrow">Bismillahir Rahmanir Rahim</p>
+            <h1 id="hero-title">Architecture of the <span class="accent-green">Soul</span>, Destiny of the <span class="accent-gold">Ummah</span>.</h1>
+            <p>
+              Bridging ancient Islamic wisdom with a high-tech discipline system
+              to build the Muslim self, family, Ummah, and civilization layer by layer.
+            </p>
+            <div class="hero-chips" aria-label="Product pillars">
+              <span>Prayer times worldwide</span>
+              <span>Qibla compass</span>
+              <span>Islamic knowledge atlas</span>
+              <span>Soul and time map</span>
+              <span>Connected practice</span>
+              <span>Salah-first</span>
+              <span>Prophetic routines</span>
+            </div>
             <div class="hero-actions">
-              <a class="button primary" href="#world-tools">Find prayer time <span aria-hidden="true">→</span></a>
-              <a class="button glass" href="#console">Begin today's practice</a>
+              <a class="button primary" href="#console">Begin your practice</a>
+              <a class="button glass" href="#civilization">Explore the manifesto</a>
             </div>
-            <div class="hero-trust" aria-label="Platform principles">
-              <span><i aria-hidden="true"></i>Source-led learning</span>
-              <span><i aria-hidden="true"></i>Private by design</span>
-              <span><i aria-hidden="true"></i>Made for every Muslim</span>
-            </div>
+            <p class="scroll-hint">Scroll to ascend</p>
           </div>
 
-          <aside class="hero-panel" aria-label="Daily practice preview">
-            <div class="practice-card-head">
-              <div>
-                <span class="card-overline">Your day, anchored</span>
-                <strong>Tuesday · 28 Muharram</strong>
-              </div>
-              <span class="live-mark">Live</span>
+          <aside class="hero-panel" aria-label="Today snapshot">
+            <div class="orbit-field" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+              <strong>بركة</strong>
             </div>
-            <div class="next-prayer">
-              <div>
-                <span>Next prayer</span>
-                <strong>Asr</strong>
-                <small>Begins in 1 hr 42 min</small>
-              </div>
-              <div class="prayer-time">4:51 <small>PM</small></div>
+            <div class="panel-topline">
+              <span>Today</span>
+              <strong id="heroPercent">0%</strong>
             </div>
-            <div class="prayer-strip" aria-label="Prayer schedule preview">
-              <span><small>Fajr</small><strong>4:18</strong><i class="complete" aria-label="Complete">✓</i></span>
-              <span><small>Dhuhr</small><strong>12:17</strong><i class="complete" aria-label="Complete">✓</i></span>
-              <span class="active"><small>Asr</small><strong>4:51</strong><i aria-label="Next prayer">•</i></span>
-              <span><small>Maghrib</small><strong>7:08</strong><i></i></span>
-              <span><small>Isha</small><strong>8:31</strong><i></i></span>
+            <div class="mini-ring" aria-hidden="true">
+              <svg viewBox="0 0 120 120">
+                <circle class="ring-track" cx="60" cy="60" r="48"></circle>
+                <circle class="ring-value" id="heroRing" cx="60" cy="60" r="48"></circle>
+              </svg>
             </div>
-            <div class="practice-progress">
-              <div class="progress-copy"><span>Today's rhythm</span><strong id="heroPercent">0%</strong></div>
-              <div class="quiet-progress"><span id="heroProgressBar"></span></div>
-              <p>Every return matters. Begin again with the next prayer.</p>
+            <p>Protect the anchors. Turn small deeds into a stronger self, family, and community.</p>
+            <div class="cosmic-metrics" aria-label="Civilization signals">
+              <span><strong>Design</strong> beautiful worship tools</span>
+              <span><strong>Space</strong> orient toward the Kaaba</span>
+              <span><strong>Soul</strong> return with dhikr</span>
+              <span><strong>Time</strong> live by Salah</span>
+              <span><strong>Entanglement</strong> habits affect family and Ummah</span>
             </div>
-            <svg class="hero-ring-compat" viewBox="0 0 120 120" aria-hidden="true"><circle id="heroRing" cx="60" cy="60" r="48"></circle></svg>
           </aside>
-        </div>
-        <div class="hero-footer">
-          <span>One faith · one rhythm · wherever you are</span>
-          <a href="#world-tools">Explore your daily tools <span aria-hidden="true">↓</span></a>
-        </div>
-      </section>
-
-      <section class="practice-network" aria-label="Islamic Habits practice pillars">
-        <p>One connected practice</p>
-        <div class="practice-network-track">
-          <span><i>01</i>Salah</span>
-          <span><i>02</i>Qur'an</span>
-          <span><i>03</i>Dua</span>
-          <span><i>04</i>Dhikr</span>
-          <span><i>05</i>Family</span>
-          <span><i>06</i>Service</span>
-          <span aria-hidden="true"><i>01</i>Salah</span>
-          <span aria-hidden="true"><i>02</i>Qur'an</span>
-          <span aria-hidden="true"><i>03</i>Dua</span>
-          <span aria-hidden="true"><i>04</i>Dhikr</span>
-          <span aria-hidden="true"><i>05</i>Family</span>
-          <span aria-hidden="true"><i>06</i>Service</span>
-        </div>
-      </section>
-
-      <section class="platform-map" aria-labelledby="platform-map-title">
-        <div class="platform-map-heading">
-          <p class="eyebrow">The Islamic Habits platform</p>
-          <h2 id="platform-map-title">Everything begins with the next faithful action.</h2>
-          <p>Move from awareness to practice through six connected spaces designed for daily life.</p>
-        </div>
-        <div class="platform-map-grid">
-          <a href="#world-tools"><span>01</span><strong>Prayer & Qibla</strong><small>Know the time. Find the direction.</small><i>↗</i></a>
-          <a href="#console"><span>02</span><strong>Daily Practice</strong><small>Protect the anchors that shape your day.</small><i>↗</i></a>
-          <a href="#knowledge-atlas"><span>03</span><strong>Knowledge</strong><small>Learn through sources, history, and reflection.</small><i>↗</i></a>
-          <a href="#circle3"><span>04</span><strong>Circle3</strong><small>Grow through a trusted three-person room.</small><i>↗</i></a>
-          <a href="#product-catalogue"><span>05</span><strong>Practice Store</strong><small>Useful objects built around real habits.</small><i>↗</i></a>
-          <a href="#civilization"><span>06</span><strong>Civilization</strong><small>Scale practice from soul to Ummah.</small><i>↗</i></a>
         </div>
       </section>
 
@@ -305,12 +314,14 @@
               <p>Live direction, Kaaba bearing, and a calm compass built for phones.</p>
             </div>
             <div class="phone-mock qibla-mock" aria-hidden="true">
+              <div class="mock-status"><span>Qibla</span><b>292°</b></div>
               <div class="mock-map"></div>
+              <div class="kaaba-pin">Kaaba</div>
               <div class="mock-compass">
                 <span>N</span><span>E</span><span>S</span><span>W</span>
                 <strong></strong>
               </div>
-              <small>Facing Makkah</small>
+              <div class="mock-footer"><b>Facing Makkah</b><span>Live phone compass</span></div>
             </div>
           </article>
 
@@ -321,12 +332,15 @@
               <p>A focused prayer rhythm with next-Salah awareness and gentle progress.</p>
             </div>
             <div class="phone-mock salah-mock" aria-hidden="true">
-              <div class="salah-now"><strong>Asr</strong><span>15:17</span></div>
-              <div class="salah-ring"><strong>2/5</strong><span>prayed</span></div>
+              <div class="mock-status"><span>Today, 25 August</span><b>1 Rabi I</b></div>
+              <div class="salah-panel">
+                <div class="salah-now"><small>Now</small><strong>Asr</strong><span>15:17</span><em>Maghrib in 2h 26m</em></div>
+                <div class="salah-ring"><strong>2/5</strong><span>prayed</span></div>
+              </div>
               <div class="salah-list">
-                <span>Fajr <b>04:40</b></span>
-                <span>Dhuhr <b>11:58</b></span>
-                <span>Asr <b>15:17</b></span>
+                <span class="done">Fajr <b>04:40</b></span>
+                <span class="done">Dhuhr <b>11:58</b></span>
+                <span class="active">Asr <b>15:17</b></span>
                 <span>Maghrib <b>17:56</b></span>
               </div>
             </div>
@@ -339,13 +353,15 @@
               <p>A pocket dhikr counter for small pauses between study, work, and travel.</p>
             </div>
             <div class="phone-mock dhikr-mock" aria-hidden="true">
+              <div class="mock-status"><span>Dhikr pause</span><b>33 count</b></div>
               <div class="bead-line">
-                <i></i><i></i><i></i><i></i><i></i>
+                <i></i><i></i><i></i><i></i><i></i><i></i>
               </div>
-              <strong>25 / 33</strong>
+              <div class="dhikr-count"><strong>25</strong><span>/ 33</span></div>
               <div class="dua-chip">
                 <span>الله أكبر</span>
                 <small>Allahu Akbar</small>
+                <em>Tap to count quietly</em>
               </div>
             </div>
           </article>
@@ -357,13 +373,15 @@
               <p>Categories for morning, prayer, travel, family, food, study, and distress.</p>
             </div>
             <div class="phone-mock dua-mock" aria-hidden="true">
+              <div class="mock-status"><span>Dua Library</span><b>132 chapters</b></div>
               <div class="dua-category-grid">
                 <span>Morning</span><span>Prayer</span><span>Travel</span>
-                <span>Family</span><span>Food</span><span>Sickness</span>
+                <span>Family</span><span>Food</span><span>Study</span>
               </div>
               <div class="dua-reader-mini">
                 <b>When leaving home</b>
                 <p>بِسْمِ اللهِ تَوَكَّلْتُ عَلَى اللهِ</p>
+                <small>In the name of Allah, I trust Allah.</small>
               </div>
             </div>
           </article>
@@ -372,19 +390,20 @@
             <div class="experience-copy">
               <span>05</span>
               <h3>Soulful Family Content</h3>
-              <p>Short, useful reminders for children, parents, people beginning Islamic practice, and seekers.</p>
+              <p>Short, useful reminders for children, parents, new Muslims, and seekers.</p>
             </div>
             <div class="phone-mock content-mock" aria-hidden="true">
-              <div class="content-tile large">Qur'an</div>
-              <div class="content-tile">Seerah</div>
-              <div class="content-tile">Stories</div>
-              <div class="content-tile">Akhlaq</div>
+              <div class="mock-status"><span>Family Feed</span><b>Useful only</b></div>
+              <div class="content-tile large"><span>Qur'an</span><small>Short reflection for tonight</small></div>
+              <div class="content-tile"><span>Seerah</span><small>5 min</small></div>
+              <div class="content-tile"><span>Stories</span><small>Kids</small></div>
+              <div class="content-tile"><span>Akhlaq</span><small>Adab</small></div>
             </div>
           </article>
         </div>
       </section>
 
-      <section class="matrimony circle3" id="circle3" aria-labelledby="circle3-title">
+      <section class="matrimony circle3" id="circle3" aria-labelledby="circle3-title" hidden>
         <div class="section-heading wide">
           <p class="eyebrow">Micro SaaS concept</p>
           <h2 id="circle3-title">Circle3: small circles for better Islamic habits.</h2>
@@ -414,27 +433,27 @@
             </div>
           </article>
 
-          <article class="circle3-chat" aria-label="Circle3 daily room concept">
+          <article class="circle3-chat circle3-private-preview" aria-label="Circle3 private room trust model">
             <div class="circle3-window">
               <div class="circle3-top">
-                <span>Daily Circle Room</span>
-                <strong>3 present</strong>
+                <span>Private Circle Room</span>
+                <strong>Trust first</strong>
               </div>
               <div class="circle3-strip">
-                <span>AI prompt active</span>
-                <b>Moderated and purposeful</b>
+                <span>No public chat preview</span>
+                <b>Real rooms stay private</b>
               </div>
               <div class="circle3-bubble">
-                <small>Prompt</small>
-                Which habit improved your iman recently, and what made it easier to repeat?
+                <small>Protected experience</small>
+                Circle3 shows the system concept publicly, while actual conversations remain inside verified private rooms.
               </div>
               <div class="circle3-bubble member">
-                <small>Member</small>
-                Fajr became easier when I slept earlier and kept my phone outside the bed.
+                <small>Adab and safety</small>
+                Matching, moderation, reporting, and gender options are part of the design before public launch.
               </div>
               <div class="circle3-bubble silent">
-                <small>Silent presence</small>
-                I am here silently today. Please make dua for my consistency.
+                <small>Launch status</small>
+                The first version will open as an invite-based beta after verification and privacy rules are ready.
               </div>
             </div>
           </article>
@@ -463,6 +482,216 @@
           </article>
         </div>
 
+        <div class="circle3-deep" aria-label="Circle3 product brief">
+          <article class="circle3-story-card">
+            <p class="eyebrow">The problem</p>
+            <h3>Many young Muslims are surrounded by content, but still growing alone.</h3>
+            <p>
+              Circle3 is designed for digital isolation, motivation crashes, inconsistent
+              Salah and Qur'an routines, passive learning, and the missing feeling of
+              trusted companionship. It gives the user a small circle that can be present
+              without becoming noisy social media.
+            </p>
+            <div class="circle3-tags">
+              <span>Digital isolation</span>
+              <span>Habit inconsistency</span>
+              <span>Low accountability</span>
+              <span>Passive content</span>
+            </div>
+          </article>
+
+          <article class="circle3-story-card accent">
+            <p class="eyebrow">The solution</p>
+            <h3>Three people, one guided room, one meaningful action each day.</h3>
+            <p>
+              The system combines habit tracking, structured interaction, AI-generated
+              prompts, and adab-first moderation. It is not Facebook, Discord, Telegram,
+              or a lecture app. It becomes faith-centered micro-community infrastructure.
+            </p>
+            <div class="circle3-tags">
+              <span>Daily reflection</span>
+              <span>Islamic habits</span>
+              <span>Quiet support</span>
+              <span>Guided growth</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="circle3-system" aria-label="Circle3 architecture">
+          <div class="circle3-system-copy">
+            <p class="eyebrow">How Circle3 works</p>
+            <h3>Profile, match, prompt, practice, repeat.</h3>
+            <p>
+              A user creates a simple profile, chooses Islamic and life goals, and receives
+              a small circle built around compatibility. The circle then receives daily
+              conversation starters, a habit check, and a low-pressure way to stay present.
+            </p>
+          </div>
+
+          <div class="circle3-flow" aria-label="Circle3 user flow">
+            <article>
+              <strong>01</strong>
+              <h4>User layer</h4>
+              <p>Nickname, gender, country, language, timezone, goals, personality, and habit focus.</p>
+            </article>
+            <article>
+              <strong>02</strong>
+              <h4>Matching engine</h4>
+              <p>Groups three members by age band, goals, timezone, language, activity, and interests.</p>
+            </article>
+            <article>
+              <strong>03</strong>
+              <h4>Daily room</h4>
+              <p>Fajr Warriors, Qur'an Consistency, Student Productivity, or Muslim Entrepreneurs.</p>
+            </article>
+            <article>
+              <strong>04</strong>
+              <h4>Growth loop</h4>
+              <p>Prompt, reflection, habit streak, silent presence, encouragement, and next action.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="circle3-activation" aria-label="Triadic activation engine">
+          <div class="circle3-activation-visual" aria-hidden="true">
+            <span>Verified human</span>
+            <span>Verified human</span>
+            <span>Verified human</span>
+            <strong>Circle unlocks</strong>
+          </div>
+          <div class="circle3-activation-copy">
+            <p class="eyebrow">Triadic activation engine</p>
+            <h3>Real conversations begin only when three real people are present.</h3>
+            <p>
+              Circle3 unlocks chat, voice, habit sync, and the daily prompt only when three
+              verified members enter the same room. Until then, users wait in a calm lobby.
+              This creates authenticity, anticipation, anti-spam protection, and real social energy.
+            </p>
+            <ul>
+              <li>Three verified users required before a room becomes active.</li>
+              <li>Lobby mode keeps the experience quiet until the circle is complete.</li>
+              <li>Presence signals focus on safety, consent, and anti-abuse protection.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="circle3-identity" aria-label="Circle3 registration and identity layer">
+          <article>
+            <span>01</span>
+            <h3>Mobile verification</h3>
+            <p>One phone number, one account, with OTP through Twilio, MSG91, or Firebase Auth for the first launch.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Liveness check</h3>
+            <p>A consent-based selfie or short liveness check helps reduce fake accounts, duplicate profiles, and bot circles.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Device trust</h3>
+            <p>Device, IP, and browser risk signals can protect the platform from spam farms without exposing private details to other users.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Secure storage</h3>
+            <p>Identity checks should use encrypted storage, minimal retention, secure face embeddings, and clear user consent.</p>
+          </article>
+        </div>
+
+        <div class="circle3-feature-board" aria-label="Circle3 core features">
+          <article>
+            <span>Prompt</span>
+            <h3>AI conversation starter</h3>
+            <p>Thoughtful, halal prompts such as “What distracts you from consistency?” or “Which Sunnah changed your mindset?”</p>
+          </article>
+          <article>
+            <span>Track</span>
+            <h3>Habit accountability</h3>
+            <p>Salah, Qur'an minutes, dhikr, sleep, water, workout, social media detox, mood, streaks, and group progress.</p>
+          </article>
+          <article>
+            <span>Presence</span>
+            <h3>Silent companionship</h3>
+            <p>A user can say “I am here silently” and still receive the emotional benefit of being part of a circle.</p>
+          </article>
+          <article>
+            <span>Future</span>
+            <h3>AI Islamic companion</h3>
+            <p>Premium habit coach, productivity mentor, Qur'an reflection assistant, and motivational responder.</p>
+          </article>
+        </div>
+
+        <div class="circle3-room-types" aria-label="Circle3 room types">
+          <div>
+            <p class="eyebrow">Circle types</p>
+            <h3>Different rooms for different seasons of life.</h3>
+          </div>
+          <article>
+            <h4>Habit circles</h4>
+            <p>Fajr, Qur'an, productivity, fitness, fasting, dhikr, sleep, and social detox.</p>
+          </article>
+          <article>
+            <h4>Emotional support</h4>
+            <p>Loneliness, student pressure, stress, spiritual burnout, and gentle companionship.</p>
+          </article>
+          <article>
+            <h4>Intellectual circles</h4>
+            <p>Islamic philosophy, startup discussions, politics, AI, future tech, and Qur'anic science.</p>
+          </article>
+        </div>
+
+        <div class="circle3-live-room" aria-label="Circle3 live room example">
+          <div class="circle3-live-copy">
+            <p class="eyebrow">Live room moment</p>
+            <h3>When all three arrive, the room begins with adab.</h3>
+            <p>
+              The AI opens with a warm salam and a meaningful prompt. Energy matching helps
+              balance active talkers, quiet listeners, shy users, and deeper intellectual users.
+            </p>
+          </div>
+          <div class="circle3-live-script">
+            <span>Assalamu Alaikum.</span>
+            <strong>Today's circle topic:</strong>
+            <p>What habit changed your life recently, and what made it easier to repeat?</p>
+          </div>
+        </div>
+
+        <div class="circle3-matrix" aria-label="Circle3 data and safety model">
+          <article>
+            <p class="eyebrow">Technical backbone</p>
+            <h3>Simple MVP stack</h3>
+            <p>Next.js, TailwindCSS, Supabase or Firebase, PostgreSQL, OpenAI API, local moderation, and realtime chat for text circles.</p>
+          </article>
+          <article>
+            <p class="eyebrow">Data model</p>
+            <h3>Small but scalable</h3>
+            <p>Users, circles, habits, prompt logs, activity score, engagement score, streaks, mood, and circle topic history.</p>
+          </article>
+          <article>
+            <p class="eyebrow">Trust layer</p>
+            <h3>Safety before growth</h3>
+            <p>Anti-harassment filters, gender separation options, AI moderation, spam protection, behavior scoring, and anonymous reporting.</p>
+          </article>
+        </div>
+
+        <div class="circle3-infra" aria-label="Circle3 scalable infrastructure">
+          <article>
+            <p class="eyebrow">Phase 1</p>
+            <h3>Launch lean</h3>
+            <p>Vercel, Supabase or Firebase, PostgreSQL, Redis, WebSocket or Socket.IO, and OpenAI moderation/prompt generation.</p>
+          </article>
+          <article>
+            <p class="eyebrow">Phase 2</p>
+            <h3>Scale toward millions</h3>
+            <p>AWS ECS or Kubernetes, Cloudflare, Redis cluster, CDN, vector database for matching, and dedicated moderation services.</p>
+          </article>
+          <article>
+            <p class="eyebrow">Privacy promise</p>
+            <h3>Trust is the product</h3>
+            <p>Encrypted storage, parental protection, GDPR-style controls, Islamic-safe moderation, and no public exposure of identity checks.</p>
+          </article>
+        </div>
+
         <div class="circle3-saas-grid" aria-label="Circle3 launch and business model">
           <article>
             <p class="eyebrow">MVP launch</p>
@@ -484,15 +713,25 @@
             </ul>
           </article>
           <article>
-            <p class="eyebrow">Safety design</p>
-            <h3>Trust before growth</h3>
+            <p class="eyebrow">Growth loop</p>
+            <h3>Complete your circle</h3>
             <ul>
-              <li>Gender separation options</li>
-              <li>Anti-harassment filters</li>
-              <li>AI moderation and reporting</li>
+              <li>User invites two friends to form a circle</li>
+              <li>Student, revert, founder, Qur'an, and family circles</li>
               <li>Marriage-readiness rooms with wali or approved observer</li>
             </ul>
           </article>
+        </div>
+
+        <div class="circle3-roadmap" aria-label="Circle3 long term vision">
+          <p class="eyebrow">Long-term vision</p>
+          <h3>A faith-centered real-human social operating system.</h3>
+          <p>
+            Circle3 can grow into Muslim student circles, Qur'an memorization groups,
+            startup founder circles, revert support, local masjid integration, family
+            habit systems, AI-guided Islamic wellness, and eventually a global digital
+            Ummah infrastructure layer.
+          </p>
         </div>
 
         <div class="circle3-note">
@@ -501,7 +740,7 @@
             The simplest launch: collect interested users, form the first small habit circles
             manually, then automate matching, prompts, moderation, and premium coaching.
           </span>
-          <a class="button secondary" href="mailto:1001.yx01@gmail.com?subject=Circle3%20pilot%20interest">Join the Circle3 pilot</a>
+          <a class="button secondary" href="mailto:support@islamic-habits.com?subject=Circle3%20pilot%20interest">Join the Circle3 pilot</a>
         </div>
       </section>
 
@@ -550,24 +789,30 @@
             <p class="eyebrow">Authentic history path</p>
             <h3>Build from sources before opinions</h3>
             <div class="pathway-list">
-              <span><strong>1. Revelation and Seerah</strong> Qur'an, hadith, early biography, and the Makkan/Madinan foundations.</span>
-              <span><strong>2. Khulafa and early community</strong> Governance, worship, knowledge, expansion, fitan, and preservation.</span>
-              <span><strong>3. Knowledge civilization</strong> Hadith sciences, fiqh, Arabic, medicine, astronomy, art, architecture, trade, and waqf.</span>
-              <span><strong>4. Modern renewal</strong> Colonial disruption, reform, education, diaspora, technology, and rebuilding institutions.</span>
+              <div><strong>1. Revelation and Seerah</strong><span>Qur'an, hadith, early biography, and the Makkan/Madinan foundations.</span></div>
+              <div><strong>2. Khulafa and early community</strong><span>Governance, worship, knowledge, expansion, fitan, and preservation.</span></div>
+              <div><strong>3. Knowledge civilization</strong><span>Hadith sciences, fiqh, Arabic, medicine, astronomy, art, architecture, trade, and waqf.</span></div>
+              <div><strong>4. Modern renewal</strong><span>Colonial disruption, reform, education, diaspora, technology, and rebuilding institutions.</span></div>
             </div>
           </article>
 
-          <article class="atlas-panel bridge-panel">
+          <article class="atlas-panel philosophy-panel">
             <p class="eyebrow">Civilization bridge</p>
             <h3>The human search for the One God</h3>
             <p>
               Islam teaches that Allah sent messengers to peoples through history. This area
-              should help users compare civilizations with humility: tawhid, prophecy, fitrah,
-              worship, ethics, family, law, beauty, and the search for ultimate truth.
+              should help users compare civilizations with humility: tawhid, prophecy,
+              fitrah, worship, ethics, family, law, beauty, and the search for ultimate truth.
             </p>
-            <div class="bridge-tags">
-              <span>Tawhid</span><span>Fitrah</span><span>Prophecy</span><span>Mercy</span>
-              <span>Law and ethics</span><span>Beauty</span><span>Family</span><span>Afterlife</span>
+            <div class="bridge-tags" aria-label="Comparative research themes">
+              <span>Tawhid</span>
+              <span>Fitrah</span>
+              <span>Prophecy</span>
+              <span>Mercy</span>
+              <span>Law and ethics</span>
+              <span>Beauty</span>
+              <span>Family</span>
+              <span>Afterlife</span>
             </div>
             <p class="fine-print">
               Comparative content should be scholar-reviewed and respectful. The app should connect themes without making careless claims about other religions.
@@ -576,79 +821,120 @@
         </div>
       </section>
 
+      <aside class="ad-slot" data-ad-slot="home-after-knowledge-atlas" aria-label="Advertisement"></aside>
+
       <section class="dua-store" id="dua-store" aria-labelledby="dua-store-title">
         <div class="section-heading wide">
           <p class="eyebrow">Free English launch edition</p>
           <h2 id="dua-store-title">Read and download the 100 Hours Dua Practice for free.</h2>
           <p>
             For the early community launch, the reviewed English practice manual is free:
-            a guided 100-hour journey through duas, meanings, references, and daily action.
-            Other language editions, premium print editions, and more practice activities will open gradually.
+            a guided
+            100-hour journey through duas, meanings, references, and daily action.
+            Other language editions, premium print editions, and more practice activities
+            will open gradually.
           </p>
         </div>
 
         <div class="store-grid">
-          <article class="store-panel dua-product-card">
-            <div class="product-topline">
-              <span class="pdf-mark">PDF</span>
+          <article class="store-panel purchase-panel">
+            <div class="tool-head">
+              <span>PDF</span>
               <div>
                 <p class="eyebrow">Free launch edition</p>
                 <h3>100 Hours Dua Practice</h3>
               </div>
             </div>
             <p>
-              A practical dua training manual prepared for reading, learning, memorizing,
-              reflecting, and applying duas over 100 focused hours. The English launch edition
-              includes Arabic source text, English meaning, references, usage notes, and practice guidance.
+              A practical dua training manual prepared for reading, learning,
+              memorizing, reflecting, and applying duas over 100 focused hours.
+              The English launch edition includes Arabic source text, English
+              meaning, references, usage notes, and practice guidance.
             </p>
-            <div class="language-select">
-              <span>Launch language</span>
-              <strong>English</strong>
+            <form class="purchase-form" id="duaPurchaseForm">
+              <label>
+                <span>Launch language</span>
+                <select id="duaLanguage" name="language">
+                  <option value="english">English only</option>
+                </select>
+              </label>
+              <div class="price-box">
+                <span>Launch access</span>
+                <strong id="duaPrice">Free</strong>
+              </div>
+              <div class="purchase-actions">
+                <a class="button primary" href="./dua-practice.html">Read inside website</a>
+                <button class="button glass" type="submit">Download PDF</button>
+              </div>
+              <p class="fine-print" id="purchaseStatus" role="status">
+                English 100-hour practice launch is selected. No payment is needed right now.
+              </p>
+              <p class="fine-print">
+                If the download does not open, email support@islamic-habits.com and we will help you directly.
+              </p>
+            </form>
+            <div class="language-roadmap" aria-label="Future language editions">
+              <span>Coming after review: Bengali</span>
+              <span>Japanese</span>
+              <span>Simplified Chinese</span>
+              <span>Malay</span>
+              <span>Arabic source edition</span>
             </div>
-            <div class="purchase-actions">
-              <span class="price-tag">Free</span>
-              <a class="button glass" href="./dua-practice.html">Read inside website</a>
-              <a class="button primary" id="duaDownloadButton" href="./downloads/100-hours-dua-practice-english.pdf" download>Download free PDF</a>
-            </div>
-            <p class="fine-print">
-              Free for now. For questions or download issues, email 1001.yx01@gmail.com.
-            </p>
           </article>
 
-          <aside class="store-panel store-roadmap" aria-label="Dua product roadmap">
-            <p class="eyebrow">Later editions</p>
-            <h3>Multilingual manuals and premium designs can be added gradually.</h3>
-            <ul>
-              <li>Arabic source and references preserved across all editions.</li>
-              <li>English first, then Bengali, Japanese, Chinese, Malay, and Indonesian.</li>
-              <li>Future paid checkout can unlock language choice, Drive save, and download.</li>
-              <li>Support email: 1001.yx01@gmail.com</li>
-            </ul>
-          </aside>
+          <article class="store-panel delivery-panel">
+            <p class="eyebrow">Free launch delivery</p>
+            <h3>How the free download works now</h3>
+              <div class="pathway-list">
+                <div><strong>1. English selected</strong><span>The first launch keeps access focused on one reviewed English 100-hour practice manual.</span></div>
+                <div><strong>2. No payment needed</strong><span>The PDF is free during the early Islamic Habits community launch.</span></div>
+              <div><strong>3. Read or download</strong><span>Open the in-site reader first, or download the English 100 Hours Dua Practice PDF immediately.</span></div>
+              <div><strong>4. Ask for help</strong><span>Any confusion goes to support@islamic-habits.com.</span></div>
+            </div>
+            <p class="fine-print">
+              Later, premium print editions, translated editions, and physical bundles can use secure checkout.
+            </p>
+          </article>
         </div>
       </section>
 
       <section class="product-catalogue" id="product-catalogue" aria-labelledby="product-catalogue-title">
+        <div class="section-heading wide">
+          <p class="eyebrow">Islamic habits shop</p>
+          <h2 id="product-catalogue-title">Physical products that help young Muslims practice.</h2>
+          <p>
+            A curated catalogue of Sunnah-friendly daily essentials, prayer tools,
+            and habit kits. The goal is not random shopping: every product should
+            make Salah, dhikr, cleanliness, family practice, or Islamic identity easier.
+          </p>
+        </div>
+
         <div class="catalogue-hero">
           <div>
-            <p class="eyebrow">Islamic Habits product catalogue</p>
-            <h2 id="product-catalogue-title">Physical products that help young Muslims practice.</h2>
+            <p class="eyebrow">Launch bundle</p>
+            <h3>Islamic Habits Daily Practice Kit</h3>
             <p>
-              A future shop for useful Islamic habit tools: miswak, prayer caps, janamaz,
-              travel prayer kits, pocket dua cards, tasbih counters, youth starter bundles,
-              and habit kits. The goal is not random shopping: every product should
-              make daily worship easier, cleaner, more beautiful, or more consistent.
+              A simple starter box for building visible daily Islam: miswak,
+              prayer cap, pocket dua cards, compact tasbih counter, and a
+              foldable prayer mat. Designed for students, new Muslims, travellers,
+              and families gifting young people.
             </p>
-            <div class="catalogue-metrics" aria-label="Product catalogue principles">
-              <span><strong>Useful</strong> tied to a real habit</span>
-              <span><strong>Giftable</strong> easy for families</span>
-              <span><strong>Youth-ready</strong> simple and modern</span>
-              <span><strong>Halal flow</strong> preorder first</span>
+            <div class="catalogue-tags" aria-label="Kit contents">
+              <span>Miswak</span>
+              <span>Topi</span>
+              <span>Janamaz</span>
+              <span>Dua cards</span>
+              <span>Tasbih counter</span>
+            </div>
+            <div class="catalogue-metrics" aria-label="Practice kit benefits">
+              <span><strong>5</strong> daily essentials</span>
+              <span><strong>7</strong> day habit start</span>
+              <span><strong>1</strong> gift-ready box</span>
             </div>
           </div>
-
-          <div class="catalogue-showcase" aria-hidden="true">
-            <div class="kit-orbit">
+          <div class="catalogue-showcase">
+            <div class="kit-orbit" aria-hidden="true">
+              <span class="kit-item mat"></span>
               <span class="kit-item miswak-stick"></span>
               <span class="kit-item cap"></span>
               <span class="kit-item card-stack"></span>
@@ -659,7 +945,7 @@
               <span>Suggested launch price</span>
               <strong>₹999</strong>
               <small>Final price depends on stock, quality, and shipping.</small>
-              <a class="button primary" href="mailto:1001.yx01@gmail.com?subject=Islamic%20Habits%20product%20preorder">Preorder by email</a>
+              <a class="button primary" href="mailto:support@islamic-habits.com?subject=Islamic%20Habits%20product%20preorder">Preorder by email</a>
             </div>
           </div>
         </div>
@@ -672,7 +958,7 @@
             <h3>Natural Miswak Pack</h3>
             <p>Fresh miswak sticks for oral cleanliness, Sunnah habit building, travel, and gift packs.</p>
             <div class="product-meta"><span>From ₹199</span><small>Pack of 3</small></div>
-            <a class="product-action" href="mailto:1001.yx01@gmail.com?subject=Natural%20Miswak%20Pack%20preorder">Ask to reserve</a>
+            <a class="product-action" href="mailto:support@islamic-habits.com?subject=Natural%20Miswak%20Pack%20preorder">Ask to reserve</a>
           </article>
 
           <article class="product-card">
@@ -682,7 +968,7 @@
             <h3>Prayer Cap / Topi</h3>
             <p>Comfortable everyday topi collection for Salah, masjid, madrasah, travel, and gifting.</p>
             <div class="product-meta"><span>From ₹249</span><small>Multiple sizes</small></div>
-            <a class="product-action" href="mailto:1001.yx01@gmail.com?subject=Prayer%20Cap%20Topi%20preorder">Ask to reserve</a>
+            <a class="product-action" href="mailto:support@islamic-habits.com?subject=Prayer%20Cap%20Topi%20preorder">Ask to reserve</a>
           </article>
 
           <article class="product-card">
@@ -692,7 +978,7 @@
             <h3>Premium Janamaz</h3>
             <p>Soft prayer mat options for home, study room, office, hostel, and family prayer corners.</p>
             <div class="product-meta"><span>From ₹799</span><small>Standard and travel</small></div>
-            <a class="product-action" href="mailto:1001.yx01@gmail.com?subject=Premium%20Janamaz%20preorder">Ask to reserve</a>
+            <a class="product-action" href="mailto:support@islamic-habits.com?subject=Premium%20Janamaz%20preorder">Ask to reserve</a>
           </article>
 
           <article class="product-card">
@@ -702,7 +988,7 @@
             <h3>Travel Prayer Kit</h3>
             <p>Foldable janamaz, compact pouch, miswak, and pocket dhikr card for school, work, or journey.</p>
             <div class="product-meta"><span>From ₹899</span><small>Lightweight kit</small></div>
-            <a class="product-action" href="mailto:1001.yx01@gmail.com?subject=Travel%20Prayer%20Kit%20preorder">Ask to reserve</a>
+            <a class="product-action" href="mailto:support@islamic-habits.com?subject=Travel%20Prayer%20Kit%20preorder">Ask to reserve</a>
           </article>
 
           <article class="product-card">
@@ -712,7 +998,7 @@
             <h3>Pocket Dua Cards</h3>
             <p>Morning, evening, sleep, travel, study, parents, and anxiety duas in compact card sets.</p>
             <div class="product-meta"><span>From ₹149</span><small>Starter set</small></div>
-            <a class="product-action" href="mailto:1001.yx01@gmail.com?subject=Pocket%20Dua%20Cards%20preorder">Ask to reserve</a>
+            <a class="product-action" href="mailto:support@islamic-habits.com?subject=Pocket%20Dua%20Cards%20preorder">Ask to reserve</a>
           </article>
 
           <article class="product-card">
@@ -722,7 +1008,7 @@
             <h3>Tasbih Counter</h3>
             <p>Simple bead tasbih or compact counter to make dhikr easier after Salah and during commute.</p>
             <div class="product-meta"><span>From ₹299</span><small>Bead or counter</small></div>
-            <a class="product-action" href="mailto:1001.yx01@gmail.com?subject=Tasbih%20Counter%20preorder">Ask to reserve</a>
+            <a class="product-action" href="mailto:support@islamic-habits.com?subject=Tasbih%20Counter%20preorder">Ask to reserve</a>
           </article>
 
           <article class="product-card kit-card">
@@ -732,24 +1018,24 @@
             <h3>Fajr Ready Kit</h3>
             <p>Bedside habit kit: miswak, small dua card, sleep reminder, tasbih, and Fajr tracker card.</p>
             <div class="product-meta"><span>From ₹699</span><small>Youth-friendly</small></div>
-            <a class="product-action" href="mailto:1001.yx01@gmail.com?subject=Fajr%20Ready%20Kit%20preorder">Ask to reserve</a>
+            <a class="product-action" href="mailto:support@islamic-habits.com?subject=Fajr%20Ready%20Kit%20preorder">Ask to reserve</a>
           </article>
 
           <article class="product-card kit-card">
-            <span class="product-badge">Practice beginning</span>
+            <span class="product-badge">Welcome gift</span>
             <div class="product-visual welcome-kit" aria-hidden="true"></div>
-            <p class="eyebrow">Practice card</p>
-            <h3>Islamic Practice Initiation Card</h3>
-            <p>A gentle, beautifully designed starting card for Salah, essential duas, dhikr, daily adab, and the next small step.</p>
-            <div class="product-meta"><span>From ₹99</span><small>Guided initiation</small></div>
-            <a class="product-action" href="mailto:1001.yx01@gmail.com?subject=Islamic%20Practice%20Initiation%20Card%20preorder">Ask to reserve</a>
+            <p class="eyebrow">Gift kit</p>
+            <h3>New Muslim Welcome Kit</h3>
+            <p>Gentle starter pack with prayer mat, basic duas, step-by-step Salah guide, and support email.</p>
+            <div class="product-meta"><span>From ₹1,299</span><small>Beginner focused</small></div>
+            <a class="product-action" href="mailto:support@islamic-habits.com?subject=New%20Muslim%20Welcome%20Kit%20preorder">Ask to reserve</a>
           </article>
         </div>
 
         <div class="catalogue-note">
           <strong>Order flow for launch</strong>
           <span>
-            Products can start as preorder by email at 1001.yx01@gmail.com.
+            Products can start as preorder by email at support@islamic-habits.com.
             After supplier quality, packaging, shipping, and Stripe checkout are ready,
             each catalogue item can become a direct purchase product.
           </span>
@@ -956,6 +1242,33 @@
           </label>
         </div>
 
+        <div class="library-featured" id="quran-vocabulary" aria-labelledby="quran-vocabulary-title">
+          <div class="library-featured-copy">
+            <p class="eyebrow">Library path</p>
+            <h3 id="quran-vocabulary-title">Qur'an Vocabulary</h3>
+            <p>
+              A dedicated vocabulary section inside the library for Arabic word study,
+              beginner-friendly understanding, and searchable Quran learning tools.
+            </p>
+          </div>
+          <a class="library-featured-card panel" href="./quranic-600-words.html" aria-label="Open 600 Quranic Words">
+            <div class="module-kicker">
+              <span>Qur'an</span>
+              <small>Vocabulary</small>
+            </div>
+            <h3>600 Quranic Words</h3>
+            <p>
+              Arabic, transliteration, English, and Bengali meanings in one searchable
+              manuscript-style study page.
+            </p>
+            <div class="chip-row" aria-hidden="true">
+              <span class="chip">Library</span>
+              <span class="chip">Qur'an Vocabulary</span>
+              <span class="chip">600 Words</span>
+            </div>
+          </a>
+        </div>
+
         <div class="module-grid" id="moduleGrid"></div>
       </section>
 
@@ -1040,20 +1353,20 @@
     </dialog>
 
     <footer class="site-footer">
-      <div class="footer-intro">
-        <span class="footer-brand"><img src="./assets/islamic-habits-logo-kaaba-bayt-al-mamur.svg" alt=""><strong>Islamic Habits</strong></span>
-        <h2>Small deeds.<br>Steady hearts.</h2>
-        <p>A global Islamic practice platform for living with remembrance, direction, and service.</p>
-      </div>
-      <div class="footer-directory">
-        <nav aria-label="Practice links"><strong>Practice</strong><a href="#world-tools">Prayer & Qibla</a><a href="#console">Daily console</a><a href="#dua-store">Dua practice</a><a href="./quranic-600-words.html">Qur'an words</a></nav>
-        <nav aria-label="Explore links"><strong>Explore</strong><a href="#circle3">Circle3</a><a href="./blog/">Journal</a><a href="#product-catalogue">Store</a><a href="#civilization">Civilization</a></nav>
-        <nav aria-label="Company links"><strong>Company</strong><a href="./contact.html">Contact</a><a href="./privacy.html">Privacy</a><a href="./terms.html">Terms</a><a href="mailto:1001.yx01@gmail.com">Support</a></nav>
-      </div>
-      <div class="footer-bottom"><span>© 2026 Islamic Habits</span><span>Faith, made practice.</span><a href="#main-content">Return to top ↑</a></div>
+      <span class="footer-brand">
+        <img src="./assets/islamic-habits-logo-kaaba-bayt-al-mamur.svg" alt="">
+        <strong>Islamic Habits</strong>
+      </span>
+      <span>Small deeds. Steady hearts. Strong routines.</span>
+      <nav class="footer-links" aria-label="Site policies">
+        <a href="./privacy.html">Privacy</a>
+        <a href="./terms.html">Terms</a>
+        <a href="./refund.html">Refunds</a>
+        <a href="./contact.html">Contact</a>
+      </nav>
     </footer>
 
-    <script src="./config.js?v=circle3-20260521"></script>
-    <script src="./script.js?v=quranic-600-20260613"></script>
+    <script src="./config.js?v=circle3-20260521b"></script>
+    <script src="./script.js?v=circle3-20260521b"></script>
   </body>
 </html>

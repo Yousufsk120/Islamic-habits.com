@@ -43,6 +43,10 @@ function formatDate(date) {
   }).format(new Date(`${date}T00:00:00+05:30`));
 }
 
+function isoDate(date) {
+  return `${date}T00:00:00+05:30`;
+}
+
 async function readJson(file, fallback) {
   try {
     return JSON.parse(await readFile(file, "utf8"));
@@ -53,6 +57,8 @@ async function readJson(file, fallback) {
 }
 
 function buildPostHtml(post, item) {
+  const canonicalUrl = `https://islamic-habits.com/blog/${post.file}`;
+  const imageUrl = "https://islamic-habits.com/assets/islamic-habits-logo-kaaba-bayt-al-mamur.png";
   const sections = item.sections
     .map(
       (section) => `
@@ -74,6 +80,19 @@ function buildPostHtml(post, item) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${escapeHtml(item.title)} | Islamic Habits Blog</title>
     <meta name="description" content="${escapeHtml(item.summary)}">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="${canonicalUrl}">
+    <meta property="og:title" content="${escapeHtml(item.title)} | Islamic Habits Blog">
+    <meta property="og:description" content="${escapeHtml(item.summary)}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="${canonicalUrl}">
+    <meta property="og:image" content="${imageUrl}">
+    <meta property="og:image:alt" content="Islamic Habits logo">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${escapeHtml(item.title)} | Islamic Habits Blog">
+    <meta name="twitter:description" content="${escapeHtml(item.summary)}">
+    <meta name="twitter:image" content="${imageUrl}">
     <link rel="stylesheet" href="../styles.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18157183110"></script>
     <script>
@@ -81,6 +100,30 @@ function buildPostHtml(post, item) {
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'AW-18157183110');
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "${escapeHtml(item.title)}",
+        "description": "${escapeHtml(item.summary)}",
+        "url": "${canonicalUrl}",
+        "datePublished": "${isoDate(post.date)}",
+        "dateModified": "${isoDate(post.date)}",
+        "inLanguage": "en",
+        "author": {
+          "@type": "Organization",
+          "name": "Islamic Habits"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Islamic Habits",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "${imageUrl}"
+          }
+        }
+      }
     </script>
   </head>
   <body>
@@ -143,6 +186,7 @@ function postToIssueCard(post) {
 function buildBlogIndex(posts) {
   const latest = posts[0];
   const cards = posts.map(postToIssueCard).join("\n");
+  const imageUrl = "https://islamic-habits.com/assets/islamic-habits-logo-kaaba-bayt-al-mamur.png";
 
   return `<!doctype html>
 <html lang="en">
@@ -151,6 +195,19 @@ function buildBlogIndex(posts) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Islamic Habits Blog</title>
     <meta name="description" content="One practical Islamic Habits article each day for Salah, dua, dhikr, family, self discipline, and young Muslim practice.">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://islamic-habits.com/blog/">
+    <meta property="og:title" content="Daily Islamic Habits Blog">
+    <meta property="og:description" content="One practical Islamic Habits article each day for Salah, dua, dhikr, family, self discipline, and young Muslim practice.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://islamic-habits.com/blog/">
+    <meta property="og:image" content="${imageUrl}">
+    <meta property="og:image:alt" content="Islamic Habits logo">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Daily Islamic Habits Blog">
+    <meta name="twitter:description" content="One practical Islamic Habits article each day for Salah, dua, dhikr, family, self discipline, and young Muslim practice.">
+    <meta name="twitter:image" content="${imageUrl}">
     <link rel="stylesheet" href="../styles.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18157183110"></script>
     <script>
@@ -158,6 +215,23 @@ function buildBlogIndex(posts) {
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'AW-18157183110');
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Daily Islamic Habits Blog",
+        "url": "https://islamic-habits.com/blog/",
+        "description": "One practical Islamic Habits article each day for Salah, dua, dhikr, family, self discipline, and young Muslim practice.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Islamic Habits",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "${imageUrl}"
+          }
+        }
+      }
     </script>
   </head>
   <body>
@@ -219,16 +293,25 @@ function buildBlogIndex(posts) {
 
 function buildSitemap(posts) {
   const urls = [
-    "https://islamic-habits.com/",
-    "https://islamic-habits.com/blog/",
-    "https://islamic-habits.com/privacy",
-    "https://islamic-habits.com/terms",
-    "https://islamic-habits.com/contact",
-    ...posts.map((post) => `https://islamic-habits.com/blog/${post.file}`)
+    { loc: "https://islamic-habits.com/", lastmod: todayInKolkata() },
+    { loc: "https://islamic-habits.com/blog/", lastmod: todayInKolkata() },
+    { loc: "https://islamic-habits.com/privacy", lastmod: "2026-05-30" },
+    { loc: "https://islamic-habits.com/terms", lastmod: "2026-05-30" },
+    { loc: "https://islamic-habits.com/refund", lastmod: "2026-05-30" },
+    { loc: "https://islamic-habits.com/contact", lastmod: "2026-05-30" },
+    { loc: "https://islamic-habits.com/dua-practice", lastmod: "2026-05-21" },
+    { loc: "https://islamic-habits.com/quranic-600-words", lastmod: todayInKolkata() },
+    ...posts.map((post) => ({
+      loc: `https://islamic-habits.com/blog/${post.file}`,
+      lastmod: post.date
+    }))
   ];
 
   const entries = urls
-    .map((url) => `  <url>\n    <loc>${escapeHtml(url)}</loc>\n  </url>`)
+    .map(
+      ({ loc, lastmod }) =>
+        `  <url>\n    <loc>${escapeHtml(loc)}</loc>\n    <lastmod>${escapeHtml(lastmod)}</lastmod>\n  </url>`
+    )
     .join("\n");
 
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries}\n</urlset>\n`;
